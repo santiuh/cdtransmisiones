@@ -326,12 +326,14 @@ const data = [
     botones: [{ nombre: "Catálogo General", archivo: "pesaro1.pdf" }],
   },
   {
+    svg: "31.svg",
     marca: "ROLLWAY",
     texto:
       "ROLLWAY Bearings es pionero en el sector de los rodamientos de bolas y rodillos. Fundada en 1908, ha construido una sólida reputación a lo largo de los años. A partir de allí, comenzaron a añadir calidad y eficiencia a sus productos. En Roda Service puede encontrar un distribuidor ubicado en la ciudad de Rosario, que ha sabido comercializar su amplia gama de productos, desde miniaturas hasta grandes rodamientos industriales.",
     botones: [{ nombre: "Catálogo General", archivo: "rollway1.pdf" }],
   },
   {
+    svg: "26.svg",
     marca: "VAR-NTN",
     texto:
       "Con más de 50 años en el mercado VAR-NTN se dedica a la fabricación y distribución de tensores y kits de rueda. Las poleas son armadas con rodamientos NTN, lo cual garantiza la máxima calidad y eficiencia, tan necesaria en el motor del vehículo. Su objetivo es brindar un producto de calidad, a un precio accesible para el consumidor, en conjunto con un servicio de primer nivel y garantía asegurada.",

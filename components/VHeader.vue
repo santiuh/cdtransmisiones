@@ -123,7 +123,7 @@ https://www.linkedin.com/company/86398638/admin/page-posts/published/
       :style="{
         backgroundImage: `url('/img/${banner}.png')`,
       }"
-      class="flex justify-center bg-cover bg-center bg-no-repeat"
+      class="flex justify-center bg-cover bg-no-repeat"
     >
       <div
         class="text-4xl py-14 flex flex-col text-white text-center"

@@ -7,7 +7,7 @@
         class="flex flex-col lg:text-2xl font-medium text-center items-center"
       >
         <NuxtImg class="mb-3 w-1/4" src="svg/Sec1_1.svg"></NuxtImg>
-        <p class="text-nowrap">Despacho de mercadería</p>
+        <p class="lg:text-nowrap">Despacho de mercadería</p>
         <span class="text-nowrap">en menos de 24hs.</span>
       </div>
       <div
@@ -30,7 +30,7 @@
         class="flex flex-col lg:text-2xl font-medium text-center items-center"
       >
         <NuxtImg class="mb-3 w-1/4" src="svg/Sec1_4.svg"></NuxtImg>
-        <p class="text-nowrap">Servicio de capacitaciones</p>
+        <p class="lg:text-nowrap">Servicio de capacitaciones</p>
         <span class="text-nowrap">para clientes.</span>
       </div>
     </div>
