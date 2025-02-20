@@ -132,7 +132,7 @@ https://www.linkedin.com/company/86398638/admin/page-posts/published/
         <h1 class="font-extrabold text-4xl relative">
           {{
             route.path === "/Productos"
-              ? "Automotor"
+              ? "Automotríz"
               : route.path.includes("Agricola")
               ? "Agrícola"
               : "Industrial"

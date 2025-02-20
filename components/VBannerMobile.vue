@@ -13,7 +13,7 @@
       <h1 class="font-extrabold text-4xl relative">
         {{
           route.path === "/Productos"
-            ? "Automotor"
+            ? "Automotríz"
             : route.path.includes("Agricola")
             ? "Agrícola"
             : "Industrial"
@@ -27,7 +27,7 @@
       v-else
       class="font-extrabold text-3xl lg:text-4xl pt-24 pb-10 flex text-white"
     >
-      {{ banner }}
+      {{ banner === "AUTOMOTOR" ? "Automotríz" : banner }}
     </h1>
   </div>
 </template>
