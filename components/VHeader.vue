@@ -1,14 +1,15 @@
 <template>
   <div
-    class="hidden lg:flex flex-col"
-    :class="{
+  class="hidden lg:flex flex-col backdrop-blur-md shadow-md"
+  :class="{
       ' !bg-primary ': isScrolled && isHome,
-      ' fixed z-50 w-full bg-transparent ': isHome,
+      'fixed z-50 w-full bg-transparent bg-gradient-to-b from-primary/70 to-transparent ': isHome,
       ' bg-primary ': !isHome,
     }"
     :style="{
       transition: 'background-color 0.3s ease-in-out',
     }"
+
   >
     <div
       class="flex flex-row justify-between py-7 px-10 self-center w-full max-w-[1440px]"
@@ -36,13 +37,7 @@
               : 'text-primary'
           "
         >
-          <button
-            class="hover:brightness-75 transition-all duration-300 hover:scale-105"
-            @click="goTo('/Marcas')"
-          >
-            MARCAS
-          </button>
-          <button
+        <button
             class="hover:brightness-75 transition-all duration-300 hover:scale-105"
             @click="goTo('/Productos')"
           >
@@ -50,16 +45,25 @@
           </button>
           <button
             class="hover:brightness-75 transition-all duration-300 hover:scale-105"
+            @click="goTo('/Marcas')"
+          >
+            SERVICIOS
+          </button>
+
+          <button
+            class="hover:brightness-75 transition-all duration-300 hover:scale-105"
             @click="goTo('/Empresa')"
           >
             EMPRESA
           </button>
+          
           <button
             class="hover:brightness-75 transition-all duration-300 hover:scale-105"
-            @click="goTo('/Clientes')"
+            @click="goTo('/Empresa')"
           >
-            ACCESO CLIENTES
+            CONTACTO
           </button>
+   
         </div>
         <div
           class="flex flex-row border-l gap-3 px-5 ml-5 items-center"

@@ -61,14 +61,7 @@
         >
           EMPRESA
         </NuxtLink>
-        <NuxtLink
-          @click="menu = false"
-          class="hover:cursor-pointer transition-all duration-300"
-          to="https://catalogo.rodaservice.com.ar/"
-          target="_blank"
-        >
-          ACCESO CLIENTES
-        </NuxtLink>
+
       </div>
     </nav>
   </div>
