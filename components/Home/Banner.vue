@@ -32,7 +32,7 @@
   <style scoped>
   .hero {
     @apply relative flex items-center bg-cover bg-center overflow-hidden;
-    background-image: url("img/fondohome.png");
+    background-image: url("/img/fondohome.png");
   }
 
   </style>
