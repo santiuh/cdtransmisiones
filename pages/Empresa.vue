@@ -1,6 +1,6 @@
 <template>
   <div class="flex place-content-center">
-    <div
+    <!-- <div
       class="flex flex-col max-w-[1440px] justify-center px-3 lg:px-0 lg:w-4/6 pt-16 pb-48 overflow-hidden"
       style="
         background: rgb(51, 51, 51);
@@ -17,7 +17,7 @@
         :id="i"
         :datos="dato"
       ></EmpresaTimeline>
-    </div>
+    </div> -->
   </div>
 </template>
 <script setup>

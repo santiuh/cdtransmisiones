@@ -9,7 +9,7 @@
         <div class="flex flex-row text-lg gap-6 items-center">
           <NuxtImg class="h-5" src="svg/footergps.svg"></NuxtImg>
           <div class="flex flex-col">
-            <span>San Martín 2437 - Rosario </span>
+            <span>Maipu 450 - Rafaela</span>
             <span>Prov. de Santa Fé - Argentina </span>
           </div>
         </div>
@@ -19,34 +19,34 @@
             class="flex flex-row gap-3 items-center"
           >
             <NuxtImg class="h-5" src="svg/footerwsp.svg"></NuxtImg>
-            <span>+54 9 341 5709283</span>
+            <span>+54 9 349 257-3782</span>
           </button>
           <button class="flex flex-row gap-3 items-center">
             <NuxtImg class="h-5" src="svg/footerphone.svg"></NuxtImg>
-            <span>0341 5278954</span>
+            <span>+54 3492 42-1086</span>
           </button>
         </div>
         <a
-          href="mailto:rosario@rodaservice.com.ar"
+          href="mailto:ejemplo@cdtrans.com.ar"
           class="flex flex-row text-lg gap-3 items-center"
         >
           <NuxtImg class="h-5" src="svg/footermail.svg"></NuxtImg>
-          <span>rosario@rodaservice.com.ar</span>
+          <span>ejemplo@cdtrans.com.ar</span>
         </a>
       </div>
       <div class="flex flex-col gap-3 lg:gap-6 items-center lg:items-start">
         <div class="font-bold text-2xl flex">Redes Sociales</div>
         <div class="flex flex-row gap-3">
-          <NuxtLink to="https://www.instagram.com/rodaservice/" target="_blank"
+          <NuxtLink to="https://www.instagram.com/imoberdorfhnos//" target="_blank"
             ><svgo-ig class="!h-7 !w-7"></svgo-ig
           ></NuxtLink>
           <NuxtLink
-            to="https://www.linkedin.com/company/86398638/admin/page-posts/published/"
+            to="https://www.linkedin.com/in/imoberdorf-hnos-s-a-628470257/"
             target="_blank"
             ><svgo-fb class="!h-7 !w-7"></svgo-fb
           ></NuxtLink>
           <NuxtLink
-            to="https://www.facebook.com/rodaservice/?locale=es_LA"
+            to="https://www.facebook.com/imoberdorfhnos"
             target="_blank"
             ><svgo-li class="!h-7 !w-7"></svgo-li
           ></NuxtLink>
@@ -57,6 +57,6 @@
 </template>
 <script setup>
 const openWindow = () => {
-  window.open("https://api.whatsapp.com/send?phone=5493415709283", "_blank");
+  window.open("https://api.whatsapp.com/send?phone=5493492573782", "_blank");
 };
 </script>

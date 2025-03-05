@@ -19,6 +19,6 @@
 </template>
 <script setup lang="ts">
 const openWindow = () => {
-  window.open("https://api.whatsapp.com/send?phone=5493415709283", "_blank");
+  window.open("https://api.whatsapp.com/send?phone=5493492573782", "_blank");
 };
 </script>

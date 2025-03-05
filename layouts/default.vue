@@ -1,7 +1,7 @@
 <template>
   <div>
     <VHeaderMobile class="lg:hidden"></VHeaderMobile>
-    <VBannerMobile></VBannerMobile>
+    <!-- <VBannerMobile></VBannerMobile> -->
     <VHeader></VHeader>
     <slot />
     <WhatsApp></WhatsApp>

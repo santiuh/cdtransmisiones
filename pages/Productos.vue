@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <div class="flex place-content-center bg-tertiary">
+    <!-- <div class="flex place-content-center bg-tertiary">
       <div
         class="flex flex-row justify-around py-4 lg:py-8 max-w-[1440px] w-full"
       >
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <NuxtPage class="max-w-[1440px] lg:px-32 px-4 self-center"></NuxtPage>
+    <NuxtPage class="max-w-[1440px] lg:px-32 px-4 self-center"></NuxtPage> -->
   </div>
 </template>
 <script setup>

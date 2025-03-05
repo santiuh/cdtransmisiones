@@ -1,13 +1,13 @@
 <template>
   <div class="flex flex-col pt-12 pb-24">
-    <div class="grid grid-cols-3 gap-x-4 lg:gap-x-10 gap-y-6 w-full">
+    <!-- <div class="grid grid-cols-3 gap-x-4 lg:gap-x-10 gap-y-6 w-full">
       <ProductosProducto
         v-for="producto in productos"
         :key="producto.texto"
         :texto="producto.texto"
         :img="producto.imagen"
       ></ProductosProducto>
-    </div>
+    </div> -->
   </div>
 </template>
 <script setup>

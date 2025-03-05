@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-const phoneNumber = "5493415709283";
+const phoneNumber = "5493492573782";
 const message = "Hola, me gustaría más información.";
 const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
   message

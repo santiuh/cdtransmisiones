@@ -75,7 +75,7 @@
               : 'border-l-primary'
           "
         >
-          <NuxtLink to="https://www.instagram.com/rodaservice/" target="_blank">
+          <NuxtLink to="https://www.instagram.com/imoberdorfhnos/" target="_blank">
             <svgo-ig
               class="!h-7 !w-7 hover:brightness-75 transition-all duration-300 hover:scale-105"
               :class="
@@ -88,9 +88,7 @@
             ></svgo-ig
           ></NuxtLink>
           <NuxtLink
-            to="
-https://www.linkedin.com/company/86398638/admin/page-posts/published/
-"
+            to="https://www.linkedin.com/in/imoberdorf-hnos-s-a-628470257"
             target="_blank"
           >
             <svgo-li
@@ -105,7 +103,7 @@ https://www.linkedin.com/company/86398638/admin/page-posts/published/
             ></svgo-li
           ></NuxtLink>
           <NuxtLink
-            to="https://www.facebook.com/rodaservice/?locale=es_LA "
+            to="https://www.facebook.com/imoberdorfhnos "
             target="_blank"
           >
             <svgo-fb
@@ -122,7 +120,7 @@ https://www.linkedin.com/company/86398638/admin/page-posts/published/
         </div>
       </div>
     </div>
-    <div
+    <!-- <div
       v-if="!isHome"
       :style="{
         backgroundImage: `url('/img/${banner}.png')`,
@@ -149,7 +147,7 @@ https://www.linkedin.com/company/86398638/admin/page-posts/published/
       <h1 v-else class="font-extrabold text-4xl py-14 flex text-white">
         {{ banner }}
       </h1>
-    </div>
+    </div> -->
   </div>
 </template>
 
