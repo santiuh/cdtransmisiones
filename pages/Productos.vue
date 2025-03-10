@@ -8,8 +8,8 @@
         Nuestros Productos
       </h1>
       <div class="flex flex-row gap-4">
-        <div class="bg-white rounded-3xl px-3 py-5 w-2/5 gap-4 flex flex-col">
-          <div class="flex flex-col w-full gap-1">
+        <div class="bg-white rounded-3xl px-3 py-5 w-1/4 gap-4 flex flex-col h-fit">
+          <div class="flex flex-col w-full gap-1 border-b py-4">
             <label class="font-semibold pl-2">Filtrar por palabra</label>
             <input
               class="bg-tertiary rounded-3xl w-full px-2 py-1"
@@ -17,59 +17,63 @@
               placeholder="Buscar productos..."
             />
           </div>
-          <div class="flex flex-col w-full gap-1">
+          <div class="flex flex-col w-full gap-1 border-b pb-4">
             <label class="font-semibold pl-2">Filtrar por categoría</label>
-
-            <select
-              class="bg-tertiary rounded-3xl w-full px-2 py-1 font-semibold"
-              v-model="selectedCategory"
-            >
-              <option value="">Todas las Categorías</option>
-              <option
-                v-for="category in categories"
-                :key="category"
+            <div v-for="category in categories" :key="category" class="flex items-center">
+              <input
+                type="checkbox"
                 :value="category"
-              >
-                {{ category }}
-              </option>
-            </select>
+                v-model="selectedCategories"
+                class="mr-2"
+              />
+              <span>{{ category }}</span>
+            </div>
           </div>
-          <div
-            class="flex flex-col w-full gap-1"
-            v-if="subcategories.length > 0"
-          >
+          <div class="flex flex-col w-full gap-1" v-if="subcategories.length > 0">
             <label class="font-semibold pl-2">Filtrar por subcategoria</label>
-            <select
-              class="bg-tertiary rounded-3xl w-full px-2 py-1"
-              v-model="selectedSubcategory"
-            >
-              <option value="">Todas las Subcategorías</option>
-              <option
-                v-for="subcategory in subcategories"
-                :key="subcategory"
+            <div v-for="subcategory in subcategories" :key="subcategory" class="flex items-center">
+              <input
+                type="checkbox"
                 :value="subcategory"
-              >
-                {{ subcategory }}
-              </option>
-            </select>
+                v-model="selectedSubcategories"
+                class="mr-2"
+              />
+              <span>{{ subcategory }}</span>
+            </div>
           </div>
         </div>
-        <div class="grid grid-flow-row grid-cols-4 gap-4">
+        <div class="grid grid-flow-row grid-cols-3 w-3/4 gap-6">
           <div
             v-for="product in filteredProducts"
             :key="product.id"
-            class="flex flex-col bg-white"
+            class="flex flex-col relative bg-white rounded-3xl overflow-hidden"
           >
+            <h3
+              class="absolute bg-[#1063b1e1] text-white text-xl w-full text-center font-semibold py-2 px-5"
+            >
+              {{ product.categoria }}
+            </h3>
             <NuxtImg
               class="aspect-square"
               :src="product.image"
               alt="product.title"
             />
-            <div>
-              <h3>{{ product.title }}</h3>
-              <p>{{ product.categoria }}</p>
-              <p v-if="product.subcategoria">{{ product.subcategoria }}</p>
-              <button @click="viewProduct(product.id)">Ver Producto</button>
+            <div class="flex flex-col p-6 justify-between h-full gap-12">
+              <div class="flex flex-col items-baseline">
+                <p class="text-lg font-semibold border-b">
+                  {{ product.title }}
+                </p>
+
+                <p class="" v-if="product.subcategoria">
+                  {{ product.subcategoria }}
+                </p>
+              </div>
+
+              <VButton
+                class="!text-base !bg-primary text-white font-semibold self-end"
+                @click="viewProduct(product.id)"
+                titulo="VER PRODUCTO"
+              ></VButton>
             </div>
           </div>
         </div>
@@ -83,8 +87,8 @@ const route = useRoute();
 const router = useRouter();
 
 const searchQuery = ref("");
-const selectedCategory = ref("");
-const selectedSubcategory = ref("");
+const selectedCategories = ref([]);
+const selectedSubcategories = ref([]);
 
 const products = ref([
   {
@@ -140,10 +144,10 @@ const categories = computed(() => {
 });
 
 const subcategories = computed(() => {
-  if (!selectedCategory.value) return [];
+  if (selectedCategories.value.length === 0) return [];
   const uniqueSubcategories = new Set(
     products.value
-      .filter((product) => product.categoria === selectedCategory.value)
+      .filter((product) => selectedCategories.value.includes(product.categoria))
       .map((product) => product.subcategoria)
   );
   return Array.from(uniqueSubcategories);
@@ -155,10 +159,11 @@ const filteredProducts = computed(() => {
       .toLowerCase()
       .includes(searchQuery.value.toLowerCase());
     const matchesCategory =
-      !selectedCategory.value || product.categoria === selectedCategory.value;
+      selectedCategories.value.length === 0 ||
+      selectedCategories.value.includes(product.categoria);
     const matchesSubcategory =
-      !selectedSubcategory.value ||
-      product.subcategoria === selectedSubcategory.value;
+      selectedSubcategories.value.length === 0 ||
+      selectedSubcategories.value.includes(product.subcategoria);
     return matchesTitle && matchesCategory && matchesSubcategory;
   });
 });
