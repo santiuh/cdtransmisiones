@@ -1,6 +1,8 @@
 <template>
-  <div class="flex place-content-center bg-tertiary">
-    <div class="flex flex-col pt-20 pb-44 relative w-full px-4 lg:px-10 max-w-[1440px]">
+  <div class="flex place-content-center">
+    <div
+      class="flex flex-col pt-20 pb-44 relative w-full px-4 lg:px-10 max-w-[1440px]"
+    >
       <h1 class="font-extrabold text-5xl text-[#1C2646] text-center">
         Líneas de Productos
       </h1>
@@ -10,18 +12,18 @@
       <div class="flex flex-col lg:flex-row justify-center gap-10">
         <Sec2Card
           @click="router.push('/Productos')"
-          bg="img/Sec2Card1.png"
-          title="Automotriz"
+          bg="img/Sec2Card1.jpg"
+          title="Productos"
         ></Sec2Card>
         <Sec2Card
-          @click="router.push('/Productos/Agricola')"
-          bg="img/Sec2Card2.png"
-          title="Agrícola"
+          @click="router.push('/Servicios')"
+          bg="img/Sec2Card2.jpg"
+          title="Servicios"
         ></Sec2Card>
         <Sec2Card
-          @click="router.push('/Productos/Industrial')"
-          bg="img/Sec2Card3.png"
-          title="Industrial"
+          @click="router.push('/Empresa')"
+          bg="img/Sec2Card3.jpg"
+          title="Sobre Nosotros"
         ></Sec2Card>
       </div>
       <HomeRodaPill></HomeRodaPill>

@@ -1,15 +1,15 @@
 <template>
   <div
-  class="hidden lg:flex flex-col backdrop-blur-md shadow-md"
-  :class="{
+    class="hidden lg:flex flex-col backdrop-blur-md shadow-md"
+    :class="{
       ' !bg-primary ': isScrolled && isHome,
-      'fixed z-50 w-full bg-transparent bg-gradient-to-b from-primary/70 to-transparent ': isHome,
+      'fixed z-50 w-full bg-transparent bg-gradient-to-b from-primary/70 to-transparent ':
+        isHome,
       ' bg-primary ': !isHome,
     }"
     :style="{
       transition: 'background-color 0.3s ease-in-out',
     }"
-
   >
     <div
       class="flex flex-row justify-between py-7 px-10 self-center w-full max-w-[1440px]"
@@ -34,10 +34,10 @@
               ? 'text-white'
               : isScrolled && isHome
               ? 'text-white'
-              : 'text-primary'
+              : 'text-white'
           "
         >
-        <button
+          <button
             class="hover:brightness-75 transition-all duration-300 hover:scale-105"
             @click="goTo('/Productos')"
           >
@@ -45,7 +45,7 @@
           </button>
           <button
             class="hover:brightness-75 transition-all duration-300 hover:scale-105"
-            @click="goTo('/Marcas')"
+            @click="goTo('/Servicios')"
           >
             SERVICIOS
           </button>
@@ -56,14 +56,13 @@
           >
             EMPRESA
           </button>
-          
+
           <button
             class="hover:brightness-75 transition-all duration-300 hover:scale-105"
             @click="goTo('/Empresa')"
           >
             CONTACTO
           </button>
-   
         </div>
         <div
           class="flex flex-row border-l gap-3 px-5 ml-5 items-center"
@@ -75,7 +74,10 @@
               : 'border-l-primary'
           "
         >
-          <NuxtLink to="https://www.instagram.com/imoberdorfhnos/" target="_blank">
+          <NuxtLink
+            to="https://www.instagram.com/imoberdorfhnos/"
+            target="_blank"
+          >
             <svgo-ig
               class="!h-7 !w-7 hover:brightness-75 transition-all duration-300 hover:scale-105"
               :class="
@@ -83,7 +85,7 @@
                   ? 'text-white'
                   : isScrolled && isHome
                   ? 'text-white'
-                  : 'text-primary'
+                  : 'text-white'
               "
             ></svgo-ig
           ></NuxtLink>
@@ -98,7 +100,7 @@
                   ? 'text-white'
                   : isScrolled && isHome
                   ? 'text-white'
-                  : 'text-primary'
+                  : 'text-white'
               "
             ></svgo-li
           ></NuxtLink>
@@ -113,7 +115,7 @@
                   ? 'text-white'
                   : isScrolled && isHome
                   ? 'text-white'
-                  : 'text-primary'
+                  : 'text-white'
               "
             ></svgo-fb
           ></NuxtLink>

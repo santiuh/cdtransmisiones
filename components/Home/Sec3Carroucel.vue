@@ -1,172 +1,72 @@
 <template>
   <div ref="glideRef" class="glide">
-    <div
-      style="
-        background: rgb(255, 255, 255);
-        background: linear-gradient(
-          270deg,
-          rgba(255, 255, 255, 1) 0%,
-          rgba(255, 255, 255, 1) 47%,
-          rgba(255, 255, 255, 0) 100%
-        );
-      "
-      class="absolute hidden lg:flex w-40 h-full right-0 z-10"
-    ></div>
-    <div
-      style="
-        background: rgb(255, 255, 255);
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 1) 0%,
-          rgba(255, 255, 255, 1) 47%,
-          rgba(255, 255, 255, 0) 100%
-        );
-      "
-      class="absolute w-40 hidden lg:flex h-full left-0-0 z-10"
-    ></div>
-    <div class="glide__arrows hidden lg:flex" data-glide-el="controls">
-      <button
-        class="glide__arrow glide__arrow--left !absolute !z-20 !h-14 !w-14 !bg-white !flex !items-center !drop-shadow-2xl !justify-center !rounded-2xl !top-28 -ml-5"
-        data-glide-dir="<"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10.019"
-          height="19.344"
-          viewBox="0 0 10.019 19.344"
-        >
-          <g
-            id="Grupo_428"
-            data-name="Grupo 428"
-            transform="translate(-111.495 -2929.686)"
-          >
-            <path
-              id="Trazado_219"
-              data-name="Trazado 219"
-              d="M120.9,2948.473l-8.286-9.115,8.286-9.115"
-              fill="none"
-              stroke="#1c2646"
-              stroke-miterlimit="10"
-              stroke-width="1.657"
-            />
-          </g>
-        </svg>
-      </button>
-      <button
-        class="glide__arrow glide__arrow--right !absolute !z-20 !h-14 !w-14 !bg-white !flex !items-center !drop-shadow-2xl !justify-center !rounded-2xl !top-28 right-0 -mr-5"
-        data-glide-dir=">"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10.019"
-          height="19.344"
-          viewBox="0 0 10.019 19.344"
-        >
-          <g
-            id="Grupo_426"
-            data-name="Grupo 426"
-            transform="translate(-1804.231 -2920.571)"
-          >
-            <path
-              id="Trazado_218"
-              data-name="Trazado 218"
-              d="M1804.844,2921.128l8.286,9.115-8.286,9.115"
-              fill="none"
-              stroke="#1c2646"
-              stroke-miterlimit="10"
-              stroke-width="1.657"
-            />
-          </g>
-        </svg>
-      </button>
-    </div>
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides !py-11">
         <li class="glide__slide">
-          <svgo-Sec3_1
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_1>
-        </li>
-        <li class="glide__slide">
-          <svgo-Sec3_2
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_2>
-        </li>
-        <li class="glide__slide">
-          <svgo-Sec3_3
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_3>
-        </li>
-        <li class="glide__slide">
-          <svgo-Sec3_7
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_7>
-        </li>
-
-        <li class="glide__slide">
-          <svgo-Sec3_8
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_8>
-        </li>
-        <li class="glide__slide">
-          <svgo-Sec3_9
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_9>
-        </li>
-        <li class="glide__slide">
-          <svgo-Sec3_10
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_10>
-        </li>
-        <li class="glide__slide">
-          <svgo-Sec3_11
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_11>
-        </li>
-        <li class="glide__slide">
           <NuxtImg
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-            src="/svg/Sec3_30.svg"
+            src="/img/Marcas/marca1.png"
+            class="carousel-image"
           ></NuxtImg>
         </li>
         <li class="glide__slide">
-          <svgo-Sec3_31
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_31>
-        </li>
-
-        <li class="glide__slide">
-          <svgo-Sec3_12
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_12>
-        </li>
-
-        <li class="glide__slide">
-          <svgo-Sec3_13
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_13>
-        </li>
-        <li class="glide__slide">
           <NuxtImg
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-            src="/svg/Sec3_25.svg"
+            src="/img/Marcas/marca3.png"
+            class="carousel-image"
           ></NuxtImg>
         </li>
         <li class="glide__slide">
-          <svgo-Sec3_14
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_14>
+          <NuxtImg
+            src="/img/Marcas/marca4.png"
+            class="carousel-image"
+          ></NuxtImg>
         </li>
         <li class="glide__slide">
-          <svgo-Sec3_15
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_15>
+          <NuxtImg
+            src="/img/Marcas/marca5.png"
+            class="carousel-image"
+          ></NuxtImg>
         </li>
-
         <li class="glide__slide">
-          <svgo-Sec3_17
-            class="lg:!w-56 lg:!h-28 !w-full !h-40 rounded-lg shadow-xl p-3"
-          ></svgo-Sec3_17>
+          <NuxtImg
+            src="/img/Marcas/marca6.png"
+            class="carousel-image"
+          ></NuxtImg>
+        </li>
+        <li class="glide__slide">
+          <NuxtImg
+            src="/img/Marcas/marca7.png"
+            class="carousel-image"
+          ></NuxtImg>
+        </li>
+        <li class="glide__slide">
+          <NuxtImg
+            src="/img/Marcas/marca8.png"
+            class="carousel-image"
+          ></NuxtImg>
+        </li>
+        <li class="glide__slide">
+          <NuxtImg
+            src="/img/Marcas/marca9.png"
+            class="carousel-image"
+          ></NuxtImg>
+        </li>
+        <li class="glide__slide">
+          <NuxtImg
+            src="/img/Marcas/marca10.png"
+            class="carousel-image"
+          ></NuxtImg>
+        </li>
+        <li class="glide__slide">
+          <NuxtImg
+            src="/img/Marcas/marca11.png"
+            class="carousel-image"
+          ></NuxtImg>
+        </li>
+        <li class="glide__slide">
+          <NuxtImg
+            src="/img/Marcas/marca12.png"
+            class="carousel-image"
+          ></NuxtImg>
         </li>
       </ul>
     </div>
@@ -176,21 +76,47 @@
 <script setup>
 import Glide from "@glidejs/glide";
 import "@glidejs/glide/dist/css/glide.core.min.css";
-const data = ref([""]);
 const glideRef = ref(null);
 
 onMounted(() => {
   const glideInstance = new Glide(glideRef.value, {
     type: "carousel",
-    perView: 5,
+    perView: 6,
+    autoplay: 1, // Disminuye el intervalo para hacer el movimiento más rápido
+    hoverpause: false, // Evita que se detenga al pasar el ratón
+    animationDuration: 6000, // Aumenta la duración de la animación para hacerlo más suave
+    animationTimingFunc: "linear", // Asegura que el movimiento sea constante y fluido
     breakpoints: {
       1280: {
         perView: 1,
-        autoplay: 2000,
+        autoplay: 1000,
       },
     },
-    gap: 20,
+    gap: 25,
+    focusAt: "center", // Mantiene las imágenes centradas en la vista
+    rewind: false, // Esto es importante para que no se "rebobine" al final
+    rtl: false, // Define si el movimiento es de izquierda a derecha
   });
   glideInstance.mount();
 });
 </script>
+
+<style scoped>
+li {
+  width: 150px; /* Set a fixed width */
+  height: 150px; /* Set a fixed height */
+  background-color: #bddfffa4; /* Light blue background */
+  padding: 25px; /* Padding */
+  border-radius: 10px; /* Rounded borders */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+</style>

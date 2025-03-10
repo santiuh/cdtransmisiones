@@ -1,5 +1,5 @@
 <template>
-  <div class="flex bg-primary place-content-center pt-24 pb-32 z-40">
+  <div class="flex bg-primary place-content-center pt-24 pb-32 z-40 relative">
     <div
       class="flex-col lg:flex-row gap-6 lg:gap-0 items-center lg:items-start text-center lg:text-start flex text-white lg:justify-around w-full max-w-[1440px]"
     >

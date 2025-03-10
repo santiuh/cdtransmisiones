@@ -30,7 +30,7 @@
         <VButton
           titulo="Marcas"
           class="!text-xl"
-          @click="router.push('/Marcas')"
+          @click="router.push('/Servicios')"
         ></VButton>
       </div>
     </div>

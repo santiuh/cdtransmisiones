@@ -1,6 +1,6 @@
 <template>
-  <NuxtLayout class="font-raleway">
-    <NuxtPage class="" />
+  <NuxtLayout class="!font-sans">
+    <NuxtPage class="z-10" />
   </NuxtLayout>
 </template>
 <style>
