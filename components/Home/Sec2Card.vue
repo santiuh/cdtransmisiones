@@ -31,7 +31,7 @@
       </p>
     </div>
     <button
-      class="lg:text-3xl flex flex-row items-center gap-3 bg-tertiary px-5 rounded-xl py-4 w-fit hover:scale-105 brig transition-all"
+      class="lg:text-xl flex flex-row items-center gap-3 bg-tertiary px-5 rounded-xl py-4 w-fit hover:scale-105 brig transition-all"
     >
       <p>Vamos</p>
       <svg

@@ -49,7 +49,7 @@ const options = {
       },
     },
     opacity: {
-      value: 1,
+      value: 0.3, // Further reduced opacity for a more blurred effect
       random: true,
       animation: {
         enable: true,
@@ -67,6 +67,9 @@ const options = {
         minimumValue: 1,
         sync: false,
       },
+    },
+    filter: {
+      blur: 10, // Increase blur effect
     },
   },
   interactivity: {

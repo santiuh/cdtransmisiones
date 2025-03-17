@@ -2,19 +2,21 @@
   <div
     class="h-screen relative flex items-center bg-cover bg-center overflow-hidden justify-center"
   >
-    <div class="flex flex-row max-w-[1440px] items-center w-full gap-12">
+    <div class="flex flex-row max-w-[1440px] items-center w-full gap-12 px-10">
       <NuxtImg
         src="img/logo.png"
         class="!h-auto w-1/3"
         data-aos="fade-right"
       ></NuxtImg>
       <h1
-        class="text-5xl font-bold text-white italic shadow-text"
+        class="text-4xl w-2/3 xl:text-5xl font-bold text-white italic shadow-text"
         data-aos="fade-left"
       >
         BOBINADO, REPARARACIÓN Y VENTA
-        <br />
-        <span class="shadow-text">DE MOTORES ELECTRICOS</span>
+
+        <span class="shadow-text"
+          >DE MOTORES ELECTRICOS<span class="text-orangelight">.</span></span
+        >
       </h1>
       <!-- <p class="text-lg text-white">Bobinado, reparación y venta de motores eléctricos</p> -->
     </div>

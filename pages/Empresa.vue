@@ -1,14 +1,17 @@
 <template>
-  <div class="flex place-content-center relative overflow-hidden">
-    <div class="flex flex-col gap-20 relative z-10 max-w-[1440px] w-full py-40">
+  <div
+    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-[#FFFFFF] to-[#0071BC]"
+  >
+    <div class="flex flex-col w-full max-w-[1440px] px-10 gap-20 py-20">
       <h1
-        class="text-6xl font-bold text-center mb-20 text-shadow-lg shadow-text"
+        class="text-6xl font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
-        Conocé más sobre nosotros
+        Conocé más sobre nosotros<span class="text-orangelight">.</span>
       </h1>
+
       <div
-        class="p-8 bg-[#071f3675] text-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-3/4 self-start transform transition-transform hover:scale-105"
+        class="p-8 bg-[#071f3675] text-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-4/5 self-start transform transition-transform hover:scale-105"
         data-aos="fade-right"
       >
         <nuxt-img
@@ -17,7 +20,9 @@
           class="w-ful rounded-3xl drop-shadow-xl md:w-2/5 h-auto object-cover shadow-lg"
         />
         <div class="p-8 md:w-3/5 text-xl">
-          <h2 class="text-2xl font-bold mb-4">Trayectoria y Experiencia</h2>
+          <h2 class="text-2xl font-bold mb-4">
+            TRAYECTORIA Y <span class="text-orangelight">EXPERIENCIA</span>
+          </h2>
           <p class="font-semibold">
             Imoberdorf Hnos. S.A. es una reconocida empresa de Rafaela con más
             de 55 años de trayectoria en el rubro de motores eléctricos. Desde
@@ -31,7 +36,7 @@
         </div>
       </div>
       <div
-        class="p-8 bg-white shadow-2xl rounded-3xl flex flex-col md:flex-row-reverse w-3/4 self-end transform transition-transform hover:scale-105"
+        class="p-8 bg-white shadow-2xl rounded-3xl flex flex-col md:flex-row-reverse w-4/5 self-end transform transition-transform hover:scale-105"
         data-aos="fade-left"
         data-aos-delay="100"
       >
@@ -42,7 +47,8 @@
         />
         <div class="p-8 text-xl md:w-3/5">
           <h2 class="text-2xl font-bold mb-4">
-            Servicios Especializados para la Industria
+            SERVICIOS ESPECIALIZADOS <br />PARA LA
+            <span class="text-orangelight">INDUSTRIA</span>
           </h2>
           <p class="font-semibold">
             Además de su labor comercial, la empresa brinda un servicio integral
@@ -57,7 +63,7 @@
         </div>
       </div>
       <div
-        class="p-8 bg-secondary text-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-3/4 self-start transform transition-transform hover:scale-105"
+        class="p-8 bg-secondary text-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-4/5 self-start transform transition-transform hover:scale-105"
         data-aos="fade-right"
         data-aos-delay="200"
       >
@@ -68,7 +74,8 @@
         />
         <div class="p-8 md:w-3/5">
           <h2 class="text-2xl font-bold mb-4">
-            Dirección y Estructura Empresarial
+            DIRECCIÓN Y ESTRUCTURA
+            <span class="text-orangelight">EMPRESARIAL</span>
           </h2>
           <p class="font-semibold">
             Actualmente, la empresa tiene su sede en calle Maipú 450, Rafaela,

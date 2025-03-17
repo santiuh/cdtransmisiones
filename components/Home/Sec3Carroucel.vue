@@ -87,8 +87,16 @@ onMounted(() => {
     animationDuration: 6000, // Aumenta la duración de la animación para hacerlo más suave
     animationTimingFunc: "linear", // Asegura que el movimiento sea constante y fluido
     breakpoints: {
-      1280: {
+      1024: {
         perView: 1,
+        autoplay: 1000,
+      },
+      1280: {
+        perView: 3,
+        autoplay: 1000,
+      },
+      1536: {
+        perView: 4,
         autoplay: 1000,
       },
     },
