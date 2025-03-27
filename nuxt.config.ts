@@ -23,6 +23,7 @@ export default defineNuxtConfig({
           Raleway: {
             wght: [300, 400, 500, 600, 700, 800],
           },
+          "Noto Sans": true, // Added Noto Sans
         },
       },
     ],
