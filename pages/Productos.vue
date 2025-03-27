@@ -1,25 +1,33 @@
 <template>
-  <div class="flex place-content-center relative overflow-hidden">
-    <div class="flex flex-col w-full max-w-[1440px] gap-4 py-40">
+  <div
+    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-[#FFFFFF] to-[#0071BC]"
+  >
+    <div class="flex flex-col w-full max-w-[1440px] px-10 gap-20 py-20">
       <h1
-        class="text-6xl font-bold text-center mb-20 text-shadow-lg shadow-text"
+        class="text-6xl font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
-        Nuestros Productos
+        Nuestros Productos<span class="text-orangelight">.</span>
       </h1>
       <div class="flex flex-row gap-4">
-        <div class="bg-white rounded-3xl px-3 py-5 w-1/4 gap-4 flex flex-col h-fit">
+        <div
+          class="bg-white rounded-lg py-5 px-4 w-1/4 gap-4 flex flex-col h-fit"
+        >
           <div class="flex flex-col w-full gap-1 border-b py-4">
             <label class="font-semibold pl-2">Filtrar por palabra</label>
             <input
-              class="bg-tertiary rounded-3xl w-full px-2 py-1"
+              class="bg-tertiary rounded-lg w-full px-2 py-1"
               v-model="searchQuery"
               placeholder="Buscar productos..."
             />
           </div>
           <div class="flex flex-col w-full gap-1 border-b pb-4">
-            <label class="font-semibold pl-2">Filtrar por categoría</label>
-            <div v-for="category in categories" :key="category" class="flex items-center">
+            <label class="font-semibold pl-2 pb-2">Filtrar por categoría</label>
+            <div
+              v-for="category in categories"
+              :key="category"
+              class="flex items-center px-4"
+            >
               <input
                 type="checkbox"
                 :value="category"
@@ -29,9 +37,18 @@
               <span>{{ category }}</span>
             </div>
           </div>
-          <div class="flex flex-col w-full gap-1" v-if="subcategories.length > 0">
-            <label class="font-semibold pl-2">Filtrar por subcategoria</label>
-            <div v-for="subcategory in subcategories" :key="subcategory" class="flex items-center">
+          <div
+            class="flex flex-col w-full gap-1"
+            v-if="subcategories.length > 0"
+          >
+            <label class="font-semibold pl-2 pb-2"
+              >Filtrar por subcategoria</label
+            >
+            <div
+              v-for="subcategory in subcategories"
+              :key="subcategory"
+              class="flex items-center px-4"
+            >
               <input
                 type="checkbox"
                 :value="subcategory"
@@ -46,31 +63,38 @@
           <div
             v-for="product in filteredProducts"
             :key="product.id"
-            class="flex flex-col relative bg-white rounded-3xl overflow-hidden"
+            @click="viewProduct(product.id)"
+            class="flex flex-col relative bg-white rounded-lg overflow-hidden hover:cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300"
           >
-            <h3
+            <!-- <h3
               class="absolute bg-[#1063b1e1] text-white text-xl w-full text-center font-semibold py-2 px-5"
             >
               {{ product.categoria }}
-            </h3>
+            </h3> -->
             <NuxtImg
-              class="aspect-square"
-              :src="product.image"
-              alt="product.title"
+              class="aspect-square p-3 rounded-lg"
+              :src="'/img/Productos/Automotor5.png'"
+              :alt="product.title"
             />
-            <div class="flex flex-col p-6 justify-between h-full gap-12">
-              <div class="flex flex-col items-baseline">
-                <p class="text-lg font-semibold border-b">
+            <div class="flex flex-col p-4 border-t justify-between h-full gap-12">
+              <div class="flex flex-col items-baseline gap-4">
+                <p class="text-lg font-semibold">
                   {{ product.title }}
                 </p>
 
-                <p class="" v-if="product.subcategoria">
-                  {{ product.subcategoria }}
+                <p class="text-sm">
+                  <span
+                    class="bg-orange text-white font-semibold py-1 px-2 rounded-lg"
+                    >{{ product.categoria }}
+                    <span v-if="product.subcategoria"
+                      >- {{ product.subcategoria }}</span
+                    ></span
+                  >
                 </p>
               </div>
 
               <VButton
-                class="!text-base !bg-primary text-white font-semibold self-end"
+                class="!text-base !rounded-lg !bg-background text-white font-semibold !w-full !justify-center"
                 @click="viewProduct(product.id)"
                 titulo="VER PRODUCTO"
               ></VButton>

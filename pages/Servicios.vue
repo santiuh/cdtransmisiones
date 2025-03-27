@@ -1,14 +1,16 @@
 <template>
-  <div class="flex place-content-center relative overflow-hidden">
-    <div class="flex flex-col gap-20 relative z-10 max-w-[1440px] w-full py-40">
+  <div
+    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-[#FFFFFF] to-[#0071BC]"
+  >
+    <div class="flex flex-col w-full max-w-[1440px] px-10 gap-20 py-20">
       <h1
-        class="text-6xl font-bold text-center mb-20 text-shadow-lg shadow-text"
+        class="text-6xl font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
-        Conocé nuestros servicios
+        Conocé nuestros servicios<span class="text-orangelight">.</span>
       </h1>
       <div
-        class="p-8 bg-[#071f3675] text-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-3/4 self-start transform transition-transform hover:scale-105"
+        class="p-8 bg-[#071f3675] text-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-4/5 self-start transform transition-transform hover:scale-105"
         data-aos="fade-right"
       >
         <nuxt-img
@@ -17,7 +19,9 @@
           class="w-ful rounded-3xl drop-shadow-xl md:w-2/5 h-auto object-cover shadow-lg"
         />
         <div class="p-8 md:w-3/5 text-xl">
-          <h2 class="text-2xl font-bold mb-4">Taller de Reparación</h2>
+          <h2 class="text-2xl font-bold mb-4">
+            TALLER DE<span class="text-orangelight"> REPARACIÓN</span>
+          </h2>
           <p class="font-semibold">
             En <strong>Imoberdorf Hnos. S.A.</strong> ofrecemos un
             <strong>servicio de reparación especializado</strong> en una amplia
@@ -36,7 +40,7 @@
         </div>
       </div>
       <div
-        class="p-8 bg-white shadow-2xl rounded-3xl flex flex-col md:flex-row-reverse w-3/4 self-end transform transition-transform hover:scale-105"
+        class="p-8 bg-white shadow-2xl rounded-3xl flex flex-col md:flex-row-reverse w-4/5 self-end transform transition-transform hover:scale-105"
         data-aos="fade-left"
         data-aos-delay="100"
       >
@@ -47,7 +51,9 @@
         />
         <div class="p-8 md:w-3/5 text-xl">
           <h2 class="text-2xl font-bold mb-4">
-            Asesoramiento y Asistencia Técnica
+            ASESORAMIENTO Y<span class="text-orangelight">
+              ASISTENCIA TÉCNICA</span
+            >
           </h2>
           <p class="font-semibold">
             Brindamos <strong>soluciones técnicas avanzadas</strong> para la
@@ -68,7 +74,7 @@
         </div>
       </div>
       <div
-        class="p-8 bg-secondary text-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-3/4 self-start transform transition-transform hover:scale-105"
+        class="p-8 bg-secondary text-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-4/5 self-start transform transition-transform hover:scale-105"
         data-aos="fade-right"
         data-aos-delay="200"
       >
@@ -78,7 +84,9 @@
           class="w-full rounded-3xl drop-shadow-xl md:w-2/5 h-auto object-cover shadow-lg"
         />
         <div class="p-8 text-xl md:w-3/5">
-          <h2 class="text-2xl font-bold mb-4">Autorización y Capacitación</h2>
+          <h2 class="text-2xl font-bold mb-4">
+            AUTORIZACIÓN Y <span class="text-orangelight"> CAPACITACIÓN</span>
+          </h2>
           <p class="font-semibold">
             Somos <strong>asistentes técnicos autorizados</strong> de
             <strong>WEG</strong>, lo que respalda nuestra experiencia y
