@@ -1,5 +1,95 @@
 <template>
   <div
+    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-tertiary to-[#0071BC]"
+  >
+    <div
+      class="flex flex-col w-full max-w-[1440px] overflow-hidden px-10 gap-20 py-20"
+    >
+      <h1
+        class="text-6xl font-bold text-center text-shadow-lg text-white"
+        data-aos="fade-up"
+      >
+        Sobre Nosotros<span class="text-orangelight">.</span>
+      </h1>
+
+      <main>
+        <section>
+          <EmpresaTimeline
+            v-for="(dato, i) in data"
+            :key="i"
+            :id="i"
+            :datos="dato"
+          ></EmpresaTimeline>
+        </section>
+      </main>
+    </div>
+  </div>
+</template>
+<script setup>
+useSeoMeta({
+  title: "Historia de Imoberdorf Hnos.",
+  description:
+    "Conozca la historia de Roda Service desde sus inicios en 1960 hasta la actualidad.",
+  keywords:
+    "Roda Service, historia, rodamientos, importación, distribución, marcas, NTN-SNR, AYS FERSA, NSK, ARB, HCH, IKO, MBS, ROLLWAY, CMB, RLM, KG, KOYO",
+});
+
+const data = [
+  {
+    year: "1960",
+    info: "Jacinto Amatriain realiza la primer importación de rodamientos desde Inglaterra.",
+    banner: "Empresa1.jpg",
+  },
+  {
+    year: "1974",
+    info: "Se adquiere la distribución oficial de la marca NTN-SNR y AYS FERSA",
+    banner: "Empresa2.jpg",
+  },
+  {
+    year: "1983",
+    info: 'Se compra una vieja casona en San Martín 2437 de Rosario. La empresa comienza a girar bajo el nombre de "Jacinto Amatriain e Hijos ", a cargo de Andrés Amatriain.',
+    banner: "Empresa3.jpg",
+  },
+  {
+    year: "2004",
+    info: "La empresa comienza a girar bajo el nombre 'Roda Service' de Andrés Amatriain. También se adquiere la distribución oficial de las marcas NSK, ARB y HCH",
+    banner: "Empresa4.jpg",
+  },
+  {
+    year: "2009",
+    info: "Se adquiere la distribución oficial de las marcas IKO, MBS Y ROLLWAY",
+    banner: "Empresa5.jpg",
+  },
+  {
+    year: "2014",
+    info: "Se adquiere la distribucion oficial de las marcas CMB, RLM y KG",
+    banner: "Empresa6.jpg",
+  },
+  {
+    year: "2019",
+    info: "Se adquiere la distribucion oficial de la marca KOYO",
+    banner: "Empresa7.jpg",
+  },
+  {
+    year: "2020",
+    info: "Se realiza la demolición de la casona y comienza la construcción del nuevo local",
+    banner: "Empresa8.jpg",
+  },
+  {
+    year: "2024",
+    info: "Se constituye",
+    banner: "Empresa8.jpg",
+  },
+  {
+    year: "2025",
+    info: "Se inaugura el nuevo local comercial",
+    banner: "Empresa8.jpg",
+  },
+];
+</script>
+
+<!-- <template>
+  <div
     class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-[#FFFFFF] to-[#0071BC]"
   >
     <div class="flex flex-col w-full max-w-[1440px] px-10 gap-20 py-20">
@@ -98,4 +188,4 @@
 .shadow-text {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-</style>
+</style> -->

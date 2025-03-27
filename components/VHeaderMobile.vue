@@ -55,6 +55,13 @@
         >
           EMPRESA
         </NuxtLink>
+        <NuxtLink
+          @click="menu = false"
+          class="hover:cursor-pointer transition-all duration-300"
+          to="/CONTACTO"
+        >
+          CONTACTO
+        </NuxtLink>
       </div>
     </nav>
   </div>

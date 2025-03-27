@@ -59,7 +59,7 @@
 
           <button
             class="hover:text-orangelight transition-all duration-300"
-            @click="goTo('/Empresa')"
+            @click="goTo('/Contacto')"
           >
             CONTACTO
           </button>
