@@ -37,52 +37,52 @@ useSeoMeta({
 const data = [
   {
     year: "1960",
-    info: "Jacinto Amatriain realiza la primer importación de rodamientos desde Inglaterra.",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     banner: "Empresa1.jpg",
   },
   {
     year: "1974",
-    info: "Se adquiere la distribución oficial de la marca NTN-SNR y AYS FERSA",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     banner: "Empresa2.jpg",
   },
   {
     year: "1983",
-    info: 'Se compra una vieja casona en San Martín 2437 de Rosario. La empresa comienza a girar bajo el nombre de "Jacinto Amatriain e Hijos ", a cargo de Andrés Amatriain.',
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.",
     banner: "Empresa3.jpg",
   },
   {
     year: "2004",
-    info: "La empresa comienza a girar bajo el nombre 'Roda Service' de Andrés Amatriain. También se adquiere la distribución oficial de las marcas NSK, ARB y HCH",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.",
     banner: "Empresa4.jpg",
   },
   {
     year: "2009",
-    info: "Se adquiere la distribución oficial de las marcas IKO, MBS Y ROLLWAY",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     banner: "Empresa5.jpg",
   },
   {
     year: "2014",
-    info: "Se adquiere la distribucion oficial de las marcas CMB, RLM y KG",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     banner: "Empresa6.jpg",
   },
   {
     year: "2019",
-    info: "Se adquiere la distribucion oficial de la marca KOYO",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     banner: "Empresa7.jpg",
   },
   {
     year: "2020",
-    info: "Se realiza la demolición de la casona y comienza la construcción del nuevo local",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     banner: "Empresa8.jpg",
   },
   {
     year: "2024",
-    info: "Se constituye",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     banner: "Empresa8.jpg",
   },
   {
     year: "2025",
-    info: "Se inaugura el nuevo local comercial",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     banner: "Empresa8.jpg",
   },
 ];
