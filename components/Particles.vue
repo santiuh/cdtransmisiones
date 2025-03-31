@@ -10,6 +10,8 @@
 <script setup lang="ts">
 import type { Container } from "@tsparticles/engine";
 
+let container: Container | null = null;
+
 const options = {
   background: {
     color: {
@@ -88,8 +90,26 @@ const options = {
   },
 };
 
-const onLoad = (container: Container) => {
-  // Remove the pause and setTimeout to start particles immediately
+const onLoad = (loadedContainer: Container) => {
+  container = loadedContainer;
   container.play();
 };
+
+const handleScroll = () => {
+  if (container) {
+    if (window.scrollY > 100) {
+      container.pause();
+    } else {
+      container.play();
+    }
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
