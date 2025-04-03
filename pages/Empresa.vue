@@ -1,17 +1,27 @@
 <template>
   <div
-    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-tertiary to-primary"
+    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-primary to-tertiary"
   >
     <div
       class="flex flex-col w-full max-w-[1440px] overflow-hidden px-10 gap-20 py-20"
     >
       <h1
-        class="text-6xl font-bold text-center text-shadow-lg text-white"
+        class="text-4xl font-raleway font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
-        Sobre Nosotros
+        SOBRE NOSOTROS
       </h1>
-
+      <p class="text-white text-lg text-shadow-lg w-4/5 self-center text-justify">
+        Somos una pequeña empresa familiar rafaelina, que hace más de 56 años
+        brinda soluciones eléctricas y electromecánicas a la industria local y
+        regional. Imoberdorf Hnos. S.A. tiene una amplia trayectoria en el
+        bobinado, reparación y venta de motores eléctricos, bombas y drives.
+        Además, brinda asistencia técnica especializada, asesoramiento en
+        mantenimiento predictivo y preventivo de motores eléctricos, cambios
+        constructivos, servicio de bobinado y reparación integral de motores
+        eléctricos industriales, y servicio de reparación de drives (variadores
+        de velocidad y arrancadores suaves).
+      </p>
       <main>
         <section>
           <EmpresaTimeline

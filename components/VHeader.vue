@@ -12,11 +12,11 @@
     }"
   >
     <div
-      class="flex flex-row justify-between py-3 px-10 self-center w-full max-w-[1440px]"
+      class="flex flex-row justify-between px-10 self-center w-full max-w-[1440px]"
     >
       <NuxtImg
         @click="router.push('/')"
-        class="transition-all duration-300 !h-20 !w-auto hover:cursor-pointer hover:scale-105 hover:brightness-90"
+        class="transition-all duration-300 my-3 !h-20 !w-auto hover:cursor-pointer hover:scale-105 hover:brightness-90"
         :class="!isHome ? '' : isScrolled && isHome ? '!h-10' : '!h-12'"
         :src="
           !isHome
@@ -43,20 +43,32 @@
           >
             PRODUCTOS
           </button>
-          <button
-            class="hover:text-orange transition-all duration-300"
-            @click="goTo('/Servicios')"
-          >
-            SERVICIOS
-          </button>
+          <div class="group relative flex flex-col justify-center">
+            <button class="hover:text-orange transition-all duration-300">
+              SERVICIOS
+            </button>
 
+            <div
+              style="top: 104px"
+              class="absolute -left-9 hidden group-hover:flex flex-col rounded-t-none bg-white shadow-lg text-black rounded-md duration-300"
+            >
+              <button
+                v-for="(service, index) in services"
+                :class="index === services.length - 1 ? '!border-b-0' : ''"
+                :key="index"
+                class="px-4 py-2 hover:bg-orange hover:text-white transition-all duration-300 text-left border-b-tertiary border-b"
+                @click="goTo(service.route)"
+              >
+                {{ service.name }}
+              </button>
+            </div>
+          </div>
           <button
             class="hover:text-orange transition-all duration-300"
             @click="goTo('/Empresa')"
           >
             EMPRESA
           </button>
-
           <button
             class="hover:text-orange transition-all duration-300"
             @click="goTo('/Contacto')"
@@ -115,34 +127,6 @@
         </div>
       </div>
     </div>
-    <!-- <div
-      v-if="!isHome"
-      :style="{
-        backgroundImage: `url('/img/${banner}.png')`,
-      }"
-      class="flex justify-center bg-cover bg-no-repeat"
-    >
-      <div
-        class="text-4xl py-14 flex flex-col text-white text-center"
-        v-if="route.path?.includes('Productos')"
-      >
-        <h1 class="font-extrabold text-4xl relative">
-          {{
-            route.path === "/Productos"
-              ? "Automotríz"
-              : route.path.includes("Agricola")
-              ? "Agrícola"
-              : "Industrial"
-          }}
-          <p class="font-medium text-lg absolute bottom-9 w-full">
-            Línea&nbsp;de&nbsp;productos
-          </p>
-        </h1>
-      </div>
-      <h1 v-else class="font-extrabold text-4xl py-14 flex text-white">
-        {{ banner }}
-      </h1>
-    </div> -->
   </div>
 </template>
 
@@ -186,4 +170,31 @@ const goTo = (ruta) => {
     window.open("https://catalogo.rodaservice.com.ar/", "_blank");
   } else router.push(ruta);
 };
+
+// Lista de servicios con rutas SEO-friendly
+const services = [
+  { name: "Bobinado", route: "/Servicios/Bobinado" },
+  { name: "Asistencia técnica", route: "/Servicios/AsistenciaTecnica" },
+  { name: "Mantenimiento", route: "/Servicios/Mantenimiento" },
+  { name: "Taller de reparación", route: "/Servicios/TallerReparacion" },
+  {
+    name: "Asistencia técnica con visita en planta",
+    route: "/Servicios/VisitaPlanta",
+  },
+  { name: "Automatización", route: "/Servicios/Automatizacion" },
+  {
+    name: "Reparación de convertidores de frecuencia",
+    route: "/Servicios/ReparacionConvertidores",
+  },
+  {
+    name: "Capacitaciones para las empresas",
+    route: "/Servicios/Capacitaciones",
+  },
+  { name: "Campo y medición", route: "/Servicios/CampoMedicion" },
+  { name: "Pruebas a bombas", route: "/Servicios/PruebasBombas" },
+  {
+    name: "Fabricación de tableros eléctricos",
+    route: "/Servicios/TablerosElectricos",
+  },
+];
 </script>

@@ -9,15 +9,15 @@
     <div
       class="max-w-[1440px] absolute px-9 w-full pt-24 justify-start lg:justify-center h-full flex flex-col text-primary text-start gap-10"
     >
-      <div class="flex flex-col text-4xl  !font-raleway font-black">
+      <div class="flex flex-col text-4xl !font-raleway font-black">
         <p>CONTAMOS CON MARCAS</p>
         <p class="text-orange">LÍDERES EN EL MERCADO</p>
       </div>
 
       <VButton
-        titulo="Ver Marcas"
+        titulo="Ver Productos"
         class="!text-xl !bg-white w-3/4"
-        @click="router.push('/Marcas')"
+        @click="router.push('/Productos')"
       ></VButton>
     </div>
   </div>

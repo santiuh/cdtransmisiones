@@ -1,14 +1,13 @@
 <template>
   <div class="flex place-content-center">
     <div
-      class="flex flex-col pt-20 pb-44 relative w-full px-4 lg:px-10 max-w-[1440px]"
+      class="flex flex-col  pb-44 relative w-full px-4 lg:px-10 max-w-[1440px]"
     >
-      <h1 class="font-extrabold text-5xl text-center text-white text-shadow-lg">
-        EXPERTOS EN SOLUCIONES
+      <h1 class="font-extrabold text-3xl text-center text-white text-shadow-lg">
+        AMPLIA TRAYECTORIA EN SOLUCIONES A LA MEDIDA DE EMPRESAS, INDUSTRIAS Y
+        COMERCIOS.
       </h1>
-      <hr
-        class="w-32 rounded-full border-orange self-center border-2 my-14"
-      />
+      <hr class="w-32 rounded-full border-orange self-center border-2 my-14" />
       <div class="flex flex-col lg:flex-row justify-center gap-10">
         <Sec2Card
           @click="router.push('/Productos')"

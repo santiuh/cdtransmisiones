@@ -4,8 +4,8 @@
   >
     <div class="flex flex-col w-full max-w-[1440px] px-10 gap-20 py-20">
       <h1
-        class="text-6xl font-bold text-center text-shadow-lg text-white"
-        data-aos="fade-up"
+      class="text-4xl font-raleway font-bold text-center text-shadow-lg text-white"
+      data-aos="fade-up"
       >
         Contactanos
       </h1>

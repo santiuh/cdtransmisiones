@@ -59,7 +59,9 @@
             ></div>
           </div>
         </div>
-        <span class="text-white text-shadow-lg"> {{ datos.info }}</span>
+        <div class="text-white text-xl pt-4 pl-6 text-shadow-lg">
+          {{ datos.info }}
+        </div>
       </div>
     </div>
     <div

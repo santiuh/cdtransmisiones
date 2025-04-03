@@ -4,11 +4,14 @@
   >
     <div class="flex flex-col w-full max-w-[1440px] px-10 gap-20 py-20">
       <h1
-        class="text-6xl font-bold text-center text-shadow-lg text-white"
+        class="text-4xl font-raleway font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
         Conocé nuestros servicios
       </h1>
+
+      <!-- Comentando las tres cards originales -->
+      <!--
       <div
         class="p-8 bg-[#071f3675] text-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-4/5 self-start transform transition-transform hover:scale-105"
         data-aos="fade-right"
@@ -98,11 +101,56 @@
           </p>
         </div>
       </div>
+      -->
+
+      <!-- Nueva card dinámica -->
+      <div
+        class="p-8 bg-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-4/5 transform transition-transform hover:scale-105"
+        data-aos="fade-up"
+      >
+        <nuxt-img
+          :src="serviceData.image"
+          :alt="serviceData.title"
+          class="w-full md:w-2/5 drop-shadow-xl h-auto object-cover rounded-3xl shadow-lg"
+        />
+        <div class="p-8 md:w-3/5 text-xl">
+          <h2 class="text-2xl font-bold mb-4">
+            {{ serviceData.title }}
+          </h2>
+          <p class="font-semibold">
+            {{ serviceData.description }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import { useRoute } from "vue-router";
+
+// Mock de datos de servicios
+const servicesMock = {
+  VisitaPlanta: {
+    title: "Visita a Planta",
+    image: "/img/VisitaPlanta.jpg",
+    description:
+      "Ofrecemos visitas guiadas a nuestra planta para conocer nuestros procesos y servicios en detalle.",
+  },
+  Reparacion: {
+    title: "Reparación de Equipos",
+    image: "/img/Reparacion.jpg",
+    description:
+      "Servicio especializado en reparación de motores eléctricos, electrobombas y más.",
+  },
+};
+
+const route = useRoute();
+const serviceId = route.params.id || "VisitaPlanta"; // ID de la página
+const serviceData = ref(servicesMock[serviceId] || servicesMock.VisitaPlanta);
+</script>
+
 <style>
 .shadow-text {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
