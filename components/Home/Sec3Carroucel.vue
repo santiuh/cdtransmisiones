@@ -1,5 +1,5 @@
 <template>
-  <div ref="glideRef" class="glide">
+  <div ref="glideRef" class="glide bg-">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides !py-11">
         <li class="glide__slide">

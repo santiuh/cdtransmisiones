@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-tertiary to-[#0071BC]"
+    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-tertiary to-primary"
   >
     <div
       class="flex flex-col w-full max-w-[1440px] overflow-hidden px-10 gap-20 py-20"
@@ -9,7 +9,7 @@
         class="text-6xl font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
-        Sobre Nosotros<span class="text-orangelight">.</span>
+        Sobre Nosotros
       </h1>
 
       <main>
@@ -36,54 +36,14 @@ useSeoMeta({
 
 const data = [
   {
-    year: "1960",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    year: "1968",
+    info: "Fue iniciada por su fundador, Héctor Luis Imoberdorf, tenía 18 años de edad. Héctor terminó sus estudios en la Escuela Nacional de Educación Técnica N°1 Guillermo Lehmann de esta ciudad, obteniendo el título de técnico electromecánico. Durante el cursado de sus estudios, Héctor colaboraba en un taller mecánico que se especializaba en electricidad del automóvil, adquiriendo allí la experiencia necesaria y aprendiendo el oficio que luego le permitiría iniciar su propio emprendimiento.",
     banner: "Empresa1.jpg",
   },
   {
-    year: "1974",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    year: "2010",
+    info: "Por su trayectoria, experiencia y reconocimiento, fue seleccionada como Asistente técnico Autorizado y Distribuidor oficial WEG para Rafaela y zona de influencia, siendo uno de los 6 asistentes técnicos autorizados en toda la provincia.",
     banner: "Empresa2.jpg",
-  },
-  {
-    year: "1983",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.",
-    banner: "Empresa3.jpg",
-  },
-  {
-    year: "2004",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus.",
-    banner: "Empresa4.jpg",
-  },
-  {
-    year: "2009",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    banner: "Empresa5.jpg",
-  },
-  {
-    year: "2014",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    banner: "Empresa6.jpg",
-  },
-  {
-    year: "2019",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    banner: "Empresa7.jpg",
-  },
-  {
-    year: "2020",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    banner: "Empresa8.jpg",
-  },
-  {
-    year: "2024",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    banner: "Empresa8.jpg",
-  },
-  {
-    year: "2025",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    banner: "Empresa8.jpg",
   },
 ];
 </script>
@@ -97,7 +57,7 @@ const data = [
         class="text-6xl font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
-        Conocé más sobre nosotros<span class="text-orangelight">.</span>
+        Conocé más sobre nosotros
       </h1>
 
       <div
@@ -111,7 +71,7 @@ const data = [
         />
         <div class="p-8 md:w-3/5 text-xl">
           <h2 class="text-2xl font-bold mb-4">
-            TRAYECTORIA Y <span class="text-orangelight">EXPERIENCIA</span>
+            TRAYECTORIA Y <span class="text-orange">EXPERIENCIA</span>
           </h2>
           <p class="font-semibold">
             Imoberdorf Hnos. S.A. es una reconocida empresa de Rafaela con más
@@ -138,7 +98,7 @@ const data = [
         <div class="p-8 text-xl md:w-3/5">
           <h2 class="text-2xl font-bold mb-4">
             SERVICIOS ESPECIALIZADOS <br />PARA LA
-            <span class="text-orangelight">INDUSTRIA</span>
+            <span class="text-orange">INDUSTRIA</span>
           </h2>
           <p class="font-semibold">
             Además de su labor comercial, la empresa brinda un servicio integral
@@ -165,7 +125,7 @@ const data = [
         <div class="p-8 md:w-3/5">
           <h2 class="text-2xl font-bold mb-4">
             DIRECCIÓN Y ESTRUCTURA
-            <span class="text-orangelight">EMPRESARIAL</span>
+            <span class="text-orange">EMPRESARIAL</span>
           </h2>
           <p class="font-semibold">
             Actualmente, la empresa tiene su sede en calle Maipú 450, Rafaela,

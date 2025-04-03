@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Particles class="-z-10"></Particles>
+  <div class="bg-gradient-to-tl from-primary to-tertiary">
+    <!-- <Particles class="-z-10"></Particles> -->
     <div>
       <VHeaderMobile class="lg:hidden"></VHeaderMobile>
       <!-- <VBannerMobile></VBannerMobile> -->

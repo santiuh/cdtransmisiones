@@ -7,7 +7,7 @@
         class="text-6xl font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
-        Conocé nuestros servicios<span class="text-orangelight">.</span>
+        Conocé nuestros servicios
       </h1>
       <div
         class="p-8 bg-[#071f3675] text-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-4/5 self-start transform transition-transform hover:scale-105"
@@ -20,7 +20,7 @@
         />
         <div class="p-8 md:w-3/5 text-xl">
           <h2 class="text-2xl font-bold mb-4">
-            TALLER DE<span class="text-orangelight"> REPARACIÓN</span>
+            TALLER DE<span class="text-orange"> REPARACIÓN</span>
           </h2>
           <p class="font-semibold">
             En <strong>Imoberdorf Hnos. S.A.</strong> ofrecemos un
@@ -51,9 +51,7 @@
         />
         <div class="p-8 md:w-3/5 text-xl">
           <h2 class="text-2xl font-bold mb-4">
-            ASESORAMIENTO Y<span class="text-orangelight">
-              ASISTENCIA TÉCNICA</span
-            >
+            ASESORAMIENTO Y<span class="text-orange"> ASISTENCIA TÉCNICA</span>
           </h2>
           <p class="font-semibold">
             Brindamos <strong>soluciones técnicas avanzadas</strong> para la
@@ -85,7 +83,7 @@
         />
         <div class="p-8 text-xl md:w-3/5">
           <h2 class="text-2xl font-bold mb-4">
-            AUTORIZACIÓN Y <span class="text-orangelight"> CAPACITACIÓN</span>
+            AUTORIZACIÓN Y <span class="text-orange"> CAPACITACIÓN</span>
           </h2>
           <p class="font-semibold">
             Somos <strong>asistentes técnicos autorizados</strong> de

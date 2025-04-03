@@ -12,23 +12,23 @@
     }"
   >
     <div
-      class="flex flex-row justify-between py-4 px-10 self-center w-full max-w-[1440px]"
+      class="flex flex-row justify-between py-3 px-10 self-center w-full max-w-[1440px]"
     >
       <NuxtImg
         @click="router.push('/')"
-        class="transition-all duration-300 !h-14 !w-auto hover:cursor-pointer hover:scale-105 hover:brightness-90"
+        class="transition-all duration-300 !h-20 !w-auto hover:cursor-pointer hover:scale-105 hover:brightness-90"
         :class="!isHome ? '' : isScrolled && isHome ? '!h-10' : '!h-12'"
         :src="
           !isHome
-            ? 'img/logononameblanco.png'
+            ? 'img/logoblanco.png'
             : isScrolled && isHome
-            ? 'img/logononameblanco.png'
-            : 'img/logononame.png'
+            ? 'img/logoblanco.png'
+            : 'img/logo.png'
         "
       ></NuxtImg>
       <div class="flex flex-row">
         <div
-          class="font-medium text-lg gap-10 flex flex-row"
+          class="font-medium gap-10 flex flex-row"
           :class="
             !isHome
               ? 'text-white'
@@ -38,48 +38,41 @@
           "
         >
           <button
-            class="hover:text-orangelight transition-all duration-300"
+            class="hover:text-orange transition-all duration-300"
             @click="goTo('/Productos')"
           >
             PRODUCTOS
           </button>
           <button
-            class="hover:text-orangelight transition-all duration-300"
+            class="hover:text-orange transition-all duration-300"
             @click="goTo('/Servicios')"
           >
             SERVICIOS
           </button>
 
           <button
-            class="hover:text-orangelight transition-all duration-300"
+            class="hover:text-orange transition-all duration-300"
             @click="goTo('/Empresa')"
           >
             EMPRESA
           </button>
 
           <button
-            class="hover:text-orangelight transition-all duration-300"
+            class="hover:text-orange transition-all duration-300"
             @click="goTo('/Contacto')"
           >
             CONTACTO
           </button>
         </div>
         <div
-          class="flex flex-row border-l gap-3 pl-5 ml-5 items-center"
-          :class="
-            !isHome
-              ? 'border-l-orangelight'
-              : isScrolled && isHome
-              ? 'border-l-orangelight'
-              : ' border-l-white'
-          "
+          class="flex flex-row border-l gap-3 pl-5 ml-5 items-center border-l-orange"
         >
           <NuxtLink
             to="https://www.instagram.com/imoberdorfhnos/"
             target="_blank"
           >
             <svgo-ig
-              class="!h-7 !w-7 hover:text-orangelight transition-all duration-300"
+              class="!h-7 !w-7 hover:text-orange transition-all duration-300"
               :class="
                 !isHome
                   ? 'text-white'
@@ -94,7 +87,7 @@
             target="_blank"
           >
             <svgo-li
-              class="!h-7 !w-7 hover:text-orangelight transition-all duration-300"
+              class="!h-7 !w-7 hover:text-orange transition-all duration-300"
               :class="
                 !isHome
                   ? 'text-white'
@@ -109,7 +102,7 @@
             target="_blank"
           >
             <svgo-fb
-              class="!h-7 !w-7 hover:text-orangelight transition-all duration-300"
+              class="!h-7 !w-7 hover:text-orange transition-all duration-300"
               :class="
                 !isHome
                   ? 'text-white'

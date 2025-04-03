@@ -18,14 +18,12 @@
 
       <div class="flex flex-col font-bold text-white gap-4 text-end">
         <p class="text-7xl text-shadow z-10">
-          <span class="text-orangelight">¿</span>Querés saber más<span
-            class="text-orangelight"
+          <span class="text-orange">¿</span>Querés saber más<span
+            class="text-orange"
             >?</span
           >
         </p>
-        <p class="text-shadow text-5xl z-10">
-          Estamos para ayudarte<span class="text-orangelight">.</span>
-        </p>
+        <p class="text-shadow text-5xl z-10">Estamos para ayudarte</p>
         <VButton
           titulo="Contactanos"
           class="!bg-primary !text-white !text-5xl font-bold h-fit mt-12 self-end"

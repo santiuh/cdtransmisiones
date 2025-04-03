@@ -20,9 +20,7 @@ export default defineNuxtConfig({
       "@nuxtjs/google-fonts",
       {
         families: {
-          Raleway: {
-            wght: [300, 400, 500, 600, 700, 800],
-          },
+          "Libre Franklin": true,
           "Noto Sans": true, // Added Noto Sans
         },
       },

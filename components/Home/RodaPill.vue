@@ -10,7 +10,7 @@
       <p
         class="lg:text-2xl text-xl text-primary lg:text-white font-semibold lg:font-medium"
       >
-        Escribinos por WhatsApp<span class="text-orangelight">.</span>
+        Escribinos por WhatsApp
       </p>
     </div>
     <div

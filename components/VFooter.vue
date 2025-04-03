@@ -19,24 +19,24 @@
         <div class="flex flex-col lg:flex-row text-lg gap-3 items-center">
           <button
             @click="openWindow()"
-            class="flex flex-row gap-3 items-center hover:text-orangelight transition-all duration-300"
+            class="flex flex-row gap-3 items-center hover:text-orange transition-all duration-300"
           >
             <NuxtImg class="h-5" src="svg/footerwsp.svg"></NuxtImg>
-            <span>+54 9 349 257-3782</span>
+            <span>+54 9 3492 57-3782</span>
           </button>
           <button
-            class="flex flex-row gap-3 items-center hover:text-orangelight transition-all duration-300"
+            class="flex flex-row gap-3 items-center hover:text-orange transition-all duration-300"
           >
             <NuxtImg class="h-5" src="svg/footerphone.svg"></NuxtImg>
             <span>+54 3492 42-1086</span>
           </button>
         </div>
         <a
-          href="mailto:ejemplo@cdtrans.com.ar"
-          class="flex flex-row text-lg gap-3 items-center hover:text-orangelight transition-all duration-300"
+          href="mailto:administración@imoberdorfhnos.com.ar"
+          class="flex flex-row text-lg gap-3 items-center hover:text-orange transition-all duration-300"
         >
           <NuxtImg class="h-5" src="svg/footermail.svg"></NuxtImg>
-          <span>ejemplo@cdtrans.com.ar</span>
+          <span>administración@imoberdorfhnos.com.ar</span>
         </a>
       </div>
       <div class="flex flex-col gap-3 lg:gap-6 items-center lg:items-start">
@@ -46,19 +46,19 @@
             to="https://www.instagram.com/imoberdorfhnos//"
             target="_blank"
             ><svgo-ig
-              class="!h-7 !w-7 hover:text-orangelight transition-all duration-300"
+              class="!h-7 !w-7 hover:text-orange transition-all duration-300"
             ></svgo-ig
           ></NuxtLink>
           <NuxtLink
             to="https://www.linkedin.com/in/imoberdorf-hnos-s-a-628470257/"
             target="_blank"
             ><svgo-fb
-              class="!h-7 !w-7 hover:text-orangelight transition-all duration-300"
+              class="!h-7 !w-7 hover:text-orange transition-all duration-300"
             ></svgo-fb
           ></NuxtLink>
           <NuxtLink to="https://www.facebook.com/imoberdorfhnos" target="_blank"
             ><svgo-li
-              class="!h-7 !w-7 hover:text-orangelight transition-all duration-300"
+              class="!h-7 !w-7 hover:text-orange transition-all duration-300"
             ></svgo-li
           ></NuxtLink>
         </div>

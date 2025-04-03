@@ -1,28 +1,27 @@
 <template>
-  <div
-    class="flex flex-col bg-[url('img/Hero/Hero2.png')] bg-cover bg-no-repeat justify-end bg-[center_right_60%] lg:bg-center"
-  >
+  <div class="flex relative w-full justify-center">
+    <div class="h-full w-2/5"></div>
     <div
-      class="max-w-[1440px] px-9 w-full justify-end lg:justify-center backdrop-blur-sm lg:backdrop-blur-0 h-full lg:h-1/2 self-center flex flex-col text-primary text-start gap-7 lg:gap-10 pb-28 lg:backdrop-brightness-100"
+      style="clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)"
+      class="bg-[url('img/Hero/Hero2.png')] flex h-full w-3/5 bg-[center_right_60%] lg:bg-center bg-cover bg-no-repeat"
+    ></div>
+
+    <div
+      class="max-w-[1440px] absolute px-9 w-full pt-24 justify-start lg:justify-center h-full flex flex-col text-primary text-start gap-10"
     >
-      <div class="flex flex-col text-4xl lg:text-7xl font-extrabold">
-        <p>Compromiso y</p>
-        <p>responsabilidad</p>
+      <div class="flex flex-col text-4xl  !font-raleway font-black">
+        <p>CONTAMOS CON MARCAS</p>
+        <p class="text-orange">LÍDERES EN EL MERCADO</p>
       </div>
-      <span class="font-semibold text-lg lg:text-base"
-        >Más de 600 empresas ya confían en Roda Service como sus proveedores de
-        confianza.
-      </span>
+
       <VButton
-        @click="openWindow()"
-        titulo="Contactanos"
-        class="!bg-primary !text-white !text-xl"
+        titulo="Ver Marcas"
+        class="!text-xl !bg-white w-3/4"
+        @click="router.push('/Marcas')"
       ></VButton>
     </div>
   </div>
 </template>
 <script setup>
-const openWindow = () => {
-  window.open("https://api.whatsapp.com/send?phone=5493415709283", "_blank");
-};
+const router = useRouter();
 </script>

@@ -11,15 +11,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#00579d",
-        secondary: "#0071BC",
+        primary: "#00679A",
+        secondary: "#124660",
         tertiary: "#F2F2F2",
         background: "#6090cd",
         orange: "#E2762D",
         orangelight: "#ff9046",
       },
       fontFamily: {
-        raleway: ["Raleway", "sans-serif"],
+        raleway: ["Libre Franklin", "sans-serif"],
         notosans: ["Noto Sans", "sans-serif"],
       },
     },

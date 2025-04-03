@@ -7,7 +7,7 @@
         class="text-6xl font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
-        Nuestros Productos<span class="text-orangelight">.</span>
+        Nuestros Productos
       </h1>
       <div class="flex flex-row gap-4">
         <div
@@ -76,7 +76,9 @@
               :src="'/img/Productos/Automotor5.png'"
               :alt="product.title"
             />
-            <div class="flex flex-col p-4 border-t justify-between h-full gap-12">
+            <div
+              class="flex flex-col p-4 border-t justify-between h-full gap-12"
+            >
               <div class="flex flex-col items-baseline gap-4">
                 <p class="text-lg font-semibold">
                   {{ product.title }}

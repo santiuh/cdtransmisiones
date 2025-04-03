@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col">
-    <HomeBanner></HomeBanner>
+    <HomeHero></HomeHero>
+    <!-- <HomeBanner></HomeBanner> -->
     <HomeSec3Carroucel></HomeSec3Carroucel>
     <HomeSec2></HomeSec2>
     <HomeSec4></HomeSec4>
