@@ -11,7 +11,10 @@
       >
         SOBRE NOSOTROS
       </h1>
-      <p class="text-white text-lg text-shadow-lg w-4/5 self-center text-justify">
+      <p
+        class="text-white text-lg text-shadow-lg w-4/5 self-center text-justify"
+        data-aos="fade-up"
+      >
         Somos una pequeña empresa familiar rafaelina, que hace más de 56 años
         brinda soluciones eléctricas y electromecánicas a la industria local y
         regional. Imoberdorf Hnos. S.A. tiene una amplia trayectoria en el

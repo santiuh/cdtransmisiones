@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       {
         families: {
           "Libre Franklin": true,
-          "Noto Sans": true, // Added Noto Sans
+          "Noto Sans": true,
         },
       },
     ],
@@ -29,4 +29,5 @@ export default defineNuxtConfig({
   svgo: {
     autoImportPath: "./public/svg",
   },
+  plugins: [{ src: "~/plugins/aos.js", ssr: false }],
 });

@@ -2,7 +2,7 @@
   <div
     class="bg-[#04254448] flex flex-col px-4 xl:px-[60px] pt-[34px] pb-[48px] rounded-xl gap-[26px] text-white"
   >
-    <div class="flex flex-col xl:flex-row gap-[26px] xl:gap-[60px]">
+    <div class="flex flex-col xl:flex-row gap-[26px] lg:gap-[30px]">
       <div class="flex flex-col xl:w-1/2">
         <div class="text-xl font-bold leading-10">Nombre y Apellido</div>
         <input
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <div class="flex flex-col xl:flex-row gap-[26px] xl:gap-[60px]">
+    <div class="flex flex-col xl:flex-row gap-[26px] lg:gap-[30px]">
       <div class="flex flex-col xl:w-1/2">
         <div class="text-xl font-bold leading-10">Teléfono</div>
         <input
@@ -57,7 +57,7 @@
       ></textarea>
     </div>
     <div
-      class="h-0 overflow-hidden transition-all text-red-700 font-bold"
+      class="h-0 overflow-hidden transition-all text-white font-bold"
       :class="mostrarDiv ? 'h-[2em]' : ''"
     >
       Debe completar todos los campos para enviar el formulario.
