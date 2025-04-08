@@ -9,11 +9,11 @@
       >
         Contactanos
       </h1>
-      <div class="flex flex-row">
+      <div class="flex flex-row-reverse">
         <Formulario
           class="w-1/2"
           data-aos="fade-up"
-          data-aos-delay="1000"
+          data-aos-delay="100"  
         ></Formulario>
 
         <div

@@ -7,7 +7,7 @@
         <div class="text-xl font-bold leading-10">Nombre y Apellido</div>
         <input
           v-model="mensaje.cliente"
-          class="h-[60px] bg-[#04254448] focus:border-orange outline-none transition-all duration-300 px-5 rounded-[4px] border border-primary"
+          class="h-[60px] bg-[#04254448] focus:border-orange outline-none transition-all duration-300 px-5 rounded-[4px] border border-transparent"
           type="text"
           name=""
           id=""
@@ -17,7 +17,7 @@
         <div class="text-xl font-bold leading-10">Correo Electrónico</div>
         <input
           v-model="mensaje.correo"
-          class="h-[60px] bg-[#04254448] px-5 focus:border-orange outline-none transition-all duration-300 rounded-[4px] border border-primary"
+          class="h-[60px] bg-[#04254448] px-5 focus:border-orange outline-none transition-all duration-300 rounded-[4px] border border-transparent"
           type="email"
           name=""
           id=""
@@ -30,7 +30,7 @@
         <div class="text-xl font-bold leading-10">Teléfono</div>
         <input
           v-model="mensaje.telefono"
-          class="h-[60px] bg-[#04254448] px-5 focus:border-orange outline-none transition-all duration-300 rounded-[4px] border border-primary"
+          class="h-[60px] bg-[#04254448] px-5 focus:border-orange outline-none transition-all duration-300 rounded-[4px] border border-transparent"
           type="number"
           name=""
           id=""
@@ -39,7 +39,7 @@
       <div class="flex flex-col xl:w-1/2">
         <div class="text-xl font-bold leading-10">Localidad</div>
         <input
-          class="h-[60px] bg-[#04254448] focus:border-orange outline-none transition-all duration-300 px-5 rounded-[4px] border border-primary"
+          class="h-[60px] bg-[#04254448] focus:border-orange outline-none transition-all duration-300 px-5 rounded-[4px] border border-transparent"
           type="text"
           name=""
           id=""
@@ -50,7 +50,7 @@
       <div class="text-xl font-bold leading-10">Mensaje</div>
       <textarea
         v-model="mensaje.mensaje"
-        class="overflow-auto bg-[#04254448] p-5 focus:border-orange outline-none transition-all duration-300 rounded-[4px] border border-primary"
+        class="overflow-auto bg-[#04254448] p-5 focus:border-orange outline-none transition-all duration-300 rounded-[4px] border border-transparent"
         type="text"
         name=""
         id=""
