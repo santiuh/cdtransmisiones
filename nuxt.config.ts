@@ -1,8 +1,5 @@
 // nuxt.config.ts
 export default defineNuxtConfig({
-  app: {
-    pageTransition: { name: "page", mode: "out-in" },
-  },
   compatibilityDate: "2024-11-01",
   css: ["~/assets/css/tailwind.css"],
   devtools: { enabled: true },

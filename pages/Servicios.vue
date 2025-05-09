@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-[#FFFFFF] to-[#0071BC]"
+    class="flex place-content-center overflow-hidden bg-gradient-to-br -z-20 from-[#FFFFFF] to-[#0071BC]"
   >
-    <div class="flex flex-col w-full max-w-[1440px] px-10 gap-20 py-20">
+    <div class="flex flex-col w-full max-w-[1440px] -z-10 px-10 gap-20 py-20">
       <h1
         class="text-4xl font-raleway font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"

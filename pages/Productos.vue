@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-[#FFFFFF] to-[#0071BC]"
+    class="flex place-content-center overflow-hidden bg-gradient-to-br from-[#FFFFFF] to-[#0071BC]"
   >
     <div class="flex flex-col w-full max-w-[1440px] px-10 gap-20 py-20">
       <h1

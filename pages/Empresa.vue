@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex place-content-center relative overflow-hidden bg-gradient-to-br from-primary to-tertiary"
-  >
+  <div class="flex overflow-hidden bg-gradient-to-br from-primary to-tertiary">
     <div
       class="flex flex-col w-full max-w-[1440px] overflow-hidden px-10 gap-20 py-20"
     >

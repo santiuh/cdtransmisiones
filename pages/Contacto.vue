@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex place-content-center relative overflow-hidden bg-gradient-to-br to-tertiary from-primary"
+    class="flex place-content-center overflow-hidden bg-gradient-to-br to-tertiary from-primary"
   >
     <div class="flex flex-col w-full max-w-[1440px] px-10 py-20 gap-20">
       <h1
@@ -13,7 +13,7 @@
         <Formulario
           class="w-1/2"
           data-aos="fade-up"
-          data-aos-delay="100"  
+          data-aos-delay="100"
         ></Formulario>
 
         <div
