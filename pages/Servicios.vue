@@ -104,22 +104,142 @@
       -->
 
       <!-- Nueva card dinámica -->
+      <div class="flex flex-row justify-center gap-9" data-aos="fade-up">
+        <VButton
+          @click="servicio = 1"
+          titulo="Tipo de Servicio"
+          :class="{
+            '!bg-orangelight text-white': servicio === 1,
+          }"
+          noflecha="true"
+        ></VButton>
+        <VButton
+          @click="servicio = 2"
+          titulo="Tipo de Servicio 2"
+          :class="{
+            '!bg-orangelight !text-white': servicio === 2,
+          }"
+          noflecha="true"
+        ></VButton>
+      </div>
       <div
-        class="p-8 bg-white shadow-2xl rounded-3xl flex flex-col md:flex-row w-4/5 transform transition-transform hover:scale-105"
+        class="flex flex-col gap-4 w-3/4 self-center items-center"
         data-aos="fade-up"
+        v-show="servicio === 1"
       >
-        <nuxt-img
-          :src="serviceData.image"
-          :alt="serviceData.title"
-          class="w-full md:w-2/5 drop-shadow-xl h-auto object-cover rounded-3xl shadow-lg"
-        />
-        <div class="p-8 md:w-3/5 text-xl">
-          <h2 class="text-2xl font-bold mb-4">
-            {{ serviceData.title }}
-          </h2>
-          <p class="font-semibold">
-            {{ serviceData.description }}
-          </p>
+        <NuxtImg
+          src="/img/Empresa/empresa1.jpg"
+          class="h-96 w-full rounded-3xl drop-shadow-xl object-cover shadow-lg self-center"
+        ></NuxtImg>
+        <span
+          class="text-white px-4 text-justify self-center text-shadow-lg text-lg py-10"
+          >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium
+          beatae quidem eligendi reprehenderit, quam cum neque tenetur harum
+          recusandae delectus, animi rem? Earum esse ad repellat. Ipsa ipsam
+          error numquam? Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Illum, voluptatem dignissimos earum nulla nobis ex! Accusantium
+          aut tempore veniam exercitationem consequatur iusto voluptates, vel
+          harum quia est, sequi unde autem!</span
+        >
+        <div class="flex flex-row gap-10 text-white text-lg">
+          <div class="flex flex-col gap-2">
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-4 w-3/4 self-center items-center"
+        data-aos="fade-up"
+        v-show="servicio === 2"
+      >
+        <NuxtImg
+          src="/img/Empresa/empresa2.jpg"
+          class="h-96 w-full rounded-3xl drop-shadow-xl object-cover shadow-lg self-center"
+        ></NuxtImg>
+        <span
+          class="text-white px-4 text-justify self-center text-shadow-lg text-lg py-10"
+          >Lorem ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Accusantium beatae quidem eligendi reprehenderit, quam cum neque
+          tenetur harum recusandae delectus, animi rem? Earum esse ad repellat.
+          Ipsa ipsam error numquam? Lorem ipsum dolor siLorem ipsum dolor sit
+          amet consectetur, adipisicing elit. Accusantium beatae quidem eligendi
+          reprehenderit, quam cum neque tenetur harum recusandae delectus, animi
+          rem? Earum esse ad repellat. Ipsa ipsam error numquam? Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Illum, voluptatem
+          dignissimos earum nulla nobis ex! Accusantium aut tempore veniam
+          exercitationem consequatur iusto voluptates, vel harum quia est, sequi
+          unde autem!
+        </span>
+        <div class="flex flex-row gap-10 text-white text-lg">
+          <div class="flex flex-col gap-2">
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción 2</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción 2</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción 2</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción 2</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción 2</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción 2</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción 2</span>
+            </div>
+            <div class="flex flex-row gap-4 items-center">
+              <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
+              <span>Nombre de la acción 2</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -129,6 +249,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
+const servicio = ref(1); // Estado para el servicio seleccionado
 
 // Mock de datos de servicios
 const servicesMock = {

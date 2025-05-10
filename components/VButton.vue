@@ -4,6 +4,7 @@
   >
     <p>{{ titulo }}</p>
     <svg
+      v-if="!noflecha"
       xmlns="http://www.w3.org/2000/svg"
       width="10.019"
       height="19.344"
@@ -23,5 +24,5 @@
   </button>
 </template>
 <script setup>
-const props = defineProps(["titulo"]);
+const props = defineProps(["titulo", "noflecha"]);
 </script>

@@ -168,6 +168,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
+import { categories } from "@/data/categories";
 
 const router = useRouter();
 const route = useRoute();
@@ -209,138 +210,6 @@ const goTo = (ruta) => {
 
 // Lista de servicios con rutas SEO-friendly
 
-const categories = [
-  {
-    name: "Motores Eléctricos",
-    subcategories: [
-      {
-        name: "Eléctricos de Aluminio",
-        items: [
-          {
-            name: "Línea W21",
-            route: "motores-electricos/electricos-aluminio/linea-w21",
-          },
-          {
-            name: "Línea W12",
-            route: "motores-electricos/electricos-aluminio/linea-w12",
-          },
-        ],
-      },
-      {
-        name: "W22",
-        items: [
-          {
-            name: "W22 IE1",
-            route: "motores-electricos/electricos-aluminio/w22/ie1",
-          },
-          {
-            name: "W22 IE3",
-            route: "motores-electricos/electricos-aluminio/w22/ie3",
-          },
-        ],
-      },
-      { name: "Con Freno", route: "motores-electricos/con-freno" },
-      { name: "Antiexplosivos", route: "motores-electricos/antiexplosivos" },
-      { name: "Monofásicos", route: "motores-electricos/monofasicos" },
-      {
-        name: "Motor de Hormigonera",
-        route: "motores-electricos/motor-hormigonera",
-      },
-      {
-        name: "Dispositivo de Monitoreo",
-        route: "motores-electricos/dispositivo-monitoreo",
-      },
-    ],
-  },
-  {
-    name: "Motorreductores",
-    subcategories: [
-      { name: "Reductor WC650", route: "motorreductores/reductor-wc650" },
-      {
-        name: "Motorreductores GSA",
-        route: "motorreductores/motorreductores-gsa",
-      },
-    ],
-  },
-  {
-    name: "Drives",
-    subcategories: [
-      {
-        name: "Variadores de Frecuencia",
-        items: [
-          { name: "CFW100", route: "drives/variadores-frecuencia/cfw100" },
-          { name: "CFW300", route: "drives/variadores-frecuencia/cfw300" },
-          { name: "CFW500", route: "drives/variadores-frecuencia/cfw500" },
-          { name: "CFW900", route: "drives/variadores-frecuencia/cfw900" },
-          { name: "CFW11", route: "drives/variadores-frecuencia/cfw11" },
-        ],
-      },
-      {
-        name: "Arranque Suave",
-        items: [
-          { name: "SSW05", route: "drives/arranque-suave/ssw05" },
-          { name: "SSW07", route: "drives/arranque-suave/ssw07" },
-          { name: "SSW900", route: "drives/arranque-suave/ssw900" },
-        ],
-      },
-      {
-        name: "Controles Lógico-Programables",
-        items: [
-          {
-            name: "PLC300",
-            route: "drives/controles-logico-programables/plc300",
-          },
-          {
-            name: "PLC600",
-            route: "drives/controles-logico-programables/plc600",
-          },
-          {
-            name: "CLIC02",
-            route: "drives/controles-logico-programables/clic02",
-          },
-        ],
-      },
-      {
-        name: "Servomotores",
-        items: [
-          {
-            name: "Servoconvertidores",
-            route: "drives/servomotores/servoconvertidores",
-          },
-        ],
-      },
-      { name: "Arrancadores Directos", route: "drives/arrancadores-directos" },
-    ],
-  },
-  {
-    name: "Controls",
-    subcategories: [
-      { name: "Contactores", route: "controls/contactores" },
-      { name: "Relé Sobrecarga", route: "controls/rele-sobrecarga" },
-      { name: "Guardamotores", route: "controls/guardamotores" },
-      { name: "Interruptores", route: "controls/interruptores" },
-      { name: "Mando y Señalización", route: "controls/mando-y-senalizacion" },
-      { name: "Tableros", route: "controls/tableros" },
-    ],
-  },
-  {
-    name: "Bombas de Agua",
-    subcategories: [
-      {
-        name: "Bombas Centrífugas y Periféricas",
-        route: "bombas-agua/bombas-centrifugas-perifericas",
-      },
-      { name: "Bombas Sumergibles", route: "bombas-agua/bombas-sumergibles" },
-      {
-        name: "Bombas Presurizadoras",
-        route: "bombas-agua/bombas-presurizadoras",
-      },
-      { name: "Bombas para Piscinas", route: "bombas-agua/bombas-piscinas" },
-      { name: "Bombas Solares", route: "bombas-agua/bombas-solares" },
-      { name: "Accesorios", route: "bombas-agua/accesorios" },
-    ],
-  },
-];
 const services = [
   { name: "Bobinado", route: "/Servicios/Bobinado" },
   { name: "Asistencia técnica", route: "/Servicios/AsistenciaTecnica" },

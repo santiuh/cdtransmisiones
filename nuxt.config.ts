@@ -26,5 +26,4 @@ export default defineNuxtConfig({
   svgo: {
     autoImportPath: "./public/svg",
   },
-  plugins: [{ src: "~/plugins/aos.js", ssr: false }],
 });
