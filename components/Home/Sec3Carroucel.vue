@@ -1,7 +1,7 @@
 <template>
   <div ref="glideRef" class="glide bg-">
     <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides !py-28">
+      <ul class="glide__slides !py-12 lg:!py-28">
         <li class="glide__slide">
           <NuxtImg
             src="/img/Marcas/marca1.png"

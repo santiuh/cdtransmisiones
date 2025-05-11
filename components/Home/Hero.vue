@@ -6,13 +6,13 @@
           <HomeHero1 class="h-[90vh] lg:h-screen"></HomeHero1>
         </li> -->
         <li class="glide__slide">
-          <HomeBanner class="h-[90vh] lg:h-screen"></HomeBanner>
+          <HomeBanner class="h-[85vh] lg:h-screen"></HomeBanner>
         </li>
         <li class="glide__slide">
-          <HomeHero2 class="h-[90vh] lg:h-screen"></HomeHero2>
+          <HomeHero2 class="h-[85vh] lg:h-screen"></HomeHero2>
         </li>
         <li class="glide__slide">
-          <HomeHero3 class="h-[90vh] lg:h-screen"></HomeHero3>
+          <HomeHero3 class="h-[85vh] lg:h-screen"></HomeHero3>
         </li>
       </ul>
     </div>
@@ -35,7 +35,7 @@ onMounted(() => {
   const glideInstance = new Glide(glideRef2.value, {
     type: "carousel",
     perView: 1,
-    autoplay: 4000,
+    autoplay: 0,
     hoverpause: false,
     gap: 0,
   });

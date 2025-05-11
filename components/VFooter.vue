@@ -9,14 +9,14 @@
       ></NuxtImg>
       <div class="flex flex-col gap-3 lg:gap-6">
         <div class="font-bold text-2xl">Contactanos</div>
-        <div class="flex flex-row text-lg gap-6 items-center">
+        <div class="flex flex-row lg:text-lg gap-6 items-center self-center lg:self-start">
           <svgo-footergps class="!h-5 !w-auto text-orange"></svgo-footergps>
           <div class="flex flex-col">
             <span>Maipu 450 - Rafaela</span>
             <span>Prov. de Santa Fé - Argentina </span>
           </div>
         </div>
-        <div class="flex flex-col lg:flex-row text-lg gap-3 items-center">
+        <div class="flex flex-col lg:flex-row lg:text-lg gap-3 items-center">
           <button
             @click="openWindow()"
             class="flex flex-row gap-3 items-center hover:text-orange transition-all duration-300"
@@ -33,7 +33,7 @@
         </div>
         <a
           href="mailto:administración@imoberdorfhnos.com.ar"
-          class="flex flex-row text-lg gap-3 items-center hover:text-orange transition-all duration-300"
+          class="flex flex-row lg:text-lg gap-3 items-center hover:text-orange transition-all duration-300"
         >
           <NuxtImg class="h-5" src="svg/footermail.svg"></NuxtImg>
           <span>administración@imoberdorfhnos.com.ar</span>
