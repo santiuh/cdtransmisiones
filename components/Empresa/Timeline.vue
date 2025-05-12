@@ -9,7 +9,7 @@
       :class="par ? 'self-start' : 'self-end text-end'"
     >
       <div
-        class="border-b-primary relative border-b font-extrabold text-3xl px-5 lg:px-11 pb-3 shadow-xl"
+        class="border-b-primary relative border-b font-extrabold text-3xl lg:px-11 pb-3 shadow-xl"
       >
         {{ datos.year }}
         <span
@@ -59,7 +59,7 @@
             ></div>
           </div>
         </div>
-        <div class="text-white text-xl pt-4 pl-6 text-shadow-lg">
+        <div class="text-white lg:text-xl pt-4 lg:pl-6 text-shadow-lg">
           {{ datos.info }}
         </div>
       </div>

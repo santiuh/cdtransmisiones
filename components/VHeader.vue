@@ -207,32 +207,4 @@ const goTo = (ruta) => {
     window.open("https://catalogo.rodaservice.com.ar/", "_blank");
   } else router.push(ruta);
 };
-
-// Lista de servicios con rutas SEO-friendly
-
-const services = [
-  { name: "Bobinado", route: "/Servicios/Bobinado" },
-  { name: "Asistencia técnica", route: "/Servicios/AsistenciaTecnica" },
-  { name: "Mantenimiento", route: "/Servicios/Mantenimiento" },
-  { name: "Taller de reparación", route: "/Servicios/TallerReparacion" },
-  {
-    name: "Asistencia técnica con visita en planta",
-    route: "/Servicios/VisitaPlanta",
-  },
-  { name: "Automatización", route: "/Servicios/Automatizacion" },
-  {
-    name: "Reparación de convertidores de frecuencia",
-    route: "/Servicios/ReparacionConvertidores",
-  },
-  {
-    name: "Capacitaciones para las empresas",
-    route: "/Servicios/Capacitaciones",
-  },
-  { name: "Campo y medición", route: "/Servicios/CampoMedicion" },
-  { name: "Pruebas a bombas", route: "/Servicios/PruebasBombas" },
-  {
-    name: "Fabricación de tableros eléctricos",
-    route: "/Servicios/TablerosElectricos",
-  },
-];
 </script>

@@ -2,24 +2,24 @@
   <div
     class="flex place-content-center overflow-hidden bg-gradient-to-br from-[#FFFFFF] to-[#0071BC]"
   >
-    <div class="flex flex-col w-full max-w-[1440px] px-10 py-20 gap-20">
+    <div class="flex flex-col w-full max-w-[1440px] px-4 lg:px-10 py-24 lg:py-20 gap-10 lg:gap-20">
       <h1
         class="text-4xl font-raleway font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
         Nuestros Productos
       </h1>
-      <div class="flex flex-row justify-around gap-4">
+      <div class="flex flex-col lg:flex-row justify-around gap-4">
         <NuxtImg
           :src="'/img/Productos/' + selectedItem.imagen"
-          class="rounded-2xl !h-auto shadow-2xl aspect-square object-contain bg-white lg:w-1/2 xl:w-2/5"
+          class="rounded-2xl !h-auto shadow-2xl aspect-square object-contain bg-white w-full lg:w-1/2 xl:w-2/5"
         ></NuxtImg>
 
         <div
-          class="bg-white md:w-1/2 w-2/5 p-12 gap-4 rounded-2xl flex flex-col shadow-2xl"
+          class="bg-white md:w-1/2 w-full  p-12 gap-4 rounded-2xl flex flex-col shadow-2xl"
         >
           <h2 class="text-3xl font-semibold">{{ selectedItem.titulo }}</h2>
-          <hr class="w-1/4 self-center" />
+          <hr class="lg:w-1/4 self-center" />
           <p>{{ selectedItem.descripcion }}</p>
           <VButton
             class="text-white !bg-orangelight self-end mt-10"

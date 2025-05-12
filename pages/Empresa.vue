@@ -3,7 +3,7 @@
     class="flex overflow-hidden justify-center bg-gradient-to-br from-primary to-tertiary"
   >
     <div
-      class="flex flex-col w-full max-w-[1440px] overflow-hidden px-10 gap-20 py-20"
+      class="flex flex-col w-full max-w-[1440px] overflow-hidden px-4 lg:px-10 gap-10 lg:gap-20 lg:py-20 py-24"
     >
       <h1
         class="text-4xl font-raleway font-bold text-center text-shadow-lg text-white"
@@ -12,7 +12,7 @@
         SOBRE NOSOTROS
       </h1>
       <p
-        class="text-white text-lg text-shadow-lg w-4/5 self-center text-justify"
+        class="text-white text-lg text-shadow-lg lg:w-4/5 self-center text-justify"
         data-aos="fade-up"
       >
         Somos una pequeña empresa familiar rafaelina, que hace más de 56 años
