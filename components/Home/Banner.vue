@@ -11,7 +11,7 @@
         data-aos="fade-right"
       ></NuxtImg>
       <h1
-        class="text-center lg:text-start  text-xl lg:text-4xl font-extrabold text-primary !font-raleway"
+        class="text-center lg:text-start text-xl lg:text-4xl font-extrabold text-primary !font-raleway"
         data-aos="fade-left"
       >
         BOBINADO, REPARARACIÓN Y VENTA DE
@@ -23,28 +23,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-const hero = ref(null);
-
-const handleMouseMove = (event) => {
-  const x = (event.clientX / window.innerWidth - 0.5) * 20;
-  const y = (event.clientY / window.innerHeight - 0.5) * 20;
-  if (hero.value) {
-    hero.value.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
-  }
-};
-
-onMounted(() => {
-  window.addEventListener("mousemove", handleMouseMove);
-  AOS.init();
-});
-
-onUnmounted(() => {
-  window.removeEventListener("mousemove", handleMouseMove);
-});
 </script>
 
 <style scoped>

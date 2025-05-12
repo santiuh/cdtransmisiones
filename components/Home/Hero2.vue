@@ -3,7 +3,7 @@
     <div class="h-full w-0 lg:w-2/5"></div>
     <div
       :style="computedClipPath"
-      class="bg-[url('img/Hero/Hero2.png')] flex h-full w-full lg:w-3/5 bg-[center_right_60%] lg:bg-center bg-cover bg-no-repeat"
+      class="bg-[url('/img/Hero/Hero2.png')] flex h-full w-full lg:w-3/5 bg-[center_right_60%] lg:bg-center bg-cover bg-no-repeat"
     ></div>
 
     <div
@@ -23,11 +23,29 @@
   </div>
 </template>
 <script setup>
+import { ref, computed, onMounted } from "vue";
 const router = useRouter();
 
-import { computed } from "vue";
+const innerWidth = ref(0); // Create a ref to store the window width
+
+// Update the innerWidth value on the client side
+onMounted(() => {
+  innerWidth.value = window.innerWidth;
+
+  // Optional: Add a resize event listener to update the value dynamically
+  const handleResize = () => {
+    innerWidth.value = window.innerWidth;
+  };
+  window.addEventListener("resize", handleResize);
+
+  // Cleanup the event listener when the component is unmounted
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+});
+
 const computedClipPath = computed(() => {
-  return window.innerWidth >= 1024
+  return innerWidth.value >= 1024
     ? "clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)"
     : "clip-path: polygon(100% 0, 33% 0, 100% 43%);";
 });
