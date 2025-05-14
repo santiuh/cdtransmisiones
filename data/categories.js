@@ -70,8 +70,8 @@ export const categories = [
       },
       {
         name: "Motor de Hormigonera",
-        titulo: "",
-        descripcion: "",
+        titulo: "MOTORES MONOFASICOS DE HORMIGONERA",
+        descripcion: "MOTOR MONOFÁSICO PARA HORMIGONERAS / TROMPITOS EN DOS POTENCIAS:  MOTOR DE 600W 1500 RPM para hormigoneras de hasta 160 litros MOTOR DE 450W 1500 RPM para hormigoneras de hasta 130 litros MOTOR EXCLUSIVO PARA HORMIGONERAS / TROMPITOS ",
         imagen: "",
         route: "8",
       },
