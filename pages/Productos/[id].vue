@@ -18,12 +18,16 @@
         ></NuxtImg>
 
         <div
-          class="bg-white md:w-1/2 w-full p-12 gap-4 rounded-2xl flex flex-col shadow-2xl"
+          class="bg-white md:w-1/2 w-full p-12 gap-4 rounded-2xl border-2 flex flex-col justify-between shadow-2xl"
         >
-          <h2 class="text-3xl font-semibold">{{ selectedItem.titulo }}</h2>
-          <hr class="lg:w-1/4 self-center" />
-          <p :v-html="selectedItem?.descripcion"></p>
+          <div class="flex flex-col gap-4">
+            <h2 class="text-3xl font-semibold">{{ selectedItem.titulo }}</h2>
+            <hr class="lg:w-1/4 self-center" />
+            <p :innerHTML="selectedItem?.descripcion"></p>
+          </div>
+
           <VButton
+            @click="openWindow()"
             class="text-white !bg-orangelight self-end mt-10"
             titulo="Consultar"
           ></VButton>
@@ -37,6 +41,9 @@
 import { useRoute } from "vue-router";
 import { categories } from "@/data/categories";
 
+const openWindow = () => {
+  window.open("https://api.whatsapp.com/send?phone=5493492573782", "_blank");
+};
 const route = useRoute();
 
 const selectedItem = computed(() => {
