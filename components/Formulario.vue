@@ -39,6 +39,7 @@
       <div class="flex flex-col xl:w-1/2">
         <div class="text-xl font-bold leading-10">Localidad</div>
         <input
+          v-model="mensaje.localidad"
           class="h-[60px] bg-[#04254448] focus:border-orange outline-none transition-all duration-300 px-5 rounded-[4px] border border-transparent"
           type="text"
           name=""
@@ -67,7 +68,7 @@
       :class="
         formularioDesactivado
           ? '!bg-gray-400 hover:!scale-100'
-          : '!!bg-orange !hover:!scale-105'
+          : '!bg-orange !hover:!scale-105'
       "
       class="mt-[20px] min-h-16 items-center xl:min-w-56 self-end"
       titulo="Enviar formulario"
@@ -77,15 +78,13 @@
   </div>
 </template>
 <script setup>
-// const mail = useMail();
+const mail = useMail();
 
 const mensaje = ref({
   cliente: "",
   correo: "",
   telefono: "",
-  tipodeevento: "",
-  cantidaddeinvitados: "",
-  fechadelevento: "",
+  localidad: "",
   mensaje: "",
 });
 
@@ -99,10 +98,8 @@ const formularioDesactivado = computed(() => {
   return (
     m.mensaje === "" ||
     m.cliente === "" ||
-    m.tipodeevento === "" ||
     m.telefono === "" ||
-    m.fechadelevento === "" ||
-    m.cantidaddeinvitados === "" ||
+    m.localidad === "" ||
     m.correo === ""
   );
 });
@@ -114,44 +111,37 @@ const prevenirClick = () => {
 };
 
 const enviarCorreo = () => {
-  console.log(mensaje.value);
+  mostrarSpin.value = true;
+  mail
+    .send({
+      from: mensaje.value.correo,
+      replyTo: mensaje.value.correo,
+      subject: `CONTACTO WEB - ${mensaje.value.cliente} - ${mensaje.value.localidad}`,
+      html:
+        '<div style="background-color: #00679A; color: white; text-align:center; font-size: x-large; font-weight: bold; padding: 12px;">SOLICITUD DE CONTACTO</div><div style="background-color: #F2F2F2; padding-left: 10rem; padding-right: 10rem; padding-top: 1rem; padding-bottom: 4rem;"><div style="font-size: large; padding: 5px;"><span>Nombre:</span> <strong>' +
+        mensaje.value.cliente +
+        '</strong></div><div style="font-size: large; padding: 5px;"><span>Correo:</span> <strong>' +
+        mensaje.value.correo +
+        '</strong></div> <div style="font-size: large; padding: 5px;"><span>Teléfono:</span> <strong>' +
+        mensaje.value.telefono +
+        '</strong></div><div style="font-size: large; padding: 5px;"><span>Localidad:</span> <strong>' +
+        mensaje.value.localidad +
+        '</strong> </div> <div style="font-size: large; padding: 5px;">Mensaje:</div><div style="background-color: white; padding: 1rem; border-radius: 10px; margin-top: 1rem;">' +
+        mensaje.value.mensaje +
+        "</div></div>",
+    })
+    .then(() => {
+      mostrarSpin.value = false;
+      mensajeModal.value = "Formulario enviado correctamente.";
+      mostrarModal.value = true;
+    })
+    .catch((error) => {
+      mostrarSpin.value = false;
+      mensajeModal.value =
+        "Un error ha ocurrido al intentar enviar el formulario.";
+      mostrarModal.value = true;
+    });
 };
-// const enviarCorreo = () => {
-//   mostrarSpin.value = true;
-//   mail
-//     .send({
-//       from: mensaje.value.correo,
-//       replyTo: mensaje.value.correo,
-//       subject: `CONTACTO WEB - ${mensaje.value.cliente} - ${mensaje.value.tipodeevento}`,
-//       html:
-//         '<div style="background-color: palevioletred; color: white; text-align:center; font-size: x-large; font-weight: bold; padding: 12px;">SOLICITUD DE CONTACTO</div><div style="background-color: #F9F3F3; padding-left: 10rem; padding-right: 10rem; padding-top: 1rem; padding-bottom: 4rem;"><div style="font-size: large; padding: 5px;"><span>Nombre:</span> <strong>' +
-//         mensaje.value.cliente +
-//         '</strong></div><div style="font-size: large; padding: 5px;"><span>Correo:</span> <strong>' +
-//         mensaje.value.correo +
-//         '</strong></div> <div style="font-size: large; padding: 5px;"><span>Teléfono:</span> <strong>' +
-//         mensaje.value.telefono +
-//         '</strong></div><div style="font-size: large; padding: 5px;"><span>Tipo de evento:</span> <strong>' +
-//         mensaje.value.tipodeevento +
-//         '</strong></div><div style="font-size: large; padding: 5px;"><span>Fecha del Evento:</span> <strong>' +
-//         mensaje.value.fechadelevento +
-//         '</strong></div><div style="font-size: large; padding: 5px;"><span>Cantidad de Invitados:</span> <strong>' +
-//         mensaje.value.cantidaddeinvitados +
-//         '</strong> </div> <div style="font-size: large; padding: 5px;">Mensaje:</div><div style="background-color: white; padding: 1rem; border-radius: 10px; margin-top: 1rem;">' +
-//         mensaje.value.mensaje +
-//         "</div></div>",
-//     })
-//     .then(() => {
-//       mostrarSpin.value = false;
-//       mensajeModal.value = "Formulario enviado correctamente.";
-//       mostrarModal.value = true;
-//     })
-//     .catch((error) => {
-//       mostrarSpin.value = false;
-//       mensajeModal.value =
-//         "Un error ha ocurrido al intentar enviar el formulario.";
-//       mostrarModal.value = true;
-//     });
-// };
 </script>
 <style>
 select {

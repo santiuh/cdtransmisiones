@@ -295,8 +295,9 @@ export const categories = [
       {
         name: "Bombas Centrífugas y Periféricas",
         titulo: "Bombas Centrífugas y Periféricas",
-        descripcion: "Bombas Centrífugas y Periféricas",
-        imagen: "CENTRIFUGAS.jpg",
+        descripcion:
+          "Las bombas centrífugas y periféricas  son la solución confiable y eficiente para el suministro de agua en aplicaciones domésticas, agrícolas e industriales. Las centrífugas ofrecen un excelente rendimiento en sistemas de gran caudal, mientras que las periféricas son ideales para generar alta presión en instalaciones con bajo flujo. Fabricadas con materiales de alta calidad,  garantizan durabilidad, fácil instalación y un funcionamiento silencioso.",
+        imagen: "CENTRIFUGA.jpg",
         route: "31",
       },
       {
@@ -310,21 +311,24 @@ export const categories = [
       {
         name: "Bombas Presurizadoras",
         titulo: "Bombas Presurizadoras",
-        descripcion: "Bombas Presurizadoras",
+        descripcion:
+          "Las bombas presurizadoras son la solución ideal para mejorar la presión del agua en tu hogar o negocio. Silenciosa, eficiente y fácil de instalar, garantiza un flujo constante en duchas, grifos y electrodomésticos. Perfecta para sistemas de agua con presión baja o inestable.",
         imagen: "PRESURIZADA.jpg",
         route: "33",
       },
       {
         name: "Bombas para Piscinas",
         titulo: "Bombas para Piscinas",
-        descripcion: "Bombas para Piscinas",
+        descripcion:
+          "Las bombas para piscina están diseñadas para mantener el agua limpia y en constante circulación, asegurando una filtración eficiente y uniforme. Son esenciales para evitar la acumulación de impurezas y garantizar condiciones óptimas de higiene y disfrute. Silenciosas, potentes y duraderas, permiten un mantenimiento sencillo y un rendimiento confiable durante todo el año.",
         imagen: "PISCINA.jpg",
         route: "34",
       },
       {
         name: "Bombas Solares",
         titulo: "Bombas Solares",
-        descripcion: "Bombas Solares",
+        descripcion:
+          "Las bombas solares utilizan la energía del sol para extraer y transportar agua de forma eficiente y sustentable, sin necesidad de conexión a la red eléctrica. Ideales para zonas rurales, riego agrícola o sistemas de almacenamiento, ofrecen un funcionamiento autónomo, bajo mantenimiento y ahorro a largo plazo, contribuyendo al cuidado del medio ambiente.",
         imagen: "SOLARES.jpg",
         route: "35",
       },

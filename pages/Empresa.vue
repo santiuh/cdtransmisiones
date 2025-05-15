@@ -35,6 +35,17 @@
           ></EmpresaTimeline>
         </section>
       </main>
+      <div
+        class="text-primary text-lg font-bold lg:w-4/5 self-center text-center mt-10"
+        data-aos="fade-up"
+      >
+        <h2 class="text-2xl">Compromiso con la calidad y la innovación</h2>
+        A lo largo de su historia, Imoberdorf Hnos. S.A. ha mantenido un firme
+        compromiso con la calidad, la innovación y el servicio al cliente. Su
+        equipo técnico altamente capacitado y su enfoque en soluciones
+        personalizadas han permitido a la empresa consolidarse como un referente
+        en el mercado regional y nacional.
+      </div>
     </div>
   </div>
 </template>
@@ -50,13 +61,39 @@ useSeoMeta({
 const data = [
   {
     year: "1968",
-    info: "Fue iniciada por su fundador, Héctor Luis Imoberdorf, tenía 18 años de edad. Héctor terminó sus estudios en la Escuela Nacional de Educación Técnica N°1 Guillermo Lehmann de esta ciudad, obteniendo el título de técnico electromecánico. Durante el cursado de sus estudios, Héctor colaboraba en un taller mecánico que se especializaba en electricidad del automóvil, adquiriendo allí la experiencia necesaria y aprendiendo el oficio que luego le permitiría iniciar su propio emprendimiento.",
+    info: "La empresa fue fundada en 1968 por Héctor Luis Imoberdorf, quien, tras completar sus estudios en la Escuela Nacional de Educación Técnica N°1 Guillermo Lehmann de Rafaela, comenzó a trabajar en un taller mecánico especializado en electricidad del automóvil. Esta experiencia le permitió adquirir los conocimientos necesarios para iniciar su propio emprendimiento.",
     banner: "Empresa1.jpg",
+  },
+
+  {
+    year: "1979",
+    info: "  Héctor incorporó a su hermano Jorge Omar Imoberdorf.",
+    banner: "Empresa2.jpg",
   },
   {
     year: "2010",
-    info: "Por su trayectoria, experiencia y reconocimiento, fue seleccionada como Asistente técnico Autorizado y Distribuidor oficial WEG para Rafaela y zona de influencia, siendo uno de los 6 asistentes técnicos autorizados en toda la provincia.",
-    banner: "Empresa2.jpg",
+    info: "Constitución de la sociedad anónima Imoberdorf Hnos. S.A. e incorporación de la nueva generación al directorio.",
+    banner: "Empresa3.jpg",
+  },
+  {
+    year: "2018",
+    info: "Ampliación y remodelación del taller para optimizar los procesos productivos.",
+    banner: "Empresa4.jpg",
+  },
+  {
+    year: "2019",
+    info: "Designación de Patricia Imoberdorf como presidenta y de Marcelo Imoberdorf como director titular de la sociedad. En septiembre de ese año, se firma el acuerdo de servicio técnico con WEG, consolidando la relación con esta reconocida marca.",
+    banner: "Empresa5.jpg",
+  },
+  {
+    year: "2024",
+    info: "Incorporación de un nuevo modelo de negocio enfocado en energías renovables y paneles solares, ampliando la oferta de soluciones sostenibles.",
+    banner: "Empresa6.jpg",
+  },
+  {
+    year: "2025",
+    info: "Remodelación edilicia del frente comercial y acceso al servicio técnico, mejorando la experiencia del cliente. Además, se implementa un sistema de gestión empresarial integral que optimiza las funciones de ventas, CRM, proyectos, manufactura, finanzas y recursos humanos.",
+    banner: "Empresa7.jpg",
   },
 ];
 </script>

@@ -17,7 +17,7 @@
         ></Formulario>
 
         <div
-          class="flex flex-col gap-10 text-white text-shadow-lg lg:gap-0 justify-around lg:text-2xl lg:w-1/2 items-center"
+          class="flex flex-col gap-10 text-white text-shadow-lg lg:gap-0 justify-around lg:text-2xl lg:w-1/2 items-startw"
         >
           <div class="flex" data-aos="fade-up" data-aos-delay="200">
             <div
@@ -75,7 +75,7 @@
               <div class="flex-col flex items-start">
                 <span class="font-bold text-3xl">Pagos </span>
                 <button class="hover:text-orange transition-all">
-                  pagos@imoberdorfhnos.com.ar
+                  administracion@imoberdorfhnos.com.ar
                 </button>
                 <button
                   class="hover:text-orange transition-all"

@@ -14,6 +14,23 @@ export default defineNuxtConfig({
     "nuxt-svgo",
     "nuxt-particles",
     [
+      "nuxt-mail",
+      {
+        message: {
+          to: process.env.EMAIL_TO,
+          from: "venta@imoberdorfhnos.com.ar",
+        },
+        smtp: {
+          host: process.env.SMTP_HOST,
+          port: process.env.SMTP_PORT,
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+          },
+        },
+      },
+    ],
+    [
       "@nuxtjs/google-fonts",
       {
         families: {
@@ -22,6 +39,7 @@ export default defineNuxtConfig({
         },
       },
     ],
+    "nuxt-mail",
   ],
   svgo: {
     autoImportPath: "./public/svg",
