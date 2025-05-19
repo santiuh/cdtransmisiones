@@ -15,7 +15,7 @@
         data-aos="fade-left"
       >
         BOBINADO, REPARARACIÓN Y VENTA DE
-        <span class="text-orange"> MOTORES ELECÉCTRICOS, BOMBAS Y DRIVES</span>
+        <span class="text-orange"> MOTORES ELÉCTRICOS, BOMBAS Y DRIVES</span>
       </h1>
       <!-- <p class="text-lg text-white">Bobinado, reparación y venta de motores eléctricos</p> -->
     </div>

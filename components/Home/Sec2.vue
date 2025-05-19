@@ -10,9 +10,11 @@
         COMERCIOS.
       </h1>
       <hr class="w-32 rounded-full border-orange self-center border-2 my-14" />
-      <div class="flex flex-col lg:flex-row justify-center gap-4 w-3/4 lg:w-full self-center lg:gap-10">
+      <div
+        class="flex flex-col lg:flex-row justify-center gap-4 w-3/4 lg:w-full self-center lg:gap-10"
+      >
         <Sec2Card
-          @click="router.push('/Productos')"
+          @click="router.push('/Productos/home')"
           bg="img/Sec2Card1.jpg"
           title="Productos"
         ></Sec2Card>

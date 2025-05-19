@@ -9,7 +9,9 @@
       ></NuxtImg>
       <div class="flex flex-col gap-3 lg:gap-6">
         <div class="font-bold text-2xl">Contactanos</div>
-        <div class="flex flex-row lg:text-lg gap-6 items-center self-center lg:self-start">
+        <div
+          class="flex flex-row lg:text-lg gap-6 items-center self-center lg:self-start"
+        >
           <svgo-footergps class="!h-5 !w-auto text-orange"></svgo-footergps>
           <div class="flex flex-col">
             <span>Maipu 450 - Rafaela</span>
@@ -43,20 +45,20 @@
         <div class="font-bold text-2xl flex">Redes Sociales</div>
         <div class="flex flex-row gap-3 !text-orange">
           <NuxtLink
-            to="https://www.instagram.com/imoberdorfhnos//"
+            to="https://www.instagram.com/imoberdorfhnos/"
             target="_blank"
             ><svgo-ig
               class="!h-7 !w-7 hover:text-orange transition-all duration-300"
             ></svgo-ig
           ></NuxtLink>
-          <NuxtLink
-            to="https://www.linkedin.com/in/imoberdorf-hnos-s-a-628470257/"
-            target="_blank"
+          <NuxtLink to="https://www.facebook.com/imoberdorfhnos" target="_blank"
             ><svgo-fb
               class="!h-7 !w-7 hover:text-orange transition-all duration-300"
             ></svgo-fb
           ></NuxtLink>
-          <NuxtLink to="https://www.facebook.com/imoberdorfhnos" target="_blank"
+          <NuxtLink
+            to="https://www.linkedin.com/in/imoberdorf-hnos-s-a-628470257/"
+            target="_blank"
             ><svgo-li
               class="!h-7 !w-7 hover:text-orange transition-all duration-300"
             ></svgo-li
