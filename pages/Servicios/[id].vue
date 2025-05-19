@@ -129,7 +129,13 @@
 <script setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
-
+useSeoMeta({
+  title: "Servicio | Imoberdorf Hnos.",
+  description:
+    "Detalles de nuestros servicios especializados: reparación, asesoramiento, asistencia técnica y capacitación industrial en Rafaela.",
+  keywords:
+    "servicio, reparación, asesoramiento, asistencia técnica, capacitación, industria, Rafaela, Imoberdorf Hnos.",
+});
 // Mock de datos de servicios
 const servicesMock = {
   VisitaPlanta: {

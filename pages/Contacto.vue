@@ -92,6 +92,14 @@
   </div>
 </template>
 <script setup>
+useSeoMeta({
+  title: "Contacto | Imoberdorf Hnos.",
+  description:
+    "Contactanos para consultas, ventas, pagos y asistencia técnica. Imoberdorf Hnos. en Rafaela, especialistas en soluciones eléctricas e industriales.",
+  keywords:
+    "contacto, consultas, ventas, asistencia técnica, pagos, Imoberdorf Hnos., Rafaela",
+});
+
 const openWhatsApp = (phone) => {
   const url = `https://wa.me/${phone}`;
   window.open(url, "_blank");

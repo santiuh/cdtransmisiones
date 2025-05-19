@@ -51,11 +51,11 @@
 </template>
 <script setup>
 useSeoMeta({
-  title: "Historia de Imoberdorf Hnos.",
+  title: "Sobre Nosotros | Imoberdorf Hnos.",
   description:
-    "Conozca la historia de Roda Service desde sus inicios en 1960 hasta la actualidad.",
+    "Conocé la historia, valores y trayectoria de Imoberdorf Hnos. Más de 56 años brindando soluciones eléctricas y electromecánicas en Rafaela y la región.",
   keywords:
-    "Roda Service, historia, rodamientos, importación, distribución, marcas, NTN-SNR, AYS FERSA, NSK, ARB, HCH, IKO, MBS, ROLLWAY, CMB, RLM, KG, KOYO",
+    "empresa, historia, valores, trayectoria, Imoberdorf Hnos., Rafaela, soluciones eléctricas, electromecánicas",
 });
 
 const data = [

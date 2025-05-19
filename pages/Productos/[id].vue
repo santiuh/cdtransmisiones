@@ -91,7 +91,13 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { categories } from "@/data/categories";
-
+useSeoMeta({
+  title: "Productos | Imoberdorf Hnos.",
+  description:
+    "Descubre nuestra variedad de productos: motores eléctricos, rodamientos, autopartes y soluciones industriales en Rafaela.",
+  keywords:
+    "productos, motores eléctricos, rodamientos, autopartes, industria, Rafaela, Imoberdorf Hnos.",
+});
 const openWindow = () => {
   window.open("https://api.whatsapp.com/send?phone=5493492573782", "_blank");
 };

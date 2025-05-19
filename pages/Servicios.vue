@@ -176,6 +176,13 @@
 <script setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
+useSeoMeta({
+  title: "Servicios | Imoberdorf Hnos.",
+  description:
+    "Conocé nuestros servicios: asistencia técnica, mantenimiento, reparación de motores eléctricos, instalación de paneles solares y soluciones industriales en Rafaela.",
+  keywords:
+    "servicios, asistencia técnica, mantenimiento, reparación, motores eléctricos, paneles solares, industria, Rafaela, Imoberdorf Hnos.",
+});
 const servicio = ref(1); // Estado para el servicio seleccionado
 
 // Mock de datos de servicios

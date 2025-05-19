@@ -41,45 +41,53 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      videos: [],
-      apiKey: "AIzaSyC9mzQZPU4IbQ4lyH1bjEu0S6D5KkyfYQ4",
-      channelId: "UCHDLcJ_xBY_YLzgA6p2oBqg",
-      maxResults: 3,
-      playingVideoId: null,
-    };
-  },
-  async mounted() {
-    await this.fetchLatestVideos();
-  },
-  methods: {
-    async fetchLatestVideos() {
-      const url = `https://www.googleapis.com/youtube/v3/search?key=${this.apiKey}&channelId=${this.channelId}&part=snippet,id&order=date&maxResults=${this.maxResults}`;
+<script setup>
+useSeoMeta({
+  title: "Novedades | Imoberdorf Hnos.",
+  description:
+    "Últimas novedades, noticias y videos de Imoberdorf Hnos. Innovación y actualidad en soluciones eléctricas e industriales.",
+  keywords:
+    "novedades, noticias, videos, Imoberdorf Hnos., innovación, industria",
+});
 
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        this.videos = data.items;
-      } catch (error) {
-        console.error("Failed to fetch videos:", error);
-      }
-    },
-    formatDate(dateString) {
-      const date = new Date(dateString);
-      const month = date
-        .toLocaleString("es-ES", { month: "long" })
-        .toUpperCase();
-      const day = date.getDate();
-      return `${month} ${day}`;
-    },
-    playVideo(videoId) {
-      this.playingVideoId = videoId;
-    },
-  },
-};
+// export default {
+//   data() {
+//     return {
+//       videos: [],
+//       apiKey: "AIzaSyC9mzQZPU4IbQ4lyH1bjEu0S6D5KkyfYQ4",
+//       channelId: "UCHDLcJ_xBY_YLzgA6p2oBqg",
+//       maxResults: 3,
+//       playingVideoId: null,
+//     };
+//   },
+//   async mounted() {
+//     await this.fetchLatestVideos();
+//   },
+//   methods: {
+//     async fetchLatestVideos() {
+//       const url = `https://www.googleapis.com/youtube/v3/search?key=${this.apiKey}&channelId=${this.channelId}&part=snippet,id&order=date&maxResults=${this.maxResults}`;
+
+//       try {
+//         const response = await fetch(url);
+//         const data = await response.json();
+//         this.videos = data.items;
+//       } catch (error) {
+//         console.error("Failed to fetch videos:", error);
+//       }
+//     },
+//     formatDate(dateString) {
+//       const date = new Date(dateString);
+//       const month = date
+//         .toLocaleString("es-ES", { month: "long" })
+//         .toUpperCase();
+//       const day = date.getDate();
+//       return `${month} ${day}`;
+//     },
+//     playVideo(videoId) {
+//       this.playingVideoId = videoId;
+//     },
+//   },
+// };
 </script>
 
 <style scoped>
