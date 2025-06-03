@@ -23,9 +23,9 @@
       <div
         class="flex flex-col font-bold text-white gap-4 text-center lg:text-end"
       >
-        <p class=" text-3xl lg:text-7xl text-shadow z-10">
-          <span class="text-orange">¿</span>Querés saber más<span
-            class="text-orange"
+        <p class=" text-3xl lg:text-6xl text-shadow z-10">
+          <span class="">¿</span>Querés saber más<span
+            class=""
             >?</span
           >
         </p>

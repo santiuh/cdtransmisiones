@@ -32,32 +32,9 @@
             :style="{
               backgroundImage: `url(/img/EmpresaPage/${datos.banner})`,
             }"
-            class="w-full h-14 lg:h-20 bg-cover bg-center bg-tertiary"
+            class="w-full h-14 lg:h-48 bg-cover bg-top bg-tertiary"
             alt="Banner"
-          >
-            <div
-              style="
-                background: linear-gradient(
-                  270deg,
-                  rgba(51, 51, 51, 0) 30%,
-                  rgba(0, 0, 0, 0.1292892156862745) 50%,
-                  rgba(0, 0, 0, 0) 70%
-                );
-              "
-              class="absolute hidden lg:flex w-40 h-full right-0 z-10"
-            ></div>
-            <div
-              style="
-                background: linear-gradient(
-                  90deg,
-                  rgba(51, 51, 51, 0) 30%,
-                  rgba(0, 0, 0, 0.1292892156862745) 50%,
-                  rgba(0, 0, 0, 0) 70%
-                );
-              "
-              class="absolute hidden lg:flex w-40 h-full left-0 z-10"
-            ></div>
-          </div>
+          ></div>
         </div>
         <div class="text-white lg:text-xl pt-4 lg:pl-6 text-shadow-lg">
           {{ datos.info }}

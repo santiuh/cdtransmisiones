@@ -111,36 +111,31 @@ const prevenirClick = () => {
 };
 
 const enviarCorreo = () => {
-  mostrarSpin.value = true;
-  mail
-    .send({
-      from: mensaje.value.correo,
-      replyTo: mensaje.value.correo,
-      subject: `CONTACTO WEB - ${mensaje.value.cliente} - ${mensaje.value.localidad}`,
-      html:
-        '<div style="background-color: #00679A; color: white; text-align:center; font-size: x-large; font-weight: bold; padding: 12px;">SOLICITUD DE CONTACTO</div><div style="background-color: #F2F2F2; padding-left: 10rem; padding-right: 10rem; padding-top: 1rem; padding-bottom: 4rem;"><div style="font-size: large; padding: 5px;"><span>Nombre:</span> <strong>' +
-        mensaje.value.cliente +
-        '</strong></div><div style="font-size: large; padding: 5px;"><span>Correo:</span> <strong>' +
-        mensaje.value.correo +
-        '</strong></div> <div style="font-size: large; padding: 5px;"><span>Teléfono:</span> <strong>' +
-        mensaje.value.telefono +
-        '</strong></div><div style="font-size: large; padding: 5px;"><span>Localidad:</span> <strong>' +
-        mensaje.value.localidad +
-        '</strong> </div> <div style="font-size: large; padding: 5px;">Mensaje:</div><div style="background-color: white; padding: 1rem; border-radius: 10px; margin-top: 1rem;">' +
-        mensaje.value.mensaje +
-        "</div></div>",
-    })
-    .then(() => {
-      mostrarSpin.value = false;
-      mensajeModal.value = "Formulario enviado correctamente.";
-      mostrarModal.value = true;
-    })
-    .catch((error) => {
-      mostrarSpin.value = false;
-      mensajeModal.value =
-        "Un error ha ocurrido al intentar enviar el formulario.";
-      mostrarModal.value = true;
-    });
+  const nombre = mensaje.value.cliente;
+  const correo = mensaje.value.correo;
+  const telefono = mensaje.value.telefono;
+  const localidad = mensaje.value.localidad;
+  const textoMensaje = mensaje.value.mensaje;
+
+  // Mensaje prearmado
+  const texto =
+    `Hola, me gustaría contactarme.\n` +
+    `Nombre: ${nombre}\n` +
+    `Correo: ${correo}\n` +
+    `Teléfono: ${telefono}\n` +
+    `Localidad: ${localidad}\n` +
+    `Motivo: ${textoMensaje}`;
+
+  // Número de WhatsApp de destino (reemplazar por el número deseado)
+  const numeroDestino = "+543492573782"; // Ejemplo: 5491123456789
+
+  // Codificar el mensaje para URL
+  const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(
+    texto
+  )}`;
+
+  // Abrir WhatsApp en una nueva pestaña
+  window.open(url, "_blank");
 };
 </script>
 <style>
