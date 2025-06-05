@@ -82,7 +82,7 @@ const data = [
   },
   {
     year: "2019",
-    info: "Designación de Patricia Imoberdorf como presidenta y de Marcelo Imoberdorf como director titular de la sociedad. En septiembre de ese año, se firma el acuerdo de servicio técnico con WEG, consolidando la relación con esta reconocida marca.",
+    info: "Designación de Patricia Imoberdorf como presidente y de Marcelo Imoberdorf como director titular de la sociedad. En septiembre de ese año, se firma el acuerdo de servicio técnico con WEG, consolidando la relación con esta reconocida marca.",
     banner: "Empresa5.jpg",
   },
   {
