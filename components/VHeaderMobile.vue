@@ -110,6 +110,13 @@
         >
           SERVICIOS
         </NuxtLink>
+         <NuxtLink
+          @click="menu = false"
+          class="hover:cursor-pointer transition-all duration-300"
+          to="https://drive.google.com/file/d/17Jnr_bjVkLtNjzQePbBwVmtTz_QMoANc/view"
+        >
+          CATÁLOGO
+        </NuxtLink>
         <NuxtLink
           @click="menu = false"
           class="hover:cursor-pointer transition-all duration-300"
