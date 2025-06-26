@@ -107,6 +107,12 @@
           </button>
           <button
             class="hover:text-orange transition-all duration-300"
+            @click="goTo('/Catalogo')"
+          >
+            CATÁLOGO
+          </button>
+          <button
+            class="hover:text-orange transition-all duration-300"
             @click="goTo('/Contacto')"
           >
             CONTACTO
@@ -203,8 +209,8 @@ onMounted(() => {
 });
 
 const goTo = (ruta) => {
-  if (ruta === "/Clientes") {
-    window.open("https://catalogo.rodaservice.com.ar/", "_blank");
+  if (ruta === "/Catalogo") {
+    window.open("https://drive.google.com/file/d/17Jnr_bjVkLtNjzQePbBwVmtTz_QMoANc/view?usp=drive_link", "_blank");
   } else router.push(ruta);
 };
 </script>
