@@ -37,6 +37,18 @@
               : 'text-white'
           "
         >
+          <button
+            class="hover:text-orange transition-all duration-300 relative h-fit self-center"
+            @click="goTo('/Tienda')"
+          >
+            TIENDA
+            <span
+              v-if="showNewBadge"
+              class="absolute -top-4 -right-6 bg-orange text-black text-xs font-bold px-2 py-0.5 rounded-full animate-pulse"
+            >
+              NUEVO
+            </span>
+          </button>
           <div class="group hover:text-orange flex flex-col justify-center">
             <span class="transition-all duration-300"> PRODUCTOS </span>
             <div
@@ -93,6 +105,7 @@
               </div>
             </div>
           </div>
+
           <button
             class="hover:text-orange transition-all duration-300"
             @click="goTo('/Servicios')"
@@ -191,6 +204,16 @@ const banner = computed(() => {
 // Estado para controlar el fondo cuando se hace scroll
 const isScrolled = ref(false);
 
+// Estado para controlar la visibilidad del badge "NUEVO"
+const showNewBadge = computed(() => {
+  const launchDate = new Date("2025-10-14"); // Fecha de lanzamiento de la tienda
+  const currentDate = new Date();
+  const daysDifference = Math.floor(
+    (currentDate - launchDate) / (1000 * 60 * 60 * 24)
+  );
+  return daysDifference < 30;
+});
+
 // Función que maneja el evento de scroll
 const handleScroll = () => {
   if (window.scrollY > 100) {
@@ -210,7 +233,12 @@ onMounted(() => {
 
 const goTo = (ruta) => {
   if (ruta === "/Catalogo") {
-    window.open("https://drive.google.com/file/d/17Jnr_bjVkLtNjzQePbBwVmtTz_QMoANc/view?usp=drive_link", "_blank");
+    window.open(
+      "https://drive.google.com/file/d/17Jnr_bjVkLtNjzQePbBwVmtTz_QMoANc/view?usp=drive_link",
+      "_blank"
+    );
+  } else if (ruta === "/Tienda") {
+    window.open("https://tienda.imoberdorfhnos.com.ar", "_blank");
   } else router.push(ruta);
 };
 </script>

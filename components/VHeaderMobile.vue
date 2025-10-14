@@ -40,7 +40,18 @@
         >
           INICIO
         </NuxtLink>
-
+        <button
+          @click="goTo('/Tienda')"
+          class="hover:cursor-pointer transition-all duration-300 relative flex items-center text-left"
+        >
+          TIENDA
+          <span
+            v-if="showNewBadge"
+            class="ml-2 bg-orange text-black text-xs font-bold px-2 py-0.5 rounded-full animate-pulse"
+          >
+            NUEVO
+          </span>
+        </button>
         <div class="group hover:cursor-pointer transition-all duration-300">
           <span
             @click="toggleDropdown"
@@ -103,14 +114,8 @@
         >
           EMPRESA
         </NuxtLink>
+
         <NuxtLink
-          @click="menu = false"
-          class="hover:cursor-pointer transition-all duration-300"
-          to="/SERVICIOS"
-        >
-          SERVICIOS
-        </NuxtLink>
-         <NuxtLink
           @click="menu = false"
           class="hover:cursor-pointer transition-all duration-300"
           to="https://drive.google.com/file/d/17Jnr_bjVkLtNjzQePbBwVmtTz_QMoANc/view"
@@ -142,6 +147,16 @@ const isHome = computed(() => {
   return route.path === "/";
 });
 
+// Estado para controlar la visibilidad del badge "NUEVO"
+const showNewBadge = computed(() => {
+  const launchDate = new Date("2025-10-14"); // Fecha de lanzamiento de la tienda
+  const currentDate = new Date();
+  const daysDifference = Math.floor(
+    (currentDate - launchDate) / (1000 * 60 * 60 * 24)
+  );
+  return daysDifference < 30;
+});
+
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 100;
 };
@@ -153,6 +168,10 @@ const toggleDropdown = () => {
 const goTo = (ruta) => {
   if (ruta === "/Clientes") {
     window.open("https://catalogo.rodaservice.com.ar/", "_blank");
+  } else if (ruta === "/Tienda") {
+    window.open("https://tienda.imoberdorfhnos.com.ar", "_blank");
+    menu.value = false;
+    dropdownOpen.value = false;
   } else {
     menu.value = false;
     dropdownOpen.value = false;

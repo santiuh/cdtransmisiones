@@ -10,15 +10,23 @@
       class="max-w-[1440px] absolute px-9 w-full pt-24 justify-center h-full flex flex-col text-primary text-start gap-10"
     >
       <div class="flex flex-col text-3xl lg:text-4xl !font-raleway font-black">
-        <p>CONTAMOS CON MARCAS</p>
-        <p class="text-orange">LÍDERES EN EL MERCADO</p>
+        <p>CONOCÉ NUESTRA NUEVA</p>
+        <p class="text-orange">TIENDA ONLINE</p>
       </div>
 
-      <VButton
-        titulo="Ver Productos"
-        class="!text-xl !bg-white w-3/4"
-        @click="router.push('/Productos')"
-      ></VButton>
+      <div class="relative w-fit">
+        <VButton
+          titulo="Ir a la tienda"
+          class="!text-xl !bg-white w-3/4"
+          @click="goToTienda"
+        ></VButton>
+        <div
+          class="absolute -top-2 -right-2 h-4 w-4 bg-orange rounded-full"
+        ></div>
+        <div
+          class="absolute -top-2 -right-2 h-4 w-4 animate-ping bg-orange rounded-full"
+        ></div>
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +35,13 @@ import { ref, computed, onMounted } from "vue";
 const router = useRouter();
 
 const innerWidth = ref(0); // Create a ref to store the window width
+
+// Función para abrir la tienda de forma segura
+const goToTienda = () => {
+  if (process.client) {
+    window.open("https://tienda.imoberdorfhnos.com.ar", "_blank");
+  }
+};
 
 // Update the innerWidth value on the client side
 onMounted(() => {
