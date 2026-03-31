@@ -23,7 +23,7 @@
             >?</span
           >
         </p>
-        <p class="text-shadow text-2xl  lg:text-5xl z-10">Estamos para ayudarte</p>
+        <p class="text-shadow text-2xl  lg:text-5xl z-10">Estamos para ayudarte.</p>
         <VButton
           titulo="Contactanos"
           class="!bg-primary !text-white lg:!text-5xl font-bold h-fit mt-6 lg:mt-12 self-end"
