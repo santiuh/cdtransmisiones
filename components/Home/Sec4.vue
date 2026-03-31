@@ -5,16 +5,10 @@
     <div
       class="flex flex-col gap-12 lg:gap- lg:flex-row w-full justify-between items-center"
     >
-      <div class="flex flex-col lg:w-2/4 gap-12 lg:pl-20">
+      <div class="flex lg:w-2/4 items-center justify-center lg:pl-20">
         <NuxtImg
           src="/img/Contacto.png"
-          class="rounded-3xl lg:w-2/3 grayscale shadow-2xl"
-          data-aos="slide-up"
-        >
-        </NuxtImg>
-        <NuxtImg
-          src="/img/Contacto2.png"
-          class="rounded-3xl lg:w-2/3 self-end shadow-2xl"
+          class="rounded-3xl w-full max-w-[500px] grayscale shadow-2xl"
           data-aos="slide-up"
         >
         </NuxtImg>
