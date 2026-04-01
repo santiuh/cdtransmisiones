@@ -1,6 +1,20 @@
 // nuxt.config.ts
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
+  app: {
+    head: {
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      htmlAttrs: { lang: "es" },
+      meta: [
+        { property: "og:site_name", content: "Imoberdorf Hnos." },
+        { property: "og:locale", content: "es_AR" },
+        { property: "og:type", content: "website" },
+        { name: "robots", content: "index, follow" },
+        { name: "twitter:card", content: "summary_large_image" },
+      ],
+    },
+  },
   css: ["~/assets/css/tailwind.css"],
   devtools: { enabled: true },
   postcss: {

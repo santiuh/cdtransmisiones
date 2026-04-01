@@ -98,6 +98,20 @@ useSeoMeta({
     "Contactanos para consultas, ventas, pagos y asistencia técnica. Imoberdorf Hnos. en Rafaela, especialistas en soluciones eléctricas e industriales.",
   keywords:
     "contacto, consultas, ventas, asistencia técnica, pagos, Imoberdorf Hnos., Rafaela",
+  ogTitle: "Contacto | Imoberdorf Hnos.",
+  ogDescription:
+    "Contactanos para consultas, ventas y asistencia técnica. Maipú 450, Rafaela, Santa Fe.",
+  ogUrl: "https://www.imoberdorfhnos.com.ar/Contacto",
+  ogImage: "https://www.imoberdorfhnos.com.ar/img/Empresa/empresa1.jpg",
+  twitterTitle: "Contacto | Imoberdorf Hnos.",
+  twitterDescription:
+    "Contactanos para consultas, ventas y asistencia técnica. Maipú 450, Rafaela.",
+  twitterImage: "https://www.imoberdorfhnos.com.ar/img/Empresa/empresa1.jpg",
+});
+useHead({
+  link: [
+    { rel: "canonical", href: "https://www.imoberdorfhnos.com.ar/Contacto" },
+  ],
 });
 
 const openWhatsApp = (phone) => {

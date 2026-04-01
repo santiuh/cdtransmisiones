@@ -182,6 +182,20 @@ useSeoMeta({
     "Conocé nuestros servicios: asistencia técnica, mantenimiento, reparación de motores eléctricos, instalación de paneles solares y soluciones industriales en Rafaela.",
   keywords:
     "servicios, asistencia técnica, mantenimiento, reparación, motores eléctricos, paneles solares, industria, Rafaela, Imoberdorf Hnos.",
+  ogTitle: "Servicios | Imoberdorf Hnos.",
+  ogDescription:
+    "Asistencia técnica, mantenimiento, reparación de motores eléctricos e instalación de paneles solares en Rafaela.",
+  ogUrl: "https://www.imoberdorfhnos.com.ar/Servicios",
+  ogImage: "https://www.imoberdorfhnos.com.ar/img/Empresa/empresa2.jpg",
+  twitterTitle: "Servicios | Imoberdorf Hnos.",
+  twitterDescription:
+    "Asistencia técnica, reparación de motores eléctricos e instalación de paneles solares en Rafaela.",
+  twitterImage: "https://www.imoberdorfhnos.com.ar/img/Empresa/empresa2.jpg",
+});
+useHead({
+  link: [
+    { rel: "canonical", href: "https://www.imoberdorfhnos.com.ar/Servicios" },
+  ],
 });
 const servicio = ref(1); // Estado para el servicio seleccionado
 

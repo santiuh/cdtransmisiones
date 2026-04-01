@@ -129,13 +129,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
-useSeoMeta({
-  title: "Servicio | Imoberdorf Hnos.",
-  description:
-    "Detalles de nuestros servicios especializados: reparación, asesoramiento, asistencia técnica y capacitación industrial en Rafaela.",
-  keywords:
-    "servicio, reparación, asesoramiento, asistencia técnica, capacitación, industria, Rafaela, Imoberdorf Hnos.",
-});
+
 // Mock de datos de servicios
 const servicesMock = {
   VisitaPlanta: {
@@ -153,8 +147,39 @@ const servicesMock = {
 };
 
 const route = useRoute();
-const serviceId = route.params.id || "VisitaPlanta"; // ID de la página
+const serviceId = route.params.id || "VisitaPlanta";
 const serviceData = ref(servicesMock[serviceId] || servicesMock.VisitaPlanta);
+
+useSeoMeta({
+  title: computed(() => `${serviceData.value.title} | Imoberdorf Hnos.`),
+  description: computed(() => serviceData.value.description),
+  keywords:
+    "servicio, reparación, asesoramiento, asistencia técnica, capacitación, industria, Rafaela, Imoberdorf Hnos.",
+  ogTitle: computed(() => `${serviceData.value.title} | Imoberdorf Hnos.`),
+  ogDescription: computed(() => serviceData.value.description),
+  ogUrl: computed(
+    () => `https://www.imoberdorfhnos.com.ar/Servicios/${route.params.id}`
+  ),
+  ogImage: computed(
+    () => `https://www.imoberdorfhnos.com.ar${serviceData.value.image}`
+  ),
+  twitterTitle: computed(() => `${serviceData.value.title} | Imoberdorf Hnos.`),
+  twitterDescription: computed(() => serviceData.value.description),
+  twitterImage: computed(
+    () => `https://www.imoberdorfhnos.com.ar${serviceData.value.image}`
+  ),
+});
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: computed(
+        () =>
+          `https://www.imoberdorfhnos.com.ar/Servicios/${route.params.id}`
+      ),
+    },
+  ],
+});
 </script>
 
 <style>

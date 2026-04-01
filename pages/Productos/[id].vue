@@ -91,55 +91,95 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { categories } from "@/data/categories";
-useSeoMeta({
-  title: "Productos | Imoberdorf Hnos.",
-  description:
-    "Descubre nuestra variedad de productos: motores eléctricos, rodamientos, autopartes y soluciones industriales en Rafaela.",
-  keywords:
-    "productos, motores eléctricos, rodamientos, autopartes, industria, Rafaela, Imoberdorf Hnos.",
-});
-const openWindow = () => {
-  window.open("https://api.whatsapp.com/send?phone=5493492573782", "_blank");
-};
+
 const route = useRoute();
 
 const selectedItem = computed(() => {
-  if (!route.params.id) return null; // No mostrar si no hay id
+  if (!route.params.id) return null;
   for (const category of categories) {
-    // Verificar si la ruta coincide directamente con un elemento de categoría
     if (category.route === route.params.id) {
-      return {
-        ...category,
-        category: category.name,
-        subcategory: null,
-      };
+      return { ...category, category: category.name, subcategory: null };
     }
-
-    // Verificar dentro de las subcategorías
     for (const subcategory of category.subcategories) {
       if (subcategory.route === route.params.id) {
-        return {
-          ...subcategory,
-          category: category.name,
-          subcategory: subcategory.name,
-        };
+        return { ...subcategory, category: category.name, subcategory: subcategory.name };
       }
-
-      // Verificar dentro de los elementos de las subcategorías
-      const item = subcategory.items?.find(
-        (item) => item.route === route.params.id
-      );
+      const item = subcategory.items?.find((item) => item.route === route.params.id);
       if (item) {
-        return {
-          ...item,
-          category: category.name,
-          subcategory: subcategory.name,
-        };
+        return { ...item, category: category.name, subcategory: subcategory.name };
       }
     }
   }
   return null;
 });
+
+const pageTitle = computed(() =>
+  selectedItem.value
+    ? `${selectedItem.value.titulo} | Imoberdorf Hnos.`
+    : "Productos | Imoberdorf Hnos."
+);
+const pageDescription = computed(() =>
+  selectedItem.value
+    ? selectedItem.value.descripcion?.replace(/<[^>]*>/g, "").substring(0, 160)
+    : "Descubrí nuestra variedad de productos: motores eléctricos, drives, bombas y soluciones industriales en Rafaela."
+);
+const pageUrl = computed(() =>
+  selectedItem.value
+    ? `https://www.imoberdorfhnos.com.ar/Productos/${route.params.id}`
+    : "https://www.imoberdorfhnos.com.ar/Productos"
+);
+const pageImage = computed(() =>
+  selectedItem.value
+    ? `https://www.imoberdorfhnos.com.ar/img/Productos/${selectedItem.value.imagen}`
+    : "https://www.imoberdorfhnos.com.ar/img/Empresa/empresa1.jpg"
+);
+
+useSeoMeta({
+  title: pageTitle,
+  description: pageDescription,
+  keywords:
+    "productos, motores eléctricos, drives, bombas, industria, Rafaela, Imoberdorf Hnos.",
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: pageUrl,
+  ogImage: pageImage,
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription,
+  twitterImage: pageImage,
+});
+useHead({
+  link: [{ rel: "canonical", href: pageUrl }],
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: computed(() => {
+        if (!selectedItem.value) return "{}";
+        return JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: selectedItem.value.titulo,
+          description: selectedItem.value.descripcion?.replace(/<[^>]*>/g, ""),
+          image: `https://www.imoberdorfhnos.com.ar/img/Productos/${selectedItem.value.imagen}`,
+          url: `https://www.imoberdorfhnos.com.ar/Productos/${route.params.id}`,
+          brand: { "@type": "Brand", name: "WEG" },
+          offers: {
+            "@type": "Offer",
+            url: `https://www.imoberdorfhnos.com.ar/Productos/${route.params.id}`,
+            priceCurrency: "ARS",
+            availability: "https://schema.org/InStock",
+            seller: {
+              "@type": "Organization",
+              name: "Imoberdorf Hnos. S.A.",
+            },
+          },
+        });
+      }),
+    },
+  ],
+});
+const openWindow = () => {
+  window.open("https://api.whatsapp.com/send?phone=5493492573782", "_blank");
+};
 </script>
 
 <style>

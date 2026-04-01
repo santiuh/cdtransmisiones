@@ -48,6 +48,20 @@ useSeoMeta({
     "Últimas novedades, noticias y videos de Imoberdorf Hnos. Innovación y actualidad en soluciones eléctricas e industriales.",
   keywords:
     "novedades, noticias, videos, Imoberdorf Hnos., innovación, industria",
+  ogTitle: "Novedades | Imoberdorf Hnos.",
+  ogDescription:
+    "Últimas novedades, noticias y videos de Imoberdorf Hnos. Innovación y actualidad en soluciones eléctricas e industriales.",
+  ogUrl: "https://www.imoberdorfhnos.com.ar/Novedades",
+  ogImage: "https://www.imoberdorfhnos.com.ar/img/Empresa/empresa1.jpg",
+  twitterTitle: "Novedades | Imoberdorf Hnos.",
+  twitterDescription:
+    "Últimas novedades y videos de Imoberdorf Hnos. en soluciones eléctricas e industriales.",
+  twitterImage: "https://www.imoberdorfhnos.com.ar/img/Empresa/empresa1.jpg",
+});
+useHead({
+  link: [
+    { rel: "canonical", href: "https://www.imoberdorfhnos.com.ar/Novedades" },
+  ],
 });
 
 // export default {

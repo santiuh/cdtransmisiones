@@ -56,6 +56,51 @@ useSeoMeta({
     "Conocé la historia, valores y trayectoria de Imoberdorf Hnos. Más de 56 años brindando soluciones eléctricas y electromecánicas en Rafaela y la región.",
   keywords:
     "empresa, historia, valores, trayectoria, Imoberdorf Hnos., Rafaela, soluciones eléctricas, electromecánicas",
+  ogTitle: "Sobre Nosotros | Imoberdorf Hnos.",
+  ogDescription:
+    "Conocé la historia, valores y trayectoria de Imoberdorf Hnos. Más de 56 años brindando soluciones eléctricas y electromecánicas en Rafaela y la región.",
+  ogUrl: "https://www.imoberdorfhnos.com.ar/Empresa",
+  ogImage: "https://www.imoberdorfhnos.com.ar/img/Empresa/empresa1.jpg",
+  twitterTitle: "Sobre Nosotros | Imoberdorf Hnos.",
+  twitterDescription:
+    "Conocé la historia, valores y trayectoria de Imoberdorf Hnos. Más de 56 años en Rafaela.",
+  twitterImage: "https://www.imoberdorfhnos.com.ar/img/Empresa/empresa1.jpg",
+});
+useHead({
+  link: [
+    { rel: "canonical", href: "https://www.imoberdorfhnos.com.ar/Empresa" },
+  ],
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "Imoberdorf Hnos. S.A.",
+        url: "https://www.imoberdorfhnos.com.ar",
+        logo: "https://www.imoberdorfhnos.com.ar/img/Empresa/empresa1.jpg",
+        foundingDate: "1968",
+        founders: [{ "@type": "Person", name: "Héctor Luis Imoberdorf" }],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Maipú 450",
+          addressLocality: "Rafaela",
+          addressRegion: "Santa Fe",
+          postalCode: "2300",
+          addressCountry: "AR",
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+543492573782",
+          contactType: "sales",
+          email: "venta@imoberdorfhnos.com.ar",
+          availableLanguage: "Spanish",
+        },
+        description:
+          "Empresa familiar rafaelina con más de 56 años brindando soluciones eléctricas y electromecánicas a la industria local y regional.",
+      }),
+    },
+  ],
 });
 
 const data = [
