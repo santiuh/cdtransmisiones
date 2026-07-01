@@ -13,12 +13,12 @@ export default defineNuxtConfig({
         "b4fcde24-d4f5-4db2-87d7-522aa26f544a",
     },
   },
-  // ISR/SWR: HTML cacheado en el edge, refresco en background ≤60s. El publish del
-  // panel dispara un redeploy que fuerza el refresco inmediato. Las rutas /api
-  // (preview/revalidate) manejan sus propios headers (no-store).
+  // SSR puro (sin edge cache por path). El cache de Vercel/SWR indexa por path e
+  // ignora el query, lo que rompía la vista previa del editor (?__smsPreview=…):
+  // servía la home publicada cacheada. El endpoint central ya cachea el contenido
+  // 5 min, así que el costo de origen es bajo. El publish refresca en ≤5 min.
   routeRules: {
-    "/**": { swr: 60 },
-    "/api/**": { swr: false },
+    "/api/**": { index: false },
   },
   app: {
     head: {

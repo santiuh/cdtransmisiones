@@ -8,9 +8,14 @@ export default defineNuxtPlugin(async () => {
   const pv = useState('smsPreview', () => ({ draft: false, edit: false, token: '' }))
 
   if (import.meta.server) {
-    const url = useRequestURL()
-    const token = url.searchParams.get('__smsPreview') || ''
-    const edit = url.searchParams.get('edit') === '1'
+    // Leemos el query del req.url crudo (robusto en Vercel; useRequestURL/getQuery
+    // no siempre traen el query en el runtime serverless).
+    const ev = useRequestEvent()
+    const raw = ev?.node?.req?.url || ''
+    const qs = raw.includes('?') ? raw.slice(raw.indexOf('?') + 1) : ''
+    const params = new URLSearchParams(qs)
+    const token = params.get('__smsPreview') || ''
+    const edit = params.get('edit') === '1'
     const draft = !!token
     pv.value = { draft, edit, token }
     const cfg = useRuntimeConfig()
