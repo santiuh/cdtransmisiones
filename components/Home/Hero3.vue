@@ -10,8 +10,8 @@
       class="max-w-[1440px] place-items-end absolute px-9 w-full pt-24 justify-center h-full flex flex-col text-primary text-start gap-10"
     >
       <div class="flex flex-col text-3xl lg:text-4xl !font-raleway font-black">
-        <p>TE OFRECEMOS EXPERIENCIA</p>
-        <p class="text-orange">Y CONOCIMIENTO TÉCNICO</p>
+        <E k="home_hero3_t1" tag="p">TE OFRECEMOS EXPERIENCIA</E>
+        <E k="home_hero3_t2" tag="p" class="text-orange">Y CONOCIMIENTO TÉCNICO</E>
       </div>
 
       <VButton

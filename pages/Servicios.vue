@@ -5,12 +5,14 @@
     <div
       class="flex flex-col w-full max-w-[1440px] px-4 lg:px-10 gap-10 lg:gap-20 py-24 lg:py-20"
     >
-      <h1
+      <E
+        tag="h1"
+        k="serv_titulo"
         class="text-4xl font-raleway font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
         Conocé nuestros servicios
-      </h1>
+      </E>
 
       <!-- Nueva card dinámica -->
       <div
@@ -41,10 +43,11 @@
         data-aos="fade-up"
         v-show="servicio === 1"
       >
-        <NuxtImg
+        <EImg
+          k="serv_a_img"
           src="/img/Empresa/empresa1.jpg"
           class="h-48 lg:h-96 w-full rounded-3xl drop-shadow-xl object-cover shadow-lg self-center"
-        ></NuxtImg>
+        />
 
         <div
           class="flex flex-col gap-4 mt-8 text-white text-shadow-lg text-lg w-5/6"
@@ -52,63 +55,63 @@
           <div class="flex flex-col gap-1">
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span> Asistencia a planta</span>
+              <E tag="span" k="serv_a1_label"> Asistencia a planta</E>
             </div>
 
-            <span class="pl-9"
+            <E tag="span" k="serv_a1_desc" class="pl-9"
               >Contar con una asistencia técnica in situ le garantiza mejorar la
               productividad de su empresa. Nuestro personal se ocupa de realizar
               una visita en planta para verificar y asesorarlo sobre los equipos
               que usted necesita reemplazar o reparar para optimizar el
-              funcionamiento general de la empresa.</span
+              funcionamiento general de la empresa.</E
             >
           </div>
           <div class="flex flex-col gap-1">
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span> Asesoramiento personalizado </span>
+              <E tag="span" k="serv_a2_label"> Asesoramiento personalizado </E>
             </div>
 
-            <span class="pl-9"
+            <E tag="span" k="serv_a2_desc" class="pl-9"
               >Nos ocupamos de asesorarlo personalmente acerca de la mejor
-              manera de optimizar la productividad de sus equipos.</span
+              manera de optimizar la productividad de sus equipos.</E
             >
           </div>
           <div class="flex flex-col gap-1">
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span>Servicio de mantenimiento</span>
+              <E tag="span" k="serv_a3_label">Servicio de mantenimiento</E>
             </div>
 
-            <span class="pl-9"
+            <E tag="span" k="serv_a3_desc" class="pl-9"
               >Realizamos el mantenimiento predictivo y preventivo de sus
               equipos directamente en planta, evitando tener que trasladarlos y
-              frenar su producción.</span
+              frenar su producción.</E
             >
           </div>
           <div class="flex flex-col gap-1">
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span>Paneles Solares </span>
+              <E tag="span" k="serv_a4_label">Paneles Solares </E>
             </div>
 
-            <span class="pl-9"
+            <E tag="span" k="serv_a4_desc" class="pl-9"
               >La tecnología no se detiene y las energías renovables están en
               nuestro portafolio de soluciones. Realizamos la instalación de
               paneles solares WEG: una oportunidad de inversión ideal para
               reducir costos y optimizar recursos, generando energía limpia y
-              evitando altos costos en tarifas eléctricas..</span
+              evitando altos costos en tarifas eléctricas..</E
             >
           </div>
           <div class="flex flex-col gap-1">
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span> Tu empresa eco-friendly </span>
+              <E tag="span" k="serv_a5_label"> Tu empresa eco-friendly </E>
             </div>
-            <span class="pl-9"
+            <E tag="span" k="serv_a5_desc" class="pl-9"
               >Tanto si usted cuenta con un comercio, industria o agroindustria,
               con los paneles solares podrá transformar su empresa en una
-              empresa amigable con el medio ambiente.</span
+              empresa amigable con el medio ambiente.</E
             >
           </div>
         </div>
@@ -118,10 +121,11 @@
         data-aos="fade-up"
         v-show="servicio === 2"
       >
-        <NuxtImg
+        <EImg
+          k="serv_t_img"
           src="/img/Empresa/empresa2.jpg"
           class="h-48 lg:h-96 w-full rounded-3xl drop-shadow-xl object-cover shadow-lg self-center"
-        ></NuxtImg>
+        />
 
         <div
           class="flex flex-row gap-10 text-white text-shadow-lg mt-8 text-xl"
@@ -129,42 +133,42 @@
           <div class="flex flex-col gap-2">
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span>Exhaustiva revisión del motor eléctrico</span>
+              <E tag="span" k="serv_t1">Exhaustiva revisión del motor eléctrico</E>
             </div>
 
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span>Detección de fallas</span>
+              <E tag="span" k="serv_t2">Detección de fallas</E>
             </div>
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span>Desarmado de motor</span>
+              <E tag="span" k="serv_t3">Desarmado de motor</E>
             </div>
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span>Limpieza y arenado de carcasa</span>
+              <E tag="span" k="serv_t4">Limpieza y arenado de carcasa</E>
             </div>
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span>Pintura exterior de motor eléctrico</span>
+              <E tag="span" k="serv_t5">Pintura exterior de motor eléctrico</E>
             </div>
           </div>
           <div class="flex flex-col gap-2">
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span> Rebobinado del motor eléctrico</span>
+              <E tag="span" k="serv_t6"> Rebobinado del motor eléctrico</E>
             </div>
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span>Doble barnizado</span>
+              <E tag="span" k="serv_t7">Doble barnizado</E>
             </div>
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span>Ensamblado del motor</span>
+              <E tag="span" k="serv_t8">Ensamblado del motor</E>
             </div>
             <div class="flex flex-row gap-2 items-center">
               <svgo-check class="text-orangelight !w-auto !h-7"></svgo-check>
-              <span>Control de calidad</span>
+              <E tag="span" k="serv_t9">Control de calidad</E>
             </div>
           </div>
         </div>

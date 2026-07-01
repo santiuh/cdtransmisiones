@@ -5,13 +5,17 @@
     <div
       class="flex flex-col w-full max-w-[1440px] overflow-hidden px-4 lg:px-10 gap-10 lg:gap-20 lg:py-20 py-24"
     >
-      <h1
+      <E
+        tag="h1"
+        k="empresa_titulo"
         class="text-4xl font-raleway font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
         SOBRE NOSOTROS
-      </h1>
-      <p
+      </E>
+      <E
+        tag="p"
+        k="empresa_intro"
         class="text-white text-lg text-shadow-lg lg:w-4/5 self-center text-justify"
         data-aos="fade-up"
       >
@@ -24,7 +28,7 @@
         constructivos, servicio de bobinado y reparación integral de motores
         eléctricos industriales, y servicio de reparación de drives (variadores
         de velocidad y arrancadores suaves).
-      </p>
+      </E>
       <main>
         <section>
           <EmpresaTimeline
@@ -39,12 +43,14 @@
         class="text-primary text-lg font-bold lg:w-4/5 self-center text-center mt-10"
         data-aos="fade-up"
       >
-        <h2 class="text-2xl">Compromiso con la calidad y la innovación</h2>
-        A lo largo de su historia, Imoberdorf Hnos. S.A. ha mantenido un firme
-        compromiso con la calidad, la innovación y el servicio al cliente. Su
-        equipo técnico altamente capacitado y su enfoque en soluciones
-        personalizadas han permitido a la empresa consolidarse como un referente
-        en el mercado regional y nacional.
+        <E tag="h2" k="empresa_compromiso_titulo" class="text-2xl">Compromiso con la calidad y la innovación</E>
+        <E tag="p" k="empresa_compromiso_texto">
+          A lo largo de su historia, Imoberdorf Hnos. S.A. ha mantenido un firme
+          compromiso con la calidad, la innovación y el servicio al cliente. Su
+          equipo técnico altamente capacitado y su enfoque en soluciones
+          personalizadas han permitido a la empresa consolidarse como un referente
+          en el mercado regional y nacional.
+        </E>
       </div>
     </div>
   </div>

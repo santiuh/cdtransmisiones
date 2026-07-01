@@ -5,28 +5,31 @@
     <div
       class="flex flex-col w-full max-w-[1440px] px-4 py-24 lg:py-20 gap-10 lg:gap-20"
     >
-      <h1
+      <E
+        tag="h1"
+        k="productos_titulo"
         class="text-4xl font-raleway font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
         Nuestros Productos
-      </h1>
+      </E>
       <div
         v-if="selectedItem"
         class="flex flex-col lg:flex-row justify-around gap-4"
       >
-        <NuxtImg
+        <EImg
+          :k="`prod_${route.params.id}_img`"
           :src="'/img/Productos/' + selectedItem.imagen"
           class="rounded-2xl !h-auto shadow-2xl p-12 aspect-square object-contain bg-white w-full lg:w-1/2 xl:w-2/5"
-        ></NuxtImg>
+        />
 
         <div
           class="bg-white md:w-1/2 w-full p-12 gap-4 rounded-2xl border-2 flex flex-col justify-between shadow-2xl"
         >
           <div class="flex flex-col gap-4">
-            <h2 class="text-3xl font-semibold">{{ selectedItem.titulo }}</h2>
+            <E tag="h2" :k="`prod_${route.params.id}_titulo`" class="text-3xl font-semibold">{{ selectedItem.titulo }}</E>
             <hr class="lg:w-1/4 self-center" />
-            <p :innerHTML="selectedItem?.descripcion"></p>
+            <E tag="p" :k="`prod_${route.params.id}_desc`"><span :innerHTML="selectedItem?.descripcion"></span></E>
           </div>
 
           <VButton

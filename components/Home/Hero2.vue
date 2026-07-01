@@ -10,8 +10,8 @@
       class="max-w-[1440px] absolute px-9 w-full pt-24 justify-center h-full flex flex-col text-primary text-start gap-10"
     >
       <div class="flex flex-col text-3xl lg:text-4xl !font-raleway font-black">
-        <p>CONOCÉ NUESTRA NUEVA</p>
-        <p class="text-orange">TIENDA ONLINE</p>
+        <E k="home_hero2_t1" tag="p">CONOCÉ NUESTRA NUEVA</E>
+        <E k="home_hero2_t2" tag="p" class="text-orange">TIENDA ONLINE</E>
       </div>
 
       <div class="relative w-fit">

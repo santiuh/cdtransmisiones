@@ -3,12 +3,14 @@
     class="flex place-content-center overflow-hidden bg-gradient-to-br to-tertiary from-primary"
   >
     <div class="flex flex-col w-full max-w-[1440px] px-4 lg:px-10 py-20 gap-20">
-      <h1
+      <E
+        tag="h1"
+        k="contacto_titulo"
         class="text-4xl font-raleway font-bold text-center text-shadow-lg text-white"
         data-aos="fade-up"
       >
         Contactanos
-      </h1>
+      </E>
       <div class="flex flex-col-reverse lg:flex-row-reverse gap-10 lg:gap-0">
         <Formulario
           class="lg:w-1/2"
@@ -28,15 +30,15 @@
               ></svgo-contacto1>
 
               <div class="flex-col flex items-start">
-                <span class="font-bold text-3xl">Taller </span>
+                <E tag="span" k="contacto_taller_label" class="font-bold text-3xl">Taller </E>
                 <button class="hover:text-orange transition-all">
-                  taller@imoberdorfhnos.com.ar
+                  <E tag="span" k="contacto_taller_email">taller@imoberdorfhnos.com.ar</E>
                 </button>
                 <button
                   class="hover:text-orange transition-all justify-start"
                   @click="openWhatsApp('+543492411984')"
                 >
-                  +54 3492 41-1984
+                  <E tag="span" k="contacto_taller_tel">+54 3492 41-1984</E>
                 </button>
               </div>
             </div>
@@ -51,15 +53,15 @@
                 class="!h-12 lg:!h-24 self-center !w-auto"
               ></svgo-contacto2>
               <div class="flex-col flex items-start">
-                <span class="font-bold text-3xl">Venta </span>
+                <E tag="span" k="contacto_venta_label" class="font-bold text-3xl">Venta </E>
                 <button class="hover:text-orange transition-all">
-                  venta@imoberdorfhnos.com.ar
+                  <E tag="span" k="contacto_venta_email">venta@imoberdorfhnos.com.ar</E>
                 </button>
                 <button
                   class="hover:text-orange transition-all"
                   @click="openWhatsApp('+543492573782')"
                 >
-                  +54 3492 57-3782
+                  <E tag="span" k="contacto_venta_tel">+54 3492 57-3782</E>
                 </button>
               </div>
             </div>
@@ -73,15 +75,15 @@
                 class="!h-12 lg:!h-24 self-center !w-auto"
               ></svgo-contacto3>
               <div class="flex-col flex items-start">
-                <span class="font-bold text-3xl">Pagos </span>
+                <E tag="span" k="contacto_pagos_label" class="font-bold text-3xl">Pagos </E>
                 <button class="hover:text-orange transition-all">
-                  administracion@imoberdorfhnos.com.ar
+                  <E tag="span" k="contacto_pagos_email">administracion@imoberdorfhnos.com.ar</E>
                 </button>
                 <button
                   class="hover:text-orange transition-all"
                   @click="openWhatsApp('+543492205805')"
                 >
-                  +54 3492 20-5805
+                  <E tag="span" k="contacto_pagos_tel">+54 3492 20-5805</E>
                 </button>
               </div>
             </div>

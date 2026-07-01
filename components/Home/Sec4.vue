@@ -6,24 +6,21 @@
       class="flex flex-col gap-12 lg:gap- lg:flex-row w-full justify-between items-center"
     >
       <div class="flex lg:w-2/4 items-center justify-center lg:pl-20">
-        <NuxtImg
+        <EImg
+          k="home_sec4_img"
           src="/img/Contacto.png"
           class="rounded-3xl w-full max-w-[500px] grayscale shadow-2xl"
           data-aos="slide-up"
-        >
-        </NuxtImg>
+        />
       </div>
 
       <div
         class="flex flex-col font-bold text-white gap-4 text-center lg:text-end"
       >
-        <p class=" text-3xl lg:text-6xl text-shadow z-10">
-          <span class="">¿</span>Querés saber más<span
-            class=""
-            >?</span
-          >
-        </p>
-        <p class="text-shadow text-2xl  lg:text-5xl z-10">Estamos para ayudarte.</p>
+        <E tag="p" k="home_sec4_t1" class=" text-3xl lg:text-6xl text-shadow z-10">
+          <span class="">¿</span>Querés saber más<span class="">?</span>
+        </E>
+        <E tag="p" k="home_sec4_t2" class="text-shadow text-2xl  lg:text-5xl z-10">Estamos para ayudarte.</E>
         <VButton
           titulo="Contactanos"
           class="!bg-primary !text-white lg:!text-5xl font-bold h-fit mt-6 lg:mt-12 self-end"
