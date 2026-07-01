@@ -61,46 +61,25 @@
           </span>
           <div v-show="dropdownOpen" class="flex flex-col py-4 w-full">
             <div
-              v-for="category in categories"
-              :key="category.name"
+              v-for="group in catalogGroups"
+              :key="group.category?.id || 'sin-categoria'"
               class="mb-2 text-start"
             >
               <p class="font-bold border-b pl-4 mr-4 py-1">
-                {{ category.name }}
+                {{ group.category?.name || "Otros" }}
               </p>
               <ul class="ml-4 py-1">
                 <li
-                  v-for="subcategory in category.subcategories"
-                  :key="subcategory.name"
+                  v-for="item in group.items"
+                  :key="item.id"
                   class="text-sm"
                 >
-                  <template v-if="subcategory.items">
-                    <p class="font-semibold text-orange">
-                      {{ subcategory.name }}
-                    </p>
-                    <ul class="ml-4">
-                      <li
-                        v-for="item in subcategory.items"
-                        :key="item.name"
-                        class="text-sm"
-                      >
-                        <button
-                          class="hover:text-orange transition-all duration-300 py-1"
-                          @click="goTo(`/Productos/${item.route}`)"
-                        >
-                          {{ item.name }}
-                        </button>
-                      </li>
-                    </ul>
-                  </template>
-                  <template v-else>
-                    <button
-                      class="hover:text-orange transition-all duration-300"
-                      @click="goTo(`/Productos/${subcategory.route}`)"
-                    >
-                      {{ subcategory.name }}
-                    </button>
-                  </template>
+                  <button
+                    class="hover:text-orange transition-all duration-300 py-1"
+                    @click="goTo(`/Productos/${item.id}`)"
+                  >
+                    {{ item.name }}
+                  </button>
                 </li>
               </ul>
             </div>
@@ -136,9 +115,11 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from "vue";
-import { categories } from "@/data/categories";
 
 const route = useRoute();
+
+// Nav de PRODUCTOS desde el widget del panel (refleja alta/baja de productos).
+const { groups: catalogGroups } = await useCatalog();
 const menu = ref(false);
 const isScrolled = ref(false);
 const dropdownOpen = ref(false);
