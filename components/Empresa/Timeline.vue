@@ -11,7 +11,7 @@
       <div
         class="border-b-primary relative border-b font-extrabold text-3xl lg:px-11 pb-3 shadow-xl"
       >
-        {{ datos.year }}
+        <E tag="span" :k="`empresa_tl_${id}_year`">{{ datos.year }}</E>
         <span
           :class="par ? '-bottom-4 -left-4' : '-right-4 -bottom-4'"
           class="absolute rounded-full z-10 h-8 w-8 bg-sky-500"
@@ -36,9 +36,9 @@
             alt="Banner"
           ></div>
         </div>
-        <div class="text-white lg:text-xl pt-4 lg:pl-6 text-shadow-lg">
+        <E tag="div" :k="`empresa_tl_${id}_info`" class="text-white lg:text-xl pt-4 lg:pl-6 text-shadow-lg">
           {{ datos.info }}
-        </div>
+        </E>
       </div>
     </div>
     <div

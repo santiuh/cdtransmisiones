@@ -30,12 +30,14 @@ import "@glidejs/glide/dist/css/glide.core.min.css";
 import "@glidejs/glide/dist/css/glide.theme.min.css";
 
 const glideRef2 = ref(null);
+// En modo edición visual (panel) frenamos el autoplay para poder editar los slides.
+const smsPreview = useState("smsPreview", () => ({ edit: false }));
 
 onMounted(() => {
   const glideInstance = new Glide(glideRef2.value, {
     type: "carousel",
     perView: 1,
-    autoplay: 3500,
+    autoplay: smsPreview.value?.edit ? false : 3500,
     hoverpause: false,
     gap: 0,
   });

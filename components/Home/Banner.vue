@@ -5,17 +5,18 @@
     <div
       class="flex flex-col lg:flex-row max-w-[1440px] items-center w-full gap-12 lg:px-10"
     >
-      <NuxtImg
-        src="img/logo.png"
+      <EImg
+        k="home_banner_logo"
+        src="/img/logo.png"
         class="!h-auto w-5/6 lg:w-1/3"
         data-aos="fade-right"
-      ></NuxtImg>
+      />
       <h1
         class="text-center lg:text-start text-xl lg:text-4xl font-extrabold text-primary !font-raleway"
         data-aos="fade-left"
       >
-        BOBINADO, REPARARACIÓN Y VENTA DE
-        <span class="text-orange"> MOTORES ELÉCTRICOS, BOMBAS Y DRIVES</span>
+        <E k="home_banner_t1" tag="span">BOBINADO, REPARARACIÓN Y VENTA DE</E>
+        <E k="home_banner_t2" tag="span" class="text-orange"> MOTORES ELÉCTRICOS, BOMBAS Y DRIVES</E>
       </h1>
       <!-- <p class="text-lg text-white">Bobinado, reparación y venta de motores eléctricos</p> -->
     </div>
