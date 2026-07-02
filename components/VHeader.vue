@@ -9,6 +9,8 @@
     }"
     :style="{
       transition: 'background-color 0.3s ease-in-out',
+      // Se corre bajo la barra de anuncio (sticky) cuando está activa; 0 si no.
+      top: 'var(--sms-ann-h, 0px)',
     }"
   >
     <div

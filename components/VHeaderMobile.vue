@@ -11,6 +11,7 @@
         ' fixed z-50 w-full bg-transparent ': isHome,
         ' bg-primary ': !isHome,
       }"
+      :style="{ top: 'var(--sms-ann-h, 0px)' }"
     >
       <div class="w-full flex flex-row relative justify-between px-4 py-3">
         <NuxtLink class="items-center flex" to="/">

@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Puente al TEMA del editor (variables --sms-*). El panel del cliente ("Colores
+   de tu marca") inyecta --sms-c-* al final del <head> (plugins/00.sms-content.ts);
+   acá mapeamos la paleta de marca a esas variables, con los MISMOS hex como
+   fallback → sin tema el sitio queda IDÉNTICO. Con tema, la paleta se desplaza
+   cohesivamente (los tonos derivados por color-mix del fondo/acento).
+   - --sms-c-accent → orange (acento dominante: hovers, links, badges, CTAs)
+   - --sms-c-bg     → primary (color estructural: header/footer/gradiente)
+   Nota: --sms-c-button-bg/text pisan el botón principal si el cliente los define.
+   --------------------------------------------------------------------------- */
+:root {
+  --c-primary: var(--sms-c-bg, #00679a);
+  --c-secondary: color-mix(in srgb, var(--sms-c-bg, #124660) 80%, #000 20%);
+  --c-tertiary: color-mix(in srgb, var(--sms-c-bg, #f2f2f2) 10%, #fff 90%);
+  --c-background: color-mix(in srgb, var(--sms-c-bg, #6090cd) 68%, #fff 32%);
+  --c-orange: var(--sms-c-accent, #e2762d);
+  --c-orangelight: color-mix(in srgb, var(--sms-c-accent, #ff9046) 78%, #fff 22%);
+}

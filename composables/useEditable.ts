@@ -25,6 +25,11 @@ export function useEditable() {
   const redes = computed(() => ec.value?.redes ?? {})
   const seo = computed(() => ec.value?.seo ?? {})
   const hero = computed(() => ec.value?.hero ?? {})
+  // Editor "estilo Tienda Nube".
+  const theme = computed(() => ec.value?.theme ?? {})
+  const sections = computed(() => (Array.isArray(ec.value?.sections) ? ec.value!.sections! : []))
+  const announcement = computed(() => ec.value?.announcement ?? {})
+  const video = computed(() => ec.value?.video ?? {})
 
-  return { ec, bloque, img, contacto, redes, seo, hero }
+  return { ec, bloque, img, contacto, redes, seo, hero, theme, sections, announcement, video }
 }

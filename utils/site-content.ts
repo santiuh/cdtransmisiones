@@ -21,6 +21,23 @@ export interface SmsEditableContent {
   head_html?: string
   custom_css?: string
   hero?: { titulo?: string; subtitulo?: string }
+  // Editor "estilo Tienda Nube": tema global, orden/visibilidad de secciones,
+  // barra de anuncio y sección de video (mismos shapes que el motor central).
+  theme?: {
+    colors?: { bg?: string; text?: string; accent?: string; button_bg?: string; button_text?: string }
+    fonts?: { title?: string; text?: string }
+    sizes?: { title?: number | null; text?: number | null }
+    page_width?: number | null
+  }
+  sections?: Array<{ key: string; visible?: boolean }>
+  announcement?: {
+    active?: boolean
+    marquee?: boolean
+    bg?: string
+    text_color?: string
+    messages?: Array<{ text?: string; link?: string }>
+  }
+  video?: { active?: boolean; youtube_url?: string; autoplay?: boolean; titulo?: string; descripcion?: string }
   [k: string]: unknown
 }
 

@@ -10,17 +10,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // Colores puenteados a variables CSS para que el TEMA del editor (panel del
+      // cliente) pueda pisarlos en runtime. El fallback es el hex original → sin
+      // tema el sitio queda idéntico. El mapeo marca→--sms-* vive en el :root de
+      // assets/css/tailwind.css. (Tailwind v3: los defaults van dentro de var()).
       colors: {
-        primary: "#00679A",
-        secondary: "#124660",
-        tertiary: "#F2F2F2",
-        background: "#6090cd",
-        orange: "#E2762D",
-        orangelight: "#ff9046",
+        primary: "var(--c-primary, #00679A)",
+        secondary: "var(--c-secondary, #124660)",
+        tertiary: "var(--c-tertiary, #F2F2F2)",
+        background: "var(--c-background, #6090cd)",
+        orange: "var(--c-orange, #E2762D)",
+        orangelight: "var(--c-orangelight, #ff9046)",
       },
       fontFamily: {
-        raleway: ["Libre Franklin", "sans-serif"],
-        notosans: ["Noto Sans", "sans-serif"],
+        raleway: ["var(--sms-f-title, 'Libre Franklin')", "sans-serif"],
+        notosans: ["var(--sms-f-text, 'Noto Sans')", "sans-serif"],
       },
     },
   },
