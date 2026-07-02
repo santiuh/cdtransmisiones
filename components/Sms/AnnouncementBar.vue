@@ -44,6 +44,7 @@ onBeforeUnmount(() => {
 <template>
   <div
     v-if="active"
+    id="sms-announcement"
     ref="root"
     class="sms-ann"
     :class="{ 'sms-ann-marquee': marquee }"
