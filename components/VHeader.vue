@@ -16,18 +16,24 @@
     <div
       class="flex flex-row justify-between px-10 self-center w-full max-w-[1440px]"
     >
-      <NuxtImg
+      <!-- Logo con crossfade suave color↔blanco al hacer scroll (mismo ratio,
+           se superponen y se hace fade de opacidad en vez de swap de src). -->
+      <div
         @click="router.push('/')"
-        class="transition-all duration-300 my-3 !h-20 !w-auto hover:cursor-pointer hover:scale-105 hover:brightness-90"
-        :class="!isHome ? '' : isScrolled && isHome ? '!h-10' : '!h-12'"
-        :src="
-          !isHome
-            ? 'img/logoblanco.png'
-            : isScrolled && isHome
-            ? 'img/logoblanco.png'
-            : 'img/logo.png'
-        "
-      ></NuxtImg>
+        class="relative my-3 !w-auto transition-all duration-300 hover:cursor-pointer hover:scale-105 hover:brightness-90"
+        :class="!isHome ? '!h-20' : isScrolled && isHome ? '!h-10' : '!h-12'"
+      >
+        <NuxtImg
+          src="img/logo.png"
+          class="h-full w-auto transition-opacity duration-300 ease-in-out"
+          :class="showColorLogo ? 'opacity-100' : 'opacity-0'"
+        ></NuxtImg>
+        <NuxtImg
+          src="img/logoblanco.png"
+          class="absolute top-0 left-0 h-full w-auto transition-opacity duration-300 ease-in-out"
+          :class="showColorLogo ? 'opacity-0' : 'opacity-100'"
+        ></NuxtImg>
+      </div>
       <div class="flex flex-row">
         <div
           class="font-medium gap-10 flex flex-row"
@@ -178,6 +184,10 @@ const { groups: catalogGroups } = await useCatalog();
 const isHome = computed(() => {
   return route.path === "/";
 });
+
+// El logo a color solo se muestra arriba de todo en el Home (fondo claro/translúcido);
+// al scrollear o en páginas internas (fondo primary) se hace fade al logo blanco.
+const showColorLogo = computed(() => isHome.value && !isScrolled.value);
 
 const banner = computed(() => {
   const path = route.path.split("/").filter(Boolean).pop();
