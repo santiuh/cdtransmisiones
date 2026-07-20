@@ -32,7 +32,12 @@
             :style="{
               backgroundImage: `url(/img/EmpresaPage/${datos.banner})`,
             }"
-            class="w-full h-14 lg:h-64 bg-cover bg-top bg-tertiary"
+            class="w-full h-14 lg:h-64"
+            :class="
+              datos.fit === 'contain'
+                ? 'bg-contain bg-center bg-no-repeat bg-white'
+                : 'bg-cover bg-top bg-tertiary'
+            "
             alt="Banner"
           ></div>
         </div>

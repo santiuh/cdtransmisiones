@@ -98,7 +98,8 @@
         <NuxtLink
           @click="menu = false"
           class="hover:cursor-pointer transition-all duration-300"
-          to="https://drive.google.com/file/d/17Jnr_bjVkLtNjzQePbBwVmtTz_QMoANc/view"
+          to="https://drive.google.com/drive/folders/13Sm4bwURvB3TQiCvf0jiV5YEgjvG7L6f"
+          target="_blank"
         >
           CATÁLOGO
         </NuxtLink>

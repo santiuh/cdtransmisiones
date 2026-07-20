@@ -125,6 +125,7 @@ const data = [
     year: "2010",
     info: "Constitución de la sociedad anónima Imoberdorf Hnos. S.A. e incorporación de la nueva generación al directorio.",
     banner: "Empresa3.jpg",
+    fit: "contain",
   },
   {
     year: "2018",

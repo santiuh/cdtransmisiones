@@ -217,7 +217,7 @@ onMounted(() => {
 const goTo = (ruta) => {
   if (ruta === "/Catalogo") {
     window.open(
-      "https://drive.google.com/file/d/17Jnr_bjVkLtNjzQePbBwVmtTz_QMoANc/view?usp=drive_link",
+      "https://drive.google.com/drive/folders/13Sm4bwURvB3TQiCvf0jiV5YEgjvG7L6f",
       "_blank"
     );
   } else if (ruta === "/Tienda") {
