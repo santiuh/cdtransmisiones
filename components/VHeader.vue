@@ -5,7 +5,7 @@
       ' !bg-primary ': isScrolled && isHome,
       'fixed  w-full bg-transparent bg-gradient-to-b from-primary/70 to-transparent ':
         isHome,
-      ' bg-primary ': !isHome,
+      ' bg-primary relative ': !isHome,
     }"
     :style="{
       transition: 'background-color 0.3s ease-in-out',
@@ -59,9 +59,12 @@
           </button>
           <div class="group hover:text-orange flex flex-col justify-center">
             <span class="transition-all duration-300"> PRODUCTOS </span>
+            <!-- El panel se ancla al borde inferior del header (top-full) para que
+                 no quede hueco entre el header y el submenú sin importar la altura
+                 del logo (home / home scrolleado / páginas internas). -->
             <div
               style="box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.5)"
-              class="absolute left-0 top-[104px] hidden justify-center group-hover:flex bg-tertiary w-screen text-black shadow-lg py-4 px-10"
+              class="absolute left-0 top-full hidden justify-center group-hover:flex bg-tertiary w-screen text-black shadow-lg py-4 px-10"
             >
               <div
                 class="flex flex-row justify-between lg:max-w-[1440px] w-full"
