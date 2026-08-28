@@ -66,7 +66,7 @@
 
     <!-- Crédito de la agencia -->
     <a
-      href="https://soldemayosoft.com.ar"
+      href="https://soldemayosoft.com"
       target="_blank"
       rel="nofollow noopener"
       aria-label="Sitio desarrollado por Sol de Mayo Soft"
