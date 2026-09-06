@@ -58,7 +58,8 @@
             </span>
           </button>
           <div class="group hover:text-orange flex flex-col justify-center">
-            <span class="transition-all duration-300"> PRODUCTOS </span>
+            <!-- Click → listado estilo tienda (/Productos); hover → mega-menú por categoría. -->
+            <NuxtLink to="/Productos" class="transition-all duration-300"> PRODUCTOS </NuxtLink>
             <!-- El panel se ancla al borde inferior del header (top-full) para que
                  no quede hueco entre el header y el submenú sin importar la altura
                  del logo (home / home scrolleado / páginas internas). -->
@@ -66,31 +67,48 @@
               style="box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.5)"
               class="absolute left-0 top-full hidden justify-center group-hover:flex bg-tertiary w-screen text-black shadow-lg py-4 px-10"
             >
-              <div
-                class="flex flex-row justify-between lg:max-w-[1440px] w-full"
-              >
+              <div class="flex flex-col gap-3 lg:max-w-[1440px] w-full">
                 <div
-                  v-for="group in catalogGroups"
-                  :key="group.category?.id || 'sin-categoria'"
-                  class="mb-2 text-start"
+                  class="flex items-center justify-between border-b border-neutral-300 pb-2 text-sm"
                 >
-                  <p class="font-bold text-primary border-b px-4 py-1">
-                    {{ group.category?.name || "Otros" }}
-                  </p>
-                  <ul class="ml-4 py-1">
-                    <li
-                      v-for="item in group.items"
-                      :key="item.id"
-                      class="text-sm"
-                    >
-                      <button
-                        class="hover:text-orange transition-all duration-300 py-1"
-                        @click="goTo(`/Productos/${item.id}`)"
+                  <NuxtLink
+                    to="/Productos"
+                    class="font-bold text-primary hover:text-orange transition-all duration-300"
+                  >
+                    Ver todos los productos ›
+                  </NuxtLink>
+                  <NuxtLink
+                    v-if="shopEnabled"
+                    to="/Productos/carrito"
+                    class="text-primary hover:text-orange transition-all duration-300"
+                  >
+                    Ver carrito
+                  </NuxtLink>
+                </div>
+                <div class="flex flex-row justify-between w-full">
+                  <div
+                    v-for="group in catalogGroups"
+                    :key="group.category?.id || 'sin-categoria'"
+                    class="mb-2 text-start"
+                  >
+                    <p class="font-bold text-primary border-b px-4 py-1">
+                      {{ group.category?.name || "Otros" }}
+                    </p>
+                    <ul class="ml-4 py-1">
+                      <li
+                        v-for="item in group.items"
+                        :key="item.id"
+                        class="text-sm"
                       >
-                        {{ item.name }}
-                      </button>
-                    </li>
-                  </ul>
+                        <button
+                          class="hover:text-orange transition-all duration-300 py-1"
+                          @click="goTo(`/Productos/${item.id}`)"
+                        >
+                          {{ item.name }}
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -124,6 +142,8 @@
         <div
           class="flex flex-row border-l gap-3 pl-5 ml-5 items-center border-l-orange"
         >
+          <!-- Carrito: solo con la tienda prendida (features.ecommerce.enabled). -->
+          <TiendaCarritoIcono v-if="shopEnabled" claro />
           <NuxtLink
             to="https://www.instagram.com/imoberdorfhnos/"
             target="_blank"
@@ -182,7 +202,8 @@ const router = useRouter();
 const route = useRoute();
 
 // Nav de PRODUCTOS desde el widget del panel (refleja alta/baja de productos).
-const { groups: catalogGroups } = await useCatalog();
+// shopEnabled = tienda online prendida → muestra el carrito.
+const { groups: catalogGroups, shopEnabled } = await useCatalog();
 
 const isHome = computed(() => {
   return route.path === "/";

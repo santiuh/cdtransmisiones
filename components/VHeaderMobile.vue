@@ -21,11 +21,18 @@
             class="self-center transition-all duration-300 h-10"
           ></NuxtImg>
         </NuxtLink>
+        <!-- Carrito (solo con la tienda prendida), a la izquierda del menú. -->
+        <TiendaCarritoIcono
+          v-if="shopEnabled"
+          :claro="iconosClaros"
+          class="absolute right-14 top-4"
+          @click="menu = false"
+        />
         <svgo-menu
           @click="menu = !menu"
           class="!w-6 !h-auto absolute right-5 top-5"
           :class="{
-            ' !stroke-primary': !isScrolled && isHome && !menu,
+            ' !stroke-primary': !iconosClaros,
           }"
           src="svg/menu.svg"
         ></svgo-menu>
@@ -54,13 +61,34 @@
           </span>
         </button>
         <div class="group hover:cursor-pointer transition-all duration-300">
-          <span
-            @click="toggleDropdown"
-            class="hover:cursor-pointer transition-all duration-300"
-          >
-            PRODUCTOS
-          </span>
+          <!-- El texto va al listado; la flecha despliega las categorías. -->
+          <div class="flex items-center gap-3">
+            <button
+              @click="goTo('/Productos')"
+              class="hover:cursor-pointer transition-all duration-300 text-left"
+            >
+              PRODUCTOS
+            </button>
+            <button
+              @click="toggleDropdown"
+              class="flex h-8 w-8 items-center justify-center"
+              :aria-expanded="dropdownOpen ? 'true' : 'false'"
+              aria-label="Ver categorías de productos"
+            >
+              <TiendaIcono
+                name="chevron-abajo"
+                class="h-5 w-5 transition-transform duration-300"
+                :class="dropdownOpen ? 'rotate-180' : ''"
+              />
+            </button>
+          </div>
           <div v-show="dropdownOpen" class="flex flex-col py-4 w-full">
+            <button
+              class="mb-3 text-left text-sm font-bold underline underline-offset-4"
+              @click="goTo('/Productos')"
+            >
+              Ver todos los productos ›
+            </button>
             <div
               v-for="group in catalogGroups"
               :key="group.category?.id || 'sin-categoria'"
@@ -121,7 +149,7 @@ import { ref, onMounted, onUnmounted, computed } from "vue";
 const route = useRoute();
 
 // Nav de PRODUCTOS desde el widget del panel (refleja alta/baja de productos).
-const { groups: catalogGroups } = await useCatalog();
+const { groups: catalogGroups, shopEnabled } = await useCatalog();
 const menu = ref(false);
 const isScrolled = ref(false);
 const dropdownOpen = ref(false);
@@ -129,6 +157,10 @@ const dropdownOpen = ref(false);
 const isHome = computed(() => {
   return route.path === "/";
 });
+
+// Arriba de todo en el home el header es transparente sobre fondo claro → los
+// íconos (menú y carrito) van en primary; en el resto, blancos.
+const iconosClaros = computed(() => !(!isScrolled.value && isHome.value && !menu.value));
 
 // Estado para controlar la visibilidad del badge "NUEVO"
 const showNewBadge = computed(() => {

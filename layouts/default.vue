@@ -7,6 +7,8 @@
     <VHeader></VHeader>
 
     <slot />
+    <!-- Aviso del carrito ("Agregaste X") + carga del carrito desde localStorage. -->
+    <TiendaAviso />
     <WhatsApp></WhatsApp>
     <VFooter></VFooter>
   </div>

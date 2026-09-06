@@ -20,3 +20,51 @@
   --c-orange: var(--sms-c-accent, #e2762d);
   --c-orangelight: color-mix(in srgb, var(--sms-c-accent, #ff9046) 78%, #fff 22%);
 }
+
+/* ---------------------------------------------------------------------------
+   Tienda (listado / ficha / carrito, estilo MercadoLibre): las piezas que se
+   repiten. Los botones toman el color del tema del panel (--sms-c-button-*)
+   y caen a primary. Se usan en components/Tienda/* y pages/Productos/*.
+   --------------------------------------------------------------------------- */
+@layer components {
+  .t-card {
+    @apply rounded-md bg-white shadow-[0_1px_2px_rgba(0,0,0,0.14)];
+  }
+  .t-btn {
+    @apply inline-flex min-h-[2.75rem] items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold leading-none transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .t-btn-primario {
+    background: var(--sms-c-button-bg, var(--c-primary));
+    color: var(--sms-c-button-text, #fff);
+  }
+  .t-btn-primario:not(:disabled):hover {
+    filter: brightness(1.08);
+  }
+  .t-btn-suave {
+    background: color-mix(in srgb, var(--c-primary) 12%, #fff);
+    color: var(--c-primary);
+  }
+  .t-btn-suave:not(:disabled):hover {
+    background: color-mix(in srgb, var(--c-primary) 20%, #fff);
+  }
+  .t-btn-borde {
+    @apply border border-neutral-300 bg-white text-neutral-800 hover:bg-neutral-50;
+  }
+  .t-prosa {
+    @apply text-[15px] leading-relaxed text-neutral-700;
+  }
+  .t-prosa p {
+    @apply mb-3;
+  }
+  .t-prosa ul,
+  .t-prosa ol {
+    @apply mb-3 list-disc pl-5;
+  }
+  .t-prosa ol {
+    @apply list-decimal;
+  }
+  .t-prosa strong,
+  .t-prosa b {
+    @apply font-semibold text-neutral-900;
+  }
+}

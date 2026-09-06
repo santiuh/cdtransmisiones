@@ -23,3 +23,6 @@ logs
 .env.*
 !.env.example
 .vercel
+
+# Capturas del QA de la tienda (scripts/qa-tienda.mjs)
+scripts/qa

@@ -16,7 +16,7 @@
         class="flex flex-col lg:flex-row justify-center gap-4 w-3/4 lg:w-full self-center lg:gap-10"
       >
         <Sec2Card
-          @click="router.push('/Productos/home')"
+          @click="router.push('/Productos')"
           bg="img/Sec2Card1.jpg"
           title="Productos"
         ></Sec2Card>

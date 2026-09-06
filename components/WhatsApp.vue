@@ -1,5 +1,8 @@
 <template>
-  <div class="fixed bottom-7 right-7 z-50">
+  <!-- En la ficha de producto y el carrito (mobile) hay una barra fija abajo con
+       la acción principal (que ya incluye WhatsApp): ahí el botón flotante se
+       esconde para no taparla. -->
+  <div class="fixed bottom-7 right-7 z-50" :class="ocultarEnMobile ? 'hidden lg:block' : ''">
     <a
       :href="whatsappLink"
       target="_blank"
@@ -16,6 +19,9 @@
 </template>
 
 <script setup>
+const route = useRoute();
+const ocultarEnMobile = computed(() => /^\/Productos\/./i.test(route.path));
+
 const phoneNumber = "5493492573782";
 const message = "Hola, me gustaría más información.";
 const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
