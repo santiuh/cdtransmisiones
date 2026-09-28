@@ -1,10 +1,14 @@
-import { fetchSiteContent, type SmsEditableContent } from '~/utils/site-content'
+import { fetchSiteContent, type SmsBuilder, type SmsEditableContent, type SmsSitePages } from '~/utils/site-content'
 
 // Trae el editable_content del panel UNA vez, en el server, y lo deja en useState
 // (se transfiere al cliente por payload → sin refetch). Aplica overrides de SEO,
 // custom_css y head_html. En modo preview (?__smsPreview=token) pide el borrador.
+// También trae el constructor de secciones (HTML/CSS/JS ya renderizados) y las
+// páginas nuevas del cliente (site_pages): el sitio solo los inyecta.
 export default defineNuxtPlugin(async () => {
   const ec = useState<SmsEditableContent>('smsEc', () => ({}))
+  const builder = useState<SmsBuilder | null>('smsBuilder', () => null)
+  const sitePages = useState<SmsSitePages | null>('smsPages', () => null)
   const pv = useState('smsPreview', () => ({ draft: false, edit: false, token: '' }))
 
   if (import.meta.server) {
@@ -19,14 +23,25 @@ export default defineNuxtPlugin(async () => {
     const draft = !!token
     pv.value = { draft, edit, token }
     const cfg = useRuntimeConfig()
-    ec.value = await fetchSiteContent(
+    const payload = await fetchSiteContent(
       cfg.public.smsApiBase as string,
       cfg.public.smsSiteId as string,
       { draft, token },
     )
+    ec.value = payload.ec
+    builder.value = payload.builder
+    sitePages.value = payload.sitePages
   }
 
   applySmsHead(ec.value, pv.value)
+
+  // CSS del constructor y de las páginas nuevas: van en el <head> (ids fijos, sin
+  // duplicar server+client). El JS del constructor lo corre plugins/sms-builder.client
+  // DESPUÉS de hidratar (si corriera antes, Vue pisaría lo que el runtime arma).
+  const style: Array<Record<string, unknown>> = []
+  if (builder.value?.css) style.push({ id: 'sms-builder-css', innerHTML: builder.value.css })
+  if (sitePages.value?.css) style.push({ id: 'sms-page-css', innerHTML: sitePages.value.css })
+  if (style.length) useHead({ style }, { tagPriority: 'high' })
 })
 
 function sanitizeCss(css: string): string {

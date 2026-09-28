@@ -3,7 +3,10 @@
     class="w-full flex justify-center xl:pt-[52px] xl:pb-[32px] text-white"
     :class="route.path === '/contacto' ? 'absolute' : 'bg-primary'"
   >
+    <!-- data-sms-header: una portada de la biblioteca del panel le deja lugar a
+         este encabezado fijo. -->
     <nav
+      data-sms-header
       class="flex flex-col w-full xl:hidden fixed z-50 transition-all duration-300"
       :class="{
         '!bg-primary': menu,
@@ -138,6 +141,16 @@
         >
           CONTACTO
         </NuxtLink>
+        <!-- Páginas nuevas del panel marcadas "Mostrar en el menú". -->
+        <NuxtLink
+          v-for="p in paginasMenu"
+          :key="p.slug"
+          @click="menu = false"
+          class="hover:cursor-pointer transition-all duration-300 uppercase"
+          :to="`/${p.slug}`"
+        >
+          {{ p.title }}
+        </NuxtLink>
       </div>
     </nav>
   </div>
@@ -157,6 +170,11 @@ const dropdownOpen = ref(false);
 const isHome = computed(() => {
   return route.path === "/";
 });
+
+const sitePages = useState("smsPages", () => null);
+const paginasMenu = computed(() =>
+  (sitePages.value?.pages || []).filter((p) => p.show_in_nav)
+);
 
 // Arriba de todo en el home el header es transparente sobre fondo claro → los
 // íconos (menú y carrito) van en primary; en el resto, blancos.

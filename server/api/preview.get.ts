@@ -12,8 +12,10 @@ export default defineEventHandler((event) => {
   const token = params.get("token") || (q.token as string) || ""
   const editVal = params.get("edit") || String(q.edit ?? "")
   const edit = editVal === "1" ? "1" : "0"
+  // Página nueva del panel (Páginas): el editor la pide con &page=<slug>.
+  const page = (params.get("page") || String(q.page ?? "")).toLowerCase().replace(/[^a-z0-9-]/g, "").slice(0, 60)
 
   setResponseHeader(event, "X-Robots-Tag", "noindex, nofollow")
   setResponseHeader(event, "Cache-Control", "no-store, max-age=0")
-  return sendRedirect(event, `/?__smsPreview=${encodeURIComponent(token)}&edit=${edit}`, 302)
+  return sendRedirect(event, `/${page}?__smsPreview=${encodeURIComponent(token)}&edit=${edit}`, 302)
 })

@@ -41,22 +41,56 @@ export interface SmsEditableContent {
   [k: string]: unknown
 }
 
+/** Constructor de secciones del panel, ya renderizado por el backend (`/data` → builder). */
+export interface SmsBuilder {
+  css: string
+  js: string
+  /** Solo en borrador: la capa de edición (barra por sección, clic derecho, "+"). */
+  edit_js?: string
+  hero: { html: string } | null
+  sections: Array<{ key: string; label: string; html: string }>
+  pages?: Record<string, { html: string; hero: boolean }>
+}
+
+/** Páginas nuevas del cliente, ya armadas (`/data` → site_pages). */
+export interface SmsSitePages {
+  css: string
+  pages: Array<{
+    slug: string
+    title: string
+    show_in_nav: boolean
+    seo: { title: string; description: string }
+    html: string
+    hero: boolean
+  }>
+}
+
+export interface SmsPayload {
+  ec: SmsEditableContent
+  builder: SmsBuilder | null
+  sitePages: SmsSitePages | null
+}
+
 export async function fetchSiteContent(
   apiBase: string,
   siteId: string,
   opts: { draft?: boolean; token?: string } = {},
-): Promise<SmsEditableContent> {
+): Promise<SmsPayload> {
   const base = (apiBase || 'https://soldemayosoft.com').replace(/\/$/, '')
   const qs = opts.draft ? `?draft=1&token=${encodeURIComponent(opts.token || '')}` : ''
   const url = `${base}/api/public/sites/${siteId}/data${qs}`
   try {
-    const json = await $fetch<{ editable_content?: SmsEditableContent }>(url, { timeout: 8000 })
+    const json = await $fetch<{ editable_content?: SmsEditableContent; builder?: SmsBuilder | null; site_pages?: SmsSitePages | null }>(url, { timeout: 8000 })
     const ec = json?.editable_content
-    return ec && typeof ec === 'object' ? ec : {}
+    return {
+      ec: ec && typeof ec === 'object' ? ec : {},
+      builder: json?.builder && typeof json.builder === 'object' ? json.builder : null,
+      sitePages: json?.site_pages && Array.isArray(json.site_pages.pages) ? json.site_pages : null,
+    }
   } catch (e) {
     // Publicado: degradar a defaults del código (nunca romper el sitio).
     // Borrador: también degradamos para no romper la preview si el token venció.
     if (import.meta.dev) console.warn('[sms] no se pudo traer el contenido:', (e as Error)?.message)
-    return {}
+    return { ec: {}, builder: null, sitePages: null }
   }
 }

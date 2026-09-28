@@ -1,5 +1,8 @@
 <template>
+  <!-- data-sms-header: una portada de la biblioteca del panel le deja lugar a
+       este encabezado (fijo en el inicio). -->
   <div
+    data-sms-header
     class="hidden lg:flex flex-col backdrop-blur-md shadow-md !z-40"
     :class="{
       ' !bg-primary ': isScrolled && isHome,
@@ -138,6 +141,15 @@
           >
             CONTACTO
           </button>
+          <!-- Páginas nuevas del panel marcadas "Mostrar en el menú". -->
+          <NuxtLink
+            v-for="p in paginasMenu"
+            :key="p.slug"
+            :to="`/${p.slug}`"
+            class="hover:text-orange transition-all duration-300 uppercase self-center"
+          >
+            {{ p.title }}
+          </NuxtLink>
         </div>
         <div
           class="flex flex-row border-l gap-3 pl-5 ml-5 items-center border-l-orange"
@@ -208,6 +220,11 @@ const { groups: catalogGroups, shopEnabled } = await useCatalog();
 const isHome = computed(() => {
   return route.path === "/";
 });
+
+const sitePages = useState("smsPages", () => null);
+const paginasMenu = computed(() =>
+  (sitePages.value?.pages || []).filter((p) => p.show_in_nav)
+);
 
 // El logo a color solo se muestra arriba de todo en el Home (fondo claro/translúcido);
 // al scrollear o en páginas internas (fondo primary) se hace fade al logo blanco.
