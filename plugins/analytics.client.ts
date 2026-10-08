@@ -1,20 +1,27 @@
 /**
- * Beacon de visitas del panel (analytics 051/052/053).
+ * Beacon de visitas del panel (analytics 051/052/053, tiempo y scroll desde la 070).
  *
  * Los sitios express llevan el snippet que hornea `build.mjs`; este es una app
  * Nuxt, así que los hits salen de acá contra el MISMO endpoint público
  * (`/api/public/sites/<identifier>/hit`). El identifier y la base salen del
  * runtimeConfig — los mismos que usa `00.sms-content.ts`, una sola fuente.
  *
- * Manda un pageview al cargar y un evento `contact` cuando el visitante toca
- * WhatsApp / teléfono / mail / Instagram / mapa. Ese segundo evento es el que le
- * importa al cliente: "45 personas te tocaron el WhatsApp".
+ * Manda un pageview al cargar (y en cada ruta nueva), un evento `contact`
+ * cuando el visitante toca WhatsApp / teléfono / mail / Instagram / mapa, y un
+ * `engagement` al dejar cada página: el tiempo ACTIVO (pestaña visible y con
+ * alguien del otro lado en el último minuto) y hasta dónde bajó. Con eso la
+ * ficha de Estadísticas del panel muestra tiempo, scroll y un rebote que no
+ * cuenta como "se fue" a quien leyó dos minutos.
  *
- * SIN COOKIES y sin localStorage: no guarda NADA en el navegador (al visitante
- * lo identifica el server con un hash diario — migración 051). Por eso no
- * necesita aviso de cookies.
+ * SIN COOKIES: al visitante lo identifica el server con un hash diario
+ * (migración 051), así que no necesita aviso de cookies. Lo único que puede
+ * quedar en el navegador es la marca del DUEÑO: abrir el sitio con `?no-medir`
+ * guarda `sms-no-medir` en el localStorage de ese navegador y deja de contarlo
+ * (`?medir` la saca). El parámetro se borra de la barra al toque: si el dueño
+ * copiara ese link para compartirlo, apagaría la medición de cada persona que
+ * lo abra. Es el mismo criterio que el beacon de los sitios express.
  *
- * Cuatro decisiones que no son obvias:
+ * Decisiones que no son obvias:
  *  - `text/plain` en el Blob A PROPÓSITO: con `application/json` el navegador
  *    dispara un preflight OPTIONS ANTES de cada pageview. No "arreglarlo".
  *  - No corre dentro de un iframe: el panel muestra el sitio embebido y esas no
@@ -22,6 +29,9 @@
  *  - No corre en `*.vercel.app` ni en la preview del borrador (`__smsPreview`):
  *    ese es tráfico nuestro, no del cliente. Cualquier OTRO host sí mide, así
  *    que mudar el dominio no apaga la medición en silencio.
+ *  - En una navegación interna el referrer es la página anterior del propio
+ *    sitio (el server la descarta): `document.referrer` en una SPA nunca cambia
+ *    y sumaría otra visita a la fuente original por cada página siguiente.
  *  - Todo en try/catch y sin `await`: el analytics jamás rompe la página.
  */
 
@@ -32,6 +42,9 @@ const CONTACTOS: Array<[RegExp, string]> = [
   [/^https?:\/\/(www\.)?instagram\.com/i, 'instagram'],
   [/^https?:\/\/((www\.)?google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|maps\.google\.[a-z.]+)/i, 'maps'],
 ]
+
+/** Sin señales de vida en este tiempo, una pestaña visible deja de sumar. */
+const INACTIVA_MS = 60_000
 
 export default defineNuxtPlugin((nuxtApp) => {
   if (import.meta.dev) return
@@ -49,11 +62,37 @@ export default defineNuxtPlugin((nuxtApp) => {
     return
   }
 
+  // "No contar este navegador": la marca del dueño (ver arriba).
+  try {
+    const marca = new URLSearchParams(location.search)
+    if (marca.has('no-medir')) localStorage.setItem('sms-no-medir', '1')
+    else if (marca.has('medir')) localStorage.removeItem('sms-no-medir')
+    if (marca.has('no-medir') || marca.has('medir')) {
+      marca.delete('no-medir')
+      marca.delete('medir')
+      const resto = marca.toString()
+      const limpia = `${location.pathname}${resto ? `?${resto}` : ''}${location.hash}`
+      const limpiar = () => {
+        try {
+          if (/[?&](no-)?medir(=|&|$)/.test(location.search)) history.replaceState(history.state, '', limpia)
+        } catch { /* la barra queda como estaba */ }
+      }
+      limpiar()
+      // El router de Nuxt vuelve a escribir la URL inicial (con el parámetro)
+      // en `app:created`: hay que limpiarla otra vez cuando ya terminó.
+      nuxtApp.hook('app:mounted', () => setTimeout(limpiar, 0))
+    }
+    if (localStorage.getItem('sms-no-medir')) return
+  } catch { /* sin localStorage: se mide */ }
+
   const url = `${base}/api/public/sites/${encodeURIComponent(site)}/hit`
 
   let utm = ''
+  let campaign = ''
   try {
-    utm = new URLSearchParams(location.search).get('utm_source') || ''
+    const qs = new URLSearchParams(location.search)
+    utm = qs.get('utm_source') || ''
+    campaign = qs.get('utm_campaign') || ''
   } catch { /* querystring roto: sin utm */ }
 
   let referrer = ''
@@ -65,29 +104,104 @@ export default defineNuxtPlugin((nuxtApp) => {
   // navegación inicial.
   let ultima = ''
 
-  function send(payload: Record<string, string>, path: string) {
+  function send(payload: Record<string, string | number>, path: string) {
     try {
-      const body = new Blob(
-        [JSON.stringify({ ...payload, p: path, r: referrer, ...(utm ? { s: utm } : {}) })],
-        { type: 'text/plain;charset=UTF-8' },
-      )
+      // El origen (referrer, utm) va con las vistas y los contactos; el tiempo
+      // de una página no lo necesita.
+      const origen = payload.k === 'engagement'
+        ? {}
+        : { r: referrer, ...(utm ? { s: utm } : {}), ...(campaign ? { c: campaign } : {}) }
+      const body = new Blob([JSON.stringify({ ...payload, p: path, ...origen })], {
+        type: 'text/plain;charset=UTF-8',
+      })
       if (navigator.sendBeacon) navigator.sendBeacon(url, body)
       else void fetch(url, { method: 'POST', body, keepalive: true, mode: 'no-cors' })
     } catch { /* el analytics jamás rompe la página */ }
   }
 
+  // ── Tiempo activo + scroll de la página actual ─────────────────────────────
+  let pagina = '' // la que se está midiendo
+  let activoMs = 0
+  let scrollMax = 0
+  let ultimaSenal = Date.now()
+
+  function medirScroll() {
+    try {
+      const alto = document.documentElement.scrollHeight
+      if (!alto) return
+      const pct = Math.min(100, ((window.scrollY + window.innerHeight) / alto) * 100)
+      if (pct > scrollMax) scrollMax = pct
+    } catch { /* nada */ }
+  }
+
+  /** Manda lo acumulado de la página actual y pone el contador en cero. */
+  function flush() {
+    if (!pagina || activoMs < 1000) {
+      activoMs = 0
+      return
+    }
+    send({ k: 'engagement', d: activoMs, sc: Math.round(scrollMax) }, pagina)
+    activoMs = 0
+  }
+
   function pageview(path: string) {
     if (path === ultima) return
+    // Lo de la página que se deja se cierra ANTES de contar la nueva.
+    flush()
     ultima = path
+    pagina = path
+    scrollMax = 0
+    ultimaSenal = Date.now()
     send({ k: 'pageview' }, path)
     // Ya consumimos el referrer externo: la próxima vista viene de ESTA página
     // (el server la descarta por self-referral y queda "directo", como en un
     // sitio multipágina).
     referrer = `${location.origin}${path}`
+    // En una SPA la ruta cambia antes que el contenido: se mide cuando la
+    // página nueva ya está pintada (si entra entera en la pantalla, es 100 %).
+    setTimeout(medirScroll, 1000)
   }
 
   nuxtApp.hook('app:mounted', () => {
     pageview(location.pathname)
+    // La primera medición, con las fotos ya cargadas: antes, una página que
+    // todavía no creció daba "bajó hasta el 90 %" sin que nadie tocara nada.
+    if (document.readyState === 'complete') medirScroll()
+    else window.addEventListener('load', medirScroll, { once: true })
+
+    setInterval(() => {
+      if (pagina && document.visibilityState === 'visible' && Date.now() - ultimaSenal < INACTIVA_MS) {
+        activoMs += 1000
+      }
+    }, 1000)
+
+    let pendiente = false
+    const senal = () => {
+      ultimaSenal = Date.now()
+    }
+    window.addEventListener(
+      'scroll',
+      () => {
+        senal()
+        if (pendiente) return
+        pendiente = true
+        requestAnimationFrame(() => {
+          pendiente = false
+          medirScroll()
+        })
+      },
+      { passive: true },
+    )
+    for (const ev of ['pointermove', 'pointerdown', 'keydown', 'touchstart'] as const) {
+      window.addEventListener(ev, senal, { passive: true })
+    }
+    // Pestaña oculta o cerrada: se manda lo acumulado (el sendBeacon sobrevive
+    // al cierre). Si vuelve, sigue sumando y se manda otro tramo después.
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') flush()
+      else senal()
+    })
+    window.addEventListener('pagehide', flush)
 
     document.addEventListener(
       'click',
