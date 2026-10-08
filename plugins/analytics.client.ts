@@ -13,13 +13,9 @@
  * ficha de Estadísticas del panel muestra tiempo, scroll y un rebote que no
  * cuenta como "se fue" a quien leyó dos minutos.
  *
- * SIN COOKIES: al visitante lo identifica el server con un hash diario
- * (migración 051), así que no necesita aviso de cookies. Lo único que puede
- * quedar en el navegador es la marca del DUEÑO: abrir el sitio con `?no-medir`
- * guarda `sms-no-medir` en el localStorage de ese navegador y deja de contarlo
- * (`?medir` la saca). El parámetro se borra de la barra al toque: si el dueño
- * copiara ese link para compartirlo, apagaría la medición de cada persona que
- * lo abra. Es el mismo criterio que el beacon de los sitios express.
+ * SIN COOKIES y sin localStorage: no guarda NADA en el navegador (al visitante
+ * lo identifica el server con un hash diario — migración 051). Por eso no
+ * necesita aviso de cookies.
  *
  * Decisiones que no son obvias:
  *  - `text/plain` en el Blob A PROPÓSITO: con `application/json` el navegador
@@ -61,29 +57,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   } catch {
     return
   }
-
-  // "No contar este navegador": la marca del dueño (ver arriba).
-  try {
-    const marca = new URLSearchParams(location.search)
-    if (marca.has('no-medir')) localStorage.setItem('sms-no-medir', '1')
-    else if (marca.has('medir')) localStorage.removeItem('sms-no-medir')
-    if (marca.has('no-medir') || marca.has('medir')) {
-      marca.delete('no-medir')
-      marca.delete('medir')
-      const resto = marca.toString()
-      const limpia = `${location.pathname}${resto ? `?${resto}` : ''}${location.hash}`
-      const limpiar = () => {
-        try {
-          if (/[?&](no-)?medir(=|&|$)/.test(location.search)) history.replaceState(history.state, '', limpia)
-        } catch { /* la barra queda como estaba */ }
-      }
-      limpiar()
-      // El router de Nuxt vuelve a escribir la URL inicial (con el parámetro)
-      // en `app:created`: hay que limpiarla otra vez cuando ya terminó.
-      nuxtApp.hook('app:mounted', () => setTimeout(limpiar, 0))
-    }
-    if (localStorage.getItem('sms-no-medir')) return
-  } catch { /* sin localStorage: se mide */ }
 
   const url = `${base}/api/public/sites/${encodeURIComponent(site)}/hit`
 
